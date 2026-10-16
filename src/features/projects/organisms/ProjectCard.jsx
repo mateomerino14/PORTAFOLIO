@@ -1,6 +1,6 @@
 import {motion} from 'framer-motion';
 import {ChevronRight} from 'lucide-react';
-import Tag from '../../../components/ui/Tag';
+import TechList from '../../../components/ui/TechList';
 import ProjectVisual from '../molecules/ProjectVisual';
 import ProjectLink from '../atoms/ProjectLink';
 import useStackedCard from '../hooks/useStackedCard';
@@ -17,7 +17,7 @@ const styles = {
   highlights: 'mt-5 space-y-2 text-sm',
   highlight: 'flex items-start gap-2',
   bullet: 'mt-0.5 shrink-0',
-  tags: 'mt-6 flex flex-wrap gap-2',
+  tags: 'mt-6',
   links: 'mt-auto flex gap-5 pt-8 text-sm font-semibold',
 };
 
@@ -48,9 +48,7 @@ function ProjectCard({project, position}) {
               </li>
             ))}
           </ul>
-          <div className={styles.tags}>
-            {project.tags.map((tag) => <Tag key={tag} label={tag} variant="pill" />)}
-          </div>
+          <TechList items={project.tags} className={styles.tags} />
           <div className={styles.links}>
             {project.links.map((link) => <ProjectLink key={link.href} href={link.href} label={link.label} />)}
           </div>

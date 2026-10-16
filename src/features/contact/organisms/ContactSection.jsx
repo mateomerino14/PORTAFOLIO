@@ -10,7 +10,6 @@ const styles = {
   section: 'overflow-hidden',
   container: 'text-center',
   glow: 'pointer-events-none absolute bottom-0 left-1/2 h-[500px] w-[900px] -translate-x-1/2 translate-y-1/2 rounded-full bg-signal/25 blur-[140px]',
-  kicker: 'mb-6 font-mono text-xs tracking-[0.2em] text-accent uppercase',
   title: 'font-display text-[clamp(2.8rem,9vw,7.5rem)] leading-[0.9] font-extrabold tracking-tight',
   outlined: 'text-outline',
   accent: 'text-accent',
@@ -26,9 +25,6 @@ const revealStepSeconds = 0.1;
 function ContactSection() {
   return (
     <Section id={SECTION_IDS.contact} className={styles.section} containerClassName={styles.container} after={<div className={styles.glow} />}>
-      <Reveal>
-        <p className={styles.kicker}>06 — Contacto</p>
-      </Reveal>
       <Reveal delay={revealStepSeconds}>
         <h2 className={styles.title}>
           ¿Construimos<br />

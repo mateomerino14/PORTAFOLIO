@@ -2,7 +2,6 @@ import Section from '../../../components/ui/Section';
 import SectionTitle from '../../../components/ui/SectionTitle';
 import Reveal from '../../../components/ui/Reveal';
 import StackCard from '../molecules/StackCard';
-import TechMarquee from '../molecules/TechMarquee';
 import {SECTION_IDS} from '../../../constants/navigation';
 import {STACK_GROUPS} from '../../../data/stack';
 
@@ -13,12 +12,11 @@ const styles = {
 
 const columns = 3;
 const cardDelay = 0.08;
-const allTechnologies = STACK_GROUPS.flatMap((group) => group.items);
 
 function StackSection() {
   return (
-    <Section id={SECTION_IDS.stack} className={styles.section} after={<TechMarquee items={allTechnologies} />}>
-      <SectionTitle index="02" kicker="Stack" title="Las herramientas con las que construyo." />
+    <Section id={SECTION_IDS.stack} className={styles.section}>
+      <SectionTitle title="Stack" />
       <div className={styles.grid}>
         {STACK_GROUPS.map((group, position) => (
           <Reveal key={group.title} delay={(position % columns) * cardDelay}>

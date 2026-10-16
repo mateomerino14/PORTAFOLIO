@@ -17,7 +17,7 @@ const iconSize = 16;
 function ProjectsSection() {
   return (
     <Section id={SECTION_IDS.projects}>
-      <SectionTitle index="03" kicker="Proyectos" title="Cosas que he construido." />
+      <SectionTitle title="Proyectos" />
       <div className={styles.list}>
         {PROJECTS.map((project, position) => <ProjectCard key={project.title} project={project} position={position} />)}
       </div>

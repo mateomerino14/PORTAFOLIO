@@ -20,7 +20,7 @@ const statDelay = 0.08;
 function AboutSection() {
   return (
     <Section id={SECTION_IDS.about}>
-      <SectionTitle index="01" kicker="Sobre mí" title="Código, datos y ganas de enseñar." />
+      <SectionTitle title="Sobre mí" />
       <div className={styles.layout}>
         <div className={styles.story}>
           {PROFILE.about.map((paragraph, position) => (

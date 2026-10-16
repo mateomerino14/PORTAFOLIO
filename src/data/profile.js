@@ -14,7 +14,6 @@ export const PROFILE = {
   cvUrl: 'cv-mateo-merino.pdf',
   cvFileName: 'CV-Mateo-Merino.pdf',
   headline: 'Construyo aplicaciones web y convierto datos en decisiones. Estudiante de Informática en la UMSS, asistente de cátedra y entre los 3 mejores de mi facultad.',
-  availability: 'Disponible para prácticas y proyectos',
   about: [
     'Estudio Informática en la Universidad Mayor de San Simón, donde estuve entre los 3 mejores estudiantes de la Facultad de Ciencias y Tecnología en 2024.',
     'Desde 2024 soy asistente de cátedra en Introducción a la Programación y Teoría de Grafos: explicar un algoritmo a otra persona es la mejor forma que conozco de entenderlo de verdad.',

@@ -16,7 +16,7 @@ function TimelineSection() {
   const {trackRef, fillHeight} = useTimelineProgress();
   return (
     <Section id={SECTION_IDS.timeline}>
-      <SectionTitle index="04" kicker="Trayectoria" title="Experiencia y formación." />
+      <SectionTitle title="Trayectoria" />
       <div ref={trackRef} className={styles.track}>
         <div className={styles.rail} />
         <motion.div className={styles.fill} style={{height: fillHeight}} />

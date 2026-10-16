@@ -6,7 +6,6 @@ const styles = {
   shape: 'absolute top-1/2 left-1/2 h-40 w-40 -translate-x-1/2 -translate-y-1/2 rounded-[30%] border-2 border-current opacity-60',
   orb: 'absolute top-1/2 left-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-80 blur-xl',
   kind: 'absolute bottom-4 left-4 font-mono text-xs text-paper/70',
-  number: 'absolute top-3 right-4 font-display text-7xl font-extrabold text-paper/10',
 };
 
 const baseSpinSeconds = 18;
@@ -23,7 +22,6 @@ function ProjectVisual({kind, accent, position}) {
       <motion.div className={`${styles.shape} ${accent.text}`} animate={shapeAnimation} transition={spinTransition} />
       <motion.div className={`${styles.orb} ${accent.fill}`} animate={orbAnimation} transition={orbTransition} />
       <span className={styles.kind}>{kind}</span>
-      <span className={styles.number}>0{position + 1}</span>
     </div>
   );
 }

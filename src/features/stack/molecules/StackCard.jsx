@@ -1,5 +1,5 @@
 import TiltCard from '../../../components/ui/TiltCard';
-import Tag from '../../../components/ui/Tag';
+import TechList from '../../../components/ui/TechList';
 import {STACK_ICONS} from '../constants/stackIcons';
 
 const styles = {
@@ -8,7 +8,6 @@ const styles = {
   header: 'mb-6 flex items-center justify-between',
   title: 'font-display text-xl font-semibold',
   icon: 'grid h-10 w-10 place-items-center rounded-xl bg-ink-raised text-accent transition-transform duration-500 group-hover:rotate-12',
-  tags: 'flex flex-wrap gap-2',
 };
 
 const iconSize = 18;
@@ -22,9 +21,7 @@ function StackCard({group}) {
           <h3 className={styles.title}>{group.title}</h3>
           <span className={styles.icon}><Icon size={iconSize} /></span>
         </div>
-        <div className={styles.tags}>
-          {group.items.map((item) => <Tag key={item} label={item} />)}
-        </div>
+        <TechList items={group.items} />
       </div>
     </TiltCard>
   );

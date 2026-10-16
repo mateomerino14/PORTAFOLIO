@@ -6,14 +6,12 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Encabezado de sección con número, etiqueta y un título cuyas palabras suben una a una.',
+        component: 'Título de sección cuyas palabras suben una a una al entrar en pantalla.',
       },
     },
   },
   args: {
-    index: '01',
-    kicker: 'Sobre mí',
-    title: 'Código, datos y ganas de enseñar.',
+    title: 'Sobre mí',
   },
 };
 

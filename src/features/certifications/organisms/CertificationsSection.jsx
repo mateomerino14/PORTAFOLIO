@@ -20,7 +20,7 @@ function CertificationsSection() {
   const activeGroup = CERTIFICATION_GROUPS[activeIndex];
   return (
     <Section id={SECTION_IDS.certifications}>
-      <SectionTitle index="05" kicker="Certificaciones" title="Aprendizaje continuo." />
+      <SectionTitle title="Certificaciones" />
       <Reveal>
         <CertificationTabs groups={CERTIFICATION_GROUPS} activeIndex={activeIndex} onSelect={setActiveIndex} />
       </Reveal>

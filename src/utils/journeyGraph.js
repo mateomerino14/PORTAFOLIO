@@ -80,3 +80,15 @@ export const scatterPoints = (count, bounds, seed) => {
   }
   return points;
 };
+
+export const ringAround = (center, count, ring, seed) => {
+  const random = createRandom(seed);
+  return Array.from({length: count}, (_, index) => {
+    const angle = (index / count) * Math.PI * 2;
+    return new Vector3(
+      center.x + Math.cos(angle) * ring.radius,
+      center.y + Math.sin(angle) * ring.radius * ring.flatten,
+      center.z - ring.depth - random() * ring.depthJitter,
+    );
+  });
+};

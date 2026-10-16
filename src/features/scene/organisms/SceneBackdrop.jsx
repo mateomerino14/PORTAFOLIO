@@ -1,11 +1,12 @@
 import {lazy, Suspense} from 'react';
 import {motion} from 'framer-motion';
+import SceneLabels from '../molecules/SceneLabels';
 
 const JourneyScene = lazy(() => import('./JourneyScene'));
 
 const styles = {
   layer: 'pointer-events-none fixed inset-0 z-0',
-  frame: 'h-full w-full',
+  frame: 'relative h-full w-full',
   fade: 'absolute inset-0 bg-gradient-to-t from-ink via-ink/30 to-transparent md:bg-gradient-to-r md:from-ink/90 md:via-ink/20',
 };
 
@@ -21,6 +22,7 @@ function SceneBackdrop() {
       <Suspense fallback={null}>
         <motion.div className={styles.frame} {...sceneEntrance}>
           <JourneyScene />
+          <SceneLabels />
         </motion.div>
       </Suspense>
       <div className={styles.fade} />

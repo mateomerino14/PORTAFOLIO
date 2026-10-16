@@ -9,14 +9,14 @@ const styles = {
 
 const iconSize = 16;
 
-function StackGroup({group}) {
+function StackGroup({group, linkedTechnologies, hoveredTech, onTechEnter, onTechLeave}) {
   const Icon = STACK_ICONS[group.icon];
   return (
     <div className={styles.row}>
       <span className={styles.icon}><Icon size={iconSize} /></span>
       <div>
         <h3 className={styles.title}>{group.title}</h3>
-        <TechList items={group.items} />
+        <TechList items={group.items} interactiveItems={linkedTechnologies} activeItem={hoveredTech} onItemEnter={onTechEnter} onItemLeave={onTechLeave} />
       </div>
     </div>
   );

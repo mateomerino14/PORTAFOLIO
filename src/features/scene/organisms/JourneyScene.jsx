@@ -5,6 +5,8 @@ import JourneyRoute from '../molecules/JourneyRoute';
 import AmbientField from '../molecules/AmbientField';
 import JourneyCamera from '../molecules/JourneyCamera';
 import TravelPulse from '../molecules/TravelPulse';
+import TechLinks from '../molecules/TechLinks';
+import LabelProjector from '../molecules/LabelProjector';
 import useJourneyLayout from '../hooks/useJourneyLayout';
 import {CAMERA_CONFIG, PIXEL_RATIO_RANGE, RENDERER_OPTIONS, SCENE_LIGHTS} from '../constants/sceneConfig';
 
@@ -22,8 +24,10 @@ function JourneyScene() {
       <JourneyCamera positions={layout.positions} />
       <AmbientField />
       <JourneyRoute layout={layout} />
+      <TechLinks positions={layout.positions} techPositions={layout.techPositions} />
       <JourneyNodes layout={layout} />
       <TravelPulse positions={layout.positions} />
+      <LabelProjector anchors={layout.anchors} />
       <CoreSphere position={layout.positions[heroStopIndex]} />
     </Canvas>
   );

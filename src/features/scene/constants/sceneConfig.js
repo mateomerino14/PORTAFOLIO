@@ -47,7 +47,7 @@ export const AMBIENT_FIELD = {
   opacity: 0.55,
 };
 
-export const LABEL_OFFSET_Y = -0.42;
+export const LABEL_OFFSET_PX = 12;
 
 export const CAMERA_CONFIG = {position: [-4, 4, 9], fov: 50, near: 0.1, far: 200};
 
@@ -78,3 +78,15 @@ export const SCENE_LIGHTS = [
 export const RENDERER_OPTIONS = {antialias: true, alpha: true, powerPreference: 'high-performance'};
 
 export const PIXEL_RATIO_RANGE = [1, 1.5];
+
+export const TECH_STYLE = {
+  ring: {radius: 1.55, flatten: 0.85, depth: 1.2, depthJitter: 0.8},
+  seed: 1907,
+  radius: 0.045,
+  hoveredScale: 2.2,
+  idleOpacity: 0.05,
+  nearbyOpacity: 0.18,
+  hoveredOpacity: 0.9,
+  dimmedOpacity: 0.03,
+  segments: 12,
+};

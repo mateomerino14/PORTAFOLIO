@@ -1,26 +1,7 @@
-import {Html} from '@react-three/drei';
 import {useActiveStopIndex} from '../../journey/hooks/useJourneyState';
 import useNodeFade from '../hooks/useNodeFade';
 import {STOP_LEVELS} from '../../../utils/journey';
-import {LABEL_OFFSET_Y, LABEL_RANGE, NODE_COLORS, NODE_SIZES} from '../constants/sceneConfig';
-
-const styles = {
-  label: 'pointer-events-none whitespace-nowrap font-mono text-[11px] text-fog transition-opacity duration-500',
-  activeLabel: 'pointer-events-none whitespace-nowrap font-mono text-[11px] text-paper transition-opacity duration-500',
-  hidden: 'opacity-0',
-  shown: 'opacity-100',
-};
-
-const labelClass = (isActive, isVisible) => {
-  let base = styles.label;
-  if (isActive) {
-    base = styles.activeLabel;
-  }
-  if (isVisible) {
-    return `${base} ${styles.shown}`;
-  }
-  return `${base} ${styles.hidden}`;
-};
+import {NODE_COLORS, NODE_SIZES} from '../constants/sceneConfig';
 
 const heroStopIndex = 0;
 
@@ -39,13 +20,6 @@ const nodeRadius = (stop) => {
     return NODE_SIZES.main;
   }
   return NODE_SIZES.branch;
-};
-
-const isLabelVisible = (stop, index, activeIndex) => {
-  if (activeIndex === heroStopIndex) {
-    return stop.level === STOP_LEVELS.main;
-  }
-  return Math.abs(index - activeIndex) <= LABEL_RANGE;
 };
 
 function JourneyNodes({layout}) {
@@ -74,9 +48,6 @@ function JourneyNodes({layout}) {
                 <meshBasicMaterial color={color} transparent opacity={NODE_SIZES.haloOpacity} depthWrite={false} toneMapped={false} />
               </mesh>
             )}
-            <Html position={[0, LABEL_OFFSET_Y, 0]} center zIndexRange={[0, 0]}>
-              <span className={labelClass(isActive, isLabelVisible(stop, index, activeIndex))}>{stop.label}</span>
-            </Html>
           </group>
         );
       })}

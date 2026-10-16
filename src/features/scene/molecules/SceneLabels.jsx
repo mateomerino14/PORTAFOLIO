@@ -1,3 +1,4 @@
+import TechIcon from '../../../components/ui/TechIcon';
 import {labelRegistry} from '../store/labelRegistry';
 import {stopLabelId, techLabelId} from '../constants/labelIds';
 import {JOURNEY_STOPS} from '../../journey/constants/journeyStops';
@@ -10,13 +11,14 @@ const styles = {
   layer: 'absolute inset-0 overflow-hidden',
   label: 'absolute top-0 left-0 whitespace-nowrap font-mono text-[11px] text-fog transition-opacity duration-500 will-change-transform',
   active: 'absolute top-0 left-0 whitespace-nowrap font-mono text-[11px] text-paper transition-opacity duration-500 will-change-transform',
-  tech: 'absolute top-0 left-0 whitespace-nowrap font-mono text-[10px] text-fog transition-opacity duration-500 will-change-transform',
-  hoveredTech: 'absolute top-0 left-0 whitespace-nowrap font-mono text-[10px] text-accent transition-opacity duration-500 will-change-transform',
+  tech: 'absolute top-0 left-0 inline-flex items-center gap-1 whitespace-nowrap font-mono text-[10px] text-fog transition-opacity duration-500 will-change-transform',
+  hoveredTech: 'absolute top-0 left-0 inline-flex items-center gap-1 whitespace-nowrap font-mono text-[10px] text-accent transition-opacity duration-500 will-change-transform',
   shown: 'opacity-100',
   hidden: 'opacity-0',
 };
 
 const heroStopIndex = 0;
+const techIconSize = 11;
 
 const visibility = (isVisible) => {
   if (isVisible) {
@@ -58,6 +60,7 @@ function SceneLabels({activeIndex, hoveredTech}) {
         }
         return (
           <span key={node.tech} ref={labelRegistry.register(techLabelId(node.tech))} className={`${base} ${visibility(isAtStack)}`}>
+            <TechIcon name={node.tech} size={techIconSize} />
             {node.tech}
           </span>
         );

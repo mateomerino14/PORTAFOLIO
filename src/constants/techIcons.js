@@ -1,0 +1,63 @@
+import {
+  siC, siCplusplus, siCss, siDocker, siElectron, siExpress, siFigma, siFramer, siGit, siGithubactions, siGooglegemini,
+  siHtml5, siJavascript, siJsonwebtokens, siMongodb, siMysql, siNestjs, siNodedotjs, siNumpy, siOpenjdk, siPaddlepaddle,
+  siPandas, siPostgresql, siPostman, siPython, siR, siReact, siAngular, siSqlite, siStorybook, siSupabase, siSvg,
+  siTailwindcss, siThreedotjs, siTypescript, siVitest,
+} from 'simple-icons';
+import {ChartColumn, ChartPie, Code, Database, RefreshCcw, ScanText, Sigma, Webhook, Workflow} from 'lucide-react';
+
+export const BRAND_ICONS = {
+  'Python': siPython,
+  'JavaScript': siJavascript,
+  'TypeScript': siTypescript,
+  'Java': siOpenjdk,
+  'C': siC,
+  'C++': siCplusplus,
+  'R': siR,
+  'ggplot2': siR,
+  'React': siReact,
+  'Angular': siAngular,
+  'Tailwind': siTailwindcss,
+  'Electron': siElectron,
+  'HTML': siHtml5,
+  'CSS': siCss,
+  'Figma': siFigma,
+  'Node.js': siNodedotjs,
+  'Express': siExpress,
+  'NestJS': siNestjs,
+  'JWT': siJsonwebtokens,
+  'Postman': siPostman,
+  'PostgreSQL': siPostgresql,
+  'Supabase': siSupabase,
+  'MySQL': siMysql,
+  'SQLite': siSqlite,
+  'MongoDB': siMongodb,
+  'Pandas': siPandas,
+  'NumPy': siNumpy,
+  'Git': siGit,
+  'GitHub Actions': siGithubactions,
+  'Docker': siDocker,
+  'Vitest': siVitest,
+  'Storybook': siStorybook,
+  'Gemini': siGooglegemini,
+  'PaddleOCR': siPaddlepaddle,
+  'SVG': siSvg,
+  'Framer Motion': siFramer,
+  'Three.js': siThreedotjs,
+};
+
+export const FALLBACK_ICONS = {
+  'MATLAB': Sigma,
+  'Estadística': Sigma,
+  'SQL Server': Database,
+  'PouchDB': Database,
+  'Power BI': ChartColumn,
+  'Business Intelligence': ChartPie,
+  'APIs REST': Webhook,
+  'Scrum / Agile': RefreshCcw,
+  'Automatización': Workflow,
+  'TrOCR': ScanText,
+  'Tesseract': ScanText,
+};
+
+export const DEFAULT_TECH_ICON = Code;

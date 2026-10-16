@@ -1,17 +1,15 @@
+import TechIcon from './TechIcon';
+
 const styles = {
-  list: 'font-mono text-xs leading-relaxed text-fog',
-  item: 'inline',
-  interactive: 'inline cursor-pointer underline decoration-accent/50 decoration-dotted underline-offset-4 transition-colors hover:text-paper focus-visible:text-paper focus-visible:outline-none',
-  active: 'inline cursor-pointer text-accent underline decoration-accent decoration-dotted underline-offset-4',
+  list: 'flex flex-wrap gap-1.5',
+  badge: 'inline-flex items-center gap-1.5 rounded-md border border-line bg-ink-soft/80 px-2 py-1 font-mono text-[11px] text-fog',
+  interactive: 'inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-dashed border-accent/40 bg-ink-soft/80 px-2 py-1 font-mono text-[11px] text-fog transition-colors hover:border-accent hover:text-paper focus-visible:border-accent focus-visible:text-paper focus-visible:outline-none',
+  active: 'inline-flex cursor-pointer items-center gap-1.5 rounded-md border border-accent bg-accent/15 px-2 py-1 font-mono text-[11px] text-paper',
 };
 
-const separator = ' · ';
 const noItems = new Set();
 
-const itemClass = (item, interactiveItems, activeItem) => {
-  if (!interactiveItems.has(item)) {
-    return styles.item;
-  }
+const interactiveClass = (item, activeItem) => {
   if (item === activeItem) {
     return styles.active;
   }
@@ -20,23 +18,25 @@ const itemClass = (item, interactiveItems, activeItem) => {
 
 function TechList({items, className = '', interactiveItems = noItems, activeItem = '', onItemEnter, onItemLeave}) {
   return (
-    <p className={`${styles.list} ${className}`}>
-      {items.map((item, position) => {
-        const isInteractive = interactiveItems.has(item);
-        return (
-          <span key={item}>
-            {position > 0 && separator}
-            {isInteractive && (
-              <button type="button" className={itemClass(item, interactiveItems, activeItem)}
-                onMouseEnter={() => onItemEnter(item)} onMouseLeave={onItemLeave} onFocus={() => onItemEnter(item)} onBlur={onItemLeave} onClick={() => onItemEnter(item)}>
-                {item}
-              </button>
-            )}
-            {!isInteractive && <span className={styles.item}>{item}</span>}
-          </span>
-        );
-      })}
-    </p>
+    <ul className={`${styles.list} ${className}`}>
+      {items.map((item) => (
+        <li key={item}>
+          {interactiveItems.has(item) && (
+            <button type="button" className={interactiveClass(item, activeItem)}
+              onMouseEnter={() => onItemEnter(item)} onMouseLeave={onItemLeave} onFocus={() => onItemEnter(item)} onBlur={onItemLeave} onClick={() => onItemEnter(item)}>
+              <TechIcon name={item} />
+              {item}
+            </button>
+          )}
+          {!interactiveItems.has(item) && (
+            <span className={styles.badge}>
+              <TechIcon name={item} />
+              {item}
+            </span>
+          )}
+        </li>
+      ))}
+    </ul>
   );
 }
 

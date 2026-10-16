@@ -3,6 +3,7 @@ import {STACK_ICONS} from '../constants/stackIcons';
 
 const styles = {
   row: 'grid grid-cols-[2rem_1fr] gap-3 border-t border-line py-3 first:border-t-0',
+  list: 'mt-2',
   icon: 'grid h-8 w-8 place-items-center rounded-lg bg-ink-raised text-accent',
   title: 'text-sm font-semibold text-paper',
 };
@@ -16,7 +17,7 @@ function StackGroup({group, linkedTechnologies, hoveredTech, onTechEnter, onTech
       <span className={styles.icon}><Icon size={iconSize} /></span>
       <div>
         <h3 className={styles.title}>{group.title}</h3>
-        <TechList items={group.items} interactiveItems={linkedTechnologies} activeItem={hoveredTech} onItemEnter={onTechEnter} onItemLeave={onTechLeave} />
+        <TechList items={group.items} className={styles.list} interactiveItems={linkedTechnologies} activeItem={hoveredTech} onItemEnter={onTechEnter} onItemLeave={onTechLeave} />
       </div>
     </div>
   );

@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Lista de tecnologías en una sola línea de texto, separadas por un punto medio. Las que están en `interactiveItems` se pueden señalar para resaltarlas en la escena 3D.',
+        component: 'Lista de tecnologías con su logo. Las que están en `interactiveItems` tienen borde punteado y se pueden señalar para resaltarlas en la escena 3D.',
       },
     },
   },

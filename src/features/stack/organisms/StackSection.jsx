@@ -19,7 +19,7 @@ function StackSection() {
       <p className={styles.hint}>
         <span className={styles.pointerHint}>Pasa el cursor por</span>
         <span className={styles.touchHint}>Toca</span>
-        {' '}una tecnología subrayada para ver en qué proyectos la usé.
+        {' '}una tecnología con borde punteado para ver en qué proyectos la usé.
       </p>
       {STACK_GROUPS.map((group) => (
         <StackGroup key={group.title} group={group} linkedTechnologies={linkedTechnologies} hoveredTech={hoveredTech} onTechEnter={highlightTech} onTechLeave={clearTech} />

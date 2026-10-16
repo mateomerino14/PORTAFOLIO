@@ -1,6 +1,8 @@
 import {MotionConfig} from 'framer-motion';
 import Navbar from './layouts/navbar/Navbar';
 import Footer from './layouts/Footer';
+import ScrollProgress from './layouts/effects/ScrollProgress';
+import CursorGlow from './layouts/effects/CursorGlow';
 import useSmoothScroll from './hooks/shared/useSmoothScroll';
 
 const styles = {
@@ -12,6 +14,8 @@ function App() {
   return (
     <MotionConfig reducedMotion="user">
       <div className={styles.app}>
+        <ScrollProgress />
+        <CursorGlow />
         <Navbar />
         <Footer />
       </div>

@@ -1,7 +1,7 @@
 import {PROFILE} from '../data/profile';
 
 const styles = {
-  footer: 'border-t border-line py-8',
+  footer: 'relative z-10 border-t border-line bg-ink py-8',
   content: 'mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 font-mono text-xs text-fog md:flex-row',
 };
 

@@ -4,15 +4,15 @@ import {Float, MeshDistortMaterial} from '@react-three/drei';
 import {COLORS} from '../../../constants';
 
 const spinSpeed = 0.3;
-const coreScale = 0.8;
-const shellScale = 1.15;
+const coreScale = 0.7;
+const shellScale = 1.05;
 const coreDetail = 24;
 const shellDetail = 1;
 const shellOpacity = 0.12;
 const floatConfig = {speed: 1.6, rotationIntensity: 0.6, floatIntensity: 0.8};
 const coreMaterial = {emissiveIntensity: 0.25, roughness: 0.25, metalness: 0.35, distort: 0.38, speed: 1.8};
 
-function CoreSphere() {
+function CoreSphere({position}) {
   const coreRef = useRef(null);
 
   useFrame((_, delta) => {
@@ -22,7 +22,7 @@ function CoreSphere() {
   });
 
   return (
-    <Float {...floatConfig}>
+    <Float {...floatConfig} position={position}>
       <mesh ref={coreRef} scale={coreScale}>
         <icosahedronGeometry args={[1, coreDetail]} />
         <MeshDistortMaterial color={COLORS.coreSphere} emissive={COLORS.coreGlow} {...coreMaterial} />

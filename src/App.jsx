@@ -3,6 +3,7 @@ import Navbar from './layouts/navbar/Navbar';
 import Footer from './layouts/Footer';
 import ScrollProgress from './layouts/effects/ScrollProgress';
 import HomePage from './pages/HomePage';
+import SceneBackdrop from './features/scene/organisms/SceneBackdrop';
 import useSmoothScroll from './hooks/shared/useSmoothScroll';
 
 const styles = {
@@ -14,6 +15,7 @@ function App() {
   return (
     <MotionConfig reducedMotion="user">
       <div className={styles.app}>
+        <SceneBackdrop />
         <ScrollProgress />
         <Navbar />
         <HomePage />

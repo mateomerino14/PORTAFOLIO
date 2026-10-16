@@ -10,9 +10,7 @@ export const COLORS = {
   signal: '#4cc9f0',
   coreSphere: '#1c1f4a',
   coreGlow: '#2b2f86',
-  accentGlow: 'rgba(124,134,255,0.45)',
   accentTint: 'rgba(124,134,255,0.12)',
-  signalTint: 'rgba(76,201,240,0.16)',
 };
 
 // Curva de aceleración compartida por todas las animaciones
@@ -23,5 +21,4 @@ export const NAVBAR_OFFSET_PX = 70;
 // Preferencias del usuario consultadas para adaptar las animaciones
 export const MEDIA_QUERIES = {
   reducedMotion: '(prefers-reduced-motion: reduce)',
-  finePointer: '(pointer: fine)',
 };

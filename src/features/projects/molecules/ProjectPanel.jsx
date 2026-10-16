@@ -1,7 +1,7 @@
 import {ChevronRight} from 'lucide-react';
 import TechList from '../../../components/ui/TechList';
 import ProjectLink from '../atoms/ProjectLink';
-import ProjectGallery from './ProjectGallery';
+import ImageGallery from '../../../components/ui/ImageGallery';
 import CodePreview from './CodePreview';
 import {MEDIA_TYPES} from '../../../data/projects';
 
@@ -47,7 +47,7 @@ function ProjectPanel({project}) {
         </div>
       </div>
       <div className={styles.media}>
-        {project.media.type === MEDIA_TYPES.gallery && <ProjectGallery images={project.media.images} note={project.media.note} title={project.title} />}
+        {project.media.type === MEDIA_TYPES.gallery && <ImageGallery images={project.media.images} note={project.media.note} title={project.title} />}
         {project.media.type === MEDIA_TYPES.code && <CodePreview file={project.media.file} language={project.media.language} code={project.media.code} />}
       </div>
     </article>

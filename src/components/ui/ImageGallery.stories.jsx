@@ -1,15 +1,15 @@
-import ProjectGallery from './ProjectGallery';
-import {PROJECTS} from '../../../data/projects';
+import ImageGallery from './ImageGallery';
+import {PROJECTS} from '../../data/projects';
 
 const [viaticos, , brasaBrava] = PROJECTS;
 
 export default {
-  title: 'Projects/Molecules/ProjectGallery',
-  component: ProjectGallery,
+  title: 'UI/ImageGallery',
+  component: ImageGallery,
   parameters: {
     docs: {
       description: {
-        component: 'Capturas de un proyecto con miniaturas para cambiar de imagen. Al tocar la imagen principal se abre ampliada; se cierra con un clic o con Escape.',
+        component: 'Galería con miniaturas para cambiar de imagen. Al tocar la imagen principal se abre ampliada; se cierra con un clic o con Escape. Con `fit="contain"` muestra la imagen completa, útil para fotos verticales.',
       },
     },
   },

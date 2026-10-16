@@ -10,6 +10,11 @@ const styles = {
 };
 
 const magneticStrength = 0.25;
+const labelMotion = {
+  initial: {y: 20, opacity: 0},
+  animate: {y: 0, opacity: 1},
+  exit: {y: -20, opacity: 0},
+};
 
 function CopyEmailButton({email, fallbackUrl}) {
   const {isCopied, copy} = useCopyToClipboard();
@@ -18,7 +23,7 @@ function CopyEmailButton({email, fallbackUrl}) {
       <Magnetic strength={magneticStrength}>
         <button type="button" className={styles.button} onClick={() => copy(email, fallbackUrl)}>
           <AnimatePresence mode="wait">
-            <motion.span key={String(isCopied)} className={styles.label} initial={{y: 20, opacity: 0}} animate={{y: 0, opacity: 1}} exit={{y: -20, opacity: 0}}>
+            <motion.span key={String(isCopied)} className={styles.label} {...labelMotion}>
               {isCopied ? '¡Email copiado!' : email}
             </motion.span>
           </AnimatePresence>

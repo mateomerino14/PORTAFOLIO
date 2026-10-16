@@ -21,6 +21,7 @@ const styles = {
 };
 
 const iconSize = 14;
+const revealStepSeconds = 0.1;
 
 function ContactSection() {
   return (
@@ -28,19 +29,19 @@ function ContactSection() {
       <Reveal>
         <p className={styles.kicker}>06 — Contacto</p>
       </Reveal>
-      <Reveal delay={0.1}>
+      <Reveal delay={revealStepSeconds}>
         <h2 className={styles.title}>
           ¿Construimos<br />
           <span className={styles.outlined}>algo</span> <span className={styles.accent}>juntos?</span>
         </h2>
       </Reveal>
-      <Reveal delay={0.2}>
+      <Reveal delay={revealStepSeconds * 2}>
         <p className={styles.text}>Busco prácticas, proyectos freelance y equipos donde aprender. Escríbeme y te respondo pronto.</p>
       </Reveal>
-      <Reveal delay={0.3} className={styles.copy}>
+      <Reveal delay={revealStepSeconds * 3} className={styles.copy}>
         <CopyEmailButton email={PROFILE.email} fallbackUrl={EMAIL_URL} />
       </Reveal>
-      <Reveal delay={0.4}>
+      <Reveal delay={revealStepSeconds * 4}>
         <div className={styles.links}>
           {CONTACT_LINKS.map((link) => (
             <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className={styles.link}>

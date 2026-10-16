@@ -9,6 +9,9 @@ const styles = {
   fill: 'h-full rounded-full bg-gradient-to-r from-violet to-lime',
 };
 
+const fillDurationSeconds = 1.4;
+const fillViewport = {once: true};
+
 function LanguageBar({language}) {
   return (
     <div className={styles.wrapper}>
@@ -17,7 +20,7 @@ function LanguageBar({language}) {
         <span>{language.level}</span>
       </div>
       <div className={styles.track}>
-        <motion.div className={styles.fill} initial={{width: 0}} whileInView={{width: `${language.percent}%`}} viewport={{once: true}} transition={{duration: 1.4, ease: EASE_OUT}} />
+        <motion.div className={styles.fill} initial={{width: 0}} whileInView={{width: `${language.percent}%`}} viewport={fillViewport} transition={{duration: fillDurationSeconds, ease: EASE_OUT}} />
       </div>
     </div>
   );

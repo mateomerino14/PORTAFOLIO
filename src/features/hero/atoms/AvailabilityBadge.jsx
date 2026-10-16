@@ -7,9 +7,15 @@ const styles = {
   core: 'relative inline-flex h-2 w-2 rounded-full bg-lime',
 };
 
+const badgeMotion = {
+  initial: {opacity: 0, y: 10},
+  animate: {opacity: 1, y: 0},
+  transition: {delay: 0.3},
+};
+
 function AvailabilityBadge({text}) {
   return (
-    <motion.div className={styles.badge} initial={{opacity: 0, y: 10}} animate={{opacity: 1, y: 0}} transition={{delay: 0.3}}>
+    <motion.div className={styles.badge} {...badgeMotion}>
       <span className={styles.dot}>
         <span className={styles.ping} />
         <span className={styles.core} />

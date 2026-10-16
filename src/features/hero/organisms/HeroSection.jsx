@@ -27,6 +27,14 @@ const styles = {
   actions: 'mt-10 flex flex-wrap items-center gap-4',
 };
 
+const sceneEntrance = {
+  initial: {opacity: 0, scale: 0.9},
+  animate: {opacity: 1, scale: 1},
+  transition: {duration: 1.6, delay: 0.2},
+};
+
+const contentDelays = {role: 1.1, headline: 1.25, actions: 1.4};
+
 const fadeUp = (delay) => ({initial: {opacity: 0, y: 20}, animate: {opacity: 1, y: 0}, transition: {delay, duration: 0.8}});
 
 function HeroSection() {
@@ -37,7 +45,7 @@ function HeroSection() {
       <div className={styles.ambientLime} />
       <motion.div className={styles.scene} style={{y: sceneY, opacity: sceneOpacity}}>
         <Suspense fallback={null}>
-          <motion.div className={styles.sceneFrame} initial={{opacity: 0, scale: 0.9}} animate={{opacity: 1, scale: 1}} transition={{duration: 1.6, delay: 0.2}}>
+          <motion.div className={styles.sceneFrame} {...sceneEntrance}>
             <GraphScene />
           </motion.div>
         </Suspense>
@@ -46,11 +54,11 @@ function HeroSection() {
       <motion.div className={styles.content} style={{y: contentY}}>
         <AvailabilityBadge text={`${PROFILE.availability} · ${PROFILE.location}`} />
         <AnimatedName firstName={PROFILE.firstName} lastName={PROFILE.lastName} />
-        <motion.p className={styles.role} {...fadeUp(1.1)}>
+        <motion.p className={styles.role} {...fadeUp(contentDelays.role)}>
           <RotatingRole roles={PROFILE.roles} />
         </motion.p>
-        <motion.p className={styles.headline} {...fadeUp(1.25)}>{PROFILE.headline}</motion.p>
-        <motion.div className={styles.actions} {...fadeUp(1.4)}>
+        <motion.p className={styles.headline} {...fadeUp(contentDelays.headline)}>{PROFILE.headline}</motion.p>
+        <motion.div className={styles.actions} {...fadeUp(contentDelays.actions)}>
           <Magnetic>
             <Button text="Ver proyectos" icon={ArrowRight} onClick={() => scrollToSection(SECTION_IDS.projects)} />
           </Magnetic>

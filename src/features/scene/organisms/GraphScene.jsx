@@ -7,18 +7,19 @@ import {COLORS} from '../../../constants';
 
 const pixelRatioRange = [1, 1.75];
 const rendererOptions = {antialias: true, alpha: true, powerPreference: 'high-performance'};
-const sparklesScale = [9, 6, 4];
+const ambientIntensity = 0.4;
+const sparklesConfig = {count: 60, scale: [9, 6, 4], size: 1.6, speed: 0.3, opacity: 0.35};
 
 function GraphScene() {
   return (
     <Canvas camera={CAMERA_CONFIG} dpr={pixelRatioRange} gl={rendererOptions}>
-      <ambientLight intensity={0.4} />
+      <ambientLight intensity={ambientIntensity} />
       {SCENE_LIGHTS.map((light) => (
         <pointLight key={light.color} position={light.position} intensity={light.intensity} color={light.color} />
       ))}
       <CoreSphere />
       <GraphNetwork />
-      <Sparkles count={60} scale={sparklesScale} size={1.6} speed={0.3} color={COLORS.paper} opacity={0.35} />
+      <Sparkles {...sparklesConfig} color={COLORS.paper} />
     </Canvas>
   );
 }

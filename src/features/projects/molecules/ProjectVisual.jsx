@@ -12,14 +12,16 @@ const styles = {
 const baseSpinSeconds = 18;
 const spinStepSeconds = 4;
 const orbTransition = {duration: 4, repeat: Infinity};
+const shapeAnimation = {rotate: 360, borderRadius: ['30%', '50%', '30%']};
+const orbAnimation = {scale: [1, 1.3, 1]};
 
 function ProjectVisual({kind, accent, position}) {
   const spinTransition = {duration: baseSpinSeconds + position * spinStepSeconds, repeat: Infinity, ease: 'linear'};
   return (
     <div className={`${styles.frame} ${accent.gradient}`}>
       <div className={styles.grid} />
-      <motion.div className={`${styles.shape} ${accent.text}`} animate={{rotate: 360, borderRadius: ['30%', '50%', '30%']}} transition={spinTransition} />
-      <motion.div className={`${styles.orb} ${accent.fill}`} animate={{scale: [1, 1.3, 1]}} transition={orbTransition} />
+      <motion.div className={`${styles.shape} ${accent.text}`} animate={shapeAnimation} transition={spinTransition} />
+      <motion.div className={`${styles.orb} ${accent.fill}`} animate={orbAnimation} transition={orbTransition} />
       <span className={styles.kind}>{kind}</span>
       <span className={styles.number}>0{position + 1}</span>
     </div>

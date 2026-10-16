@@ -7,14 +7,19 @@ const styles = {
 };
 
 const thumbTransition = {repeat: Infinity, duration: 1.6, ease: 'easeInOut'};
+const thumbAnimation = {y: ['-100%', '250%']};
+const indicatorMotion = {
+  initial: {opacity: 0},
+  animate: {opacity: 1},
+  transition: {delay: 2},
+};
 
 function ScrollIndicator({onClick}) {
   return (
-    <motion.button type="button" className={styles.button} onClick={onClick} aria-label="Bajar a la siguiente sección"
-      initial={{opacity: 0}} animate={{opacity: 1}} transition={{delay: 2}}>
+    <motion.button type="button" className={styles.button} onClick={onClick} aria-label="Bajar a la siguiente sección" {...indicatorMotion}>
       Scroll
       <span className={styles.track}>
-        <motion.span className={styles.thumb} animate={{y: ['-100%', '250%']}} transition={thumbTransition} />
+        <motion.span className={styles.thumb} animate={thumbAnimation} transition={thumbTransition} />
       </span>
     </motion.button>
   );

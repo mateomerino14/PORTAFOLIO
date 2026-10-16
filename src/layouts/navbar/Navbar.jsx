@@ -24,6 +24,12 @@ const styles = {
 };
 
 const scrollThresholdPx = 40;
+const downloadIconSize = 16;
+const headerMotion = {
+  initial: {y: -80, opacity: 0},
+  animate: {y: 0, opacity: 1},
+  transition: {delay: 0.3, duration: 0.8, ease: EASE_OUT},
+};
 const sectionIds = NAV_ITEMS.map((item) => item.id);
 
 function Navbar() {
@@ -38,7 +44,7 @@ function Navbar() {
 
   return (
     <>
-      <motion.header className={styles.header} initial={{y: -80, opacity: 0}} animate={{y: 0, opacity: 1}} transition={{delay: 0.3, duration: 0.8, ease: EASE_OUT}}>
+      <motion.header className={styles.header} {...headerMotion}>
         <nav className={`${styles.nav} ${isScrolled ? styles.navSolid : styles.navClear}`}>
           <button type="button" className={styles.brand} onClick={scrollToTop}>
             <span className={styles.logo}>{PROFILE.initials}</span>
@@ -47,7 +53,7 @@ function Navbar() {
           <NavLinks items={NAV_ITEMS} activeId={activeId} onNavigate={handleNavigate} />
           <div className={styles.actions}>
             <a href={PROFILE.cvUrl} download className={styles.cvLink}>
-              <Download size={16} />
+              <Download size={downloadIconSize} />
               Descargar CV
             </a>
             <MenuToggle isOpen={isMenuOpen} onToggle={() => setIsMenuOpen((previous) => !previous)} />

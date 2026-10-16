@@ -9,6 +9,8 @@ const shellScale = 1.15;
 const coreDetail = 24;
 const shellDetail = 1;
 const shellOpacity = 0.12;
+const floatConfig = {speed: 1.6, rotationIntensity: 0.6, floatIntensity: 0.8};
+const coreMaterial = {emissiveIntensity: 0.25, roughness: 0.25, metalness: 0.35, distort: 0.38, speed: 1.8};
 
 function CoreSphere() {
   const coreRef = useRef(null);
@@ -20,10 +22,10 @@ function CoreSphere() {
   });
 
   return (
-    <Float speed={1.6} rotationIntensity={0.6} floatIntensity={0.8}>
+    <Float {...floatConfig}>
       <mesh ref={coreRef} scale={coreScale}>
         <icosahedronGeometry args={[1, coreDetail]} />
-        <MeshDistortMaterial color={COLORS.coreSphere} emissive={COLORS.coreGlow} emissiveIntensity={0.25} roughness={0.25} metalness={0.35} distort={0.38} speed={1.8} />
+        <MeshDistortMaterial color={COLORS.coreSphere} emissive={COLORS.coreGlow} {...coreMaterial} />
       </mesh>
       <mesh scale={shellScale}>
         <icosahedronGeometry args={[1, shellDetail]} />

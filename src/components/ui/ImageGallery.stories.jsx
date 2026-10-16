@@ -16,13 +16,13 @@ export default {
   decorators: [(Story) => <div className="w-[36rem]"><Story /></div>],
   args: {
     title: brasaBrava.title,
-    images: brasaBrava.media.images,
-    note: brasaBrava.media.note,
+    images: brasaBrava.media[0].images,
+    note: brasaBrava.media[0].note,
   },
 };
 
 export const SeveralImages = {};
 
 export const OtherProject = {
-  args: {title: viaticos.title, images: viaticos.media.images, note: viaticos.media.note},
+  args: {title: viaticos.title, images: viaticos.media[0].images, note: viaticos.media[0].note},
 };

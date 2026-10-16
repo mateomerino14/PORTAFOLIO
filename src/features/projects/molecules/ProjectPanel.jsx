@@ -1,9 +1,7 @@
 import {ChevronRight} from 'lucide-react';
 import TechList from '../../../components/ui/TechList';
 import ProjectLink from '../atoms/ProjectLink';
-import ImageGallery from '../../../components/ui/ImageGallery';
-import CodePreview from './CodePreview';
-import {MEDIA_TYPES} from '../../../data/projects';
+import ProjectMedia from './ProjectMedia';
 
 const styles = {
   layout: 'grid grid-cols-[minmax(0,1fr)] gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:items-start md:gap-8',
@@ -47,8 +45,7 @@ function ProjectPanel({project}) {
         </div>
       </div>
       <div className={styles.media}>
-        {project.media.type === MEDIA_TYPES.gallery && <ImageGallery images={project.media.images} note={project.media.note} title={project.title} />}
-        {project.media.type === MEDIA_TYPES.code && <CodePreview file={project.media.file} language={project.media.language} code={project.media.code} />}
+        <ProjectMedia key={project.title} blocks={project.media} title={project.title} />
       </div>
     </article>
   );

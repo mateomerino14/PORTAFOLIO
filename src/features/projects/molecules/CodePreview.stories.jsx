@@ -1,7 +1,7 @@
 import CodePreview from './CodePreview';
 import {PROJECTS} from '../../../data/projects';
 
-const codeProjects = PROJECTS.filter((project) => project.media.code);
+const codeBlocks = PROJECTS.flatMap((project) => project.media).filter((block) => block.code);
 
 export default {
   title: 'Projects/Molecules/CodePreview',
@@ -14,11 +14,11 @@ export default {
     },
   },
   decorators: [(Story) => <div className="w-[36rem]"><Story /></div>],
-  args: codeProjects[0].media,
+  args: codeBlocks[0],
 };
 
 export const Python = {};
 
 export const R = {
-  args: codeProjects[1].media,
+  args: codeBlocks[1],
 };

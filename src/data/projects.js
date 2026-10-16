@@ -23,15 +23,18 @@ export const PROJECTS = [
       {label: 'Frontend', href: `${githubUrl}/SCV-Frontend`},
       {label: 'Backend', href: `${githubUrl}/SCV-Backend`},
     ],
-    media: {
-      type: MEDIA_TYPES.gallery,
-      note: 'Capturas del frontend real con datos ficticios.',
-      images: [
-        {src: 'projects/viaticos/mis-viajes.webp', caption: 'Viajes del empleado: borradores, viajes en curso y gasto acumulado'},
-        {src: 'projects/viaticos/resumen-administrador.webp', caption: 'Resumen del administrador con indicadores por periodo'},
-        {src: 'projects/viaticos/inicio-sesion.webp', caption: 'Inicio de sesión con recuperación de contraseña por código'},
-      ],
-    },
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Capturas',
+        note: 'Capturas del frontend real con datos ficticios.',
+        images: [
+          {src: 'projects/viaticos/mis-viajes.webp', caption: 'Viajes del empleado: borradores, viajes en curso y gasto acumulado'},
+          {src: 'projects/viaticos/resumen-administrador.webp', caption: 'Resumen del administrador con indicadores por periodo'},
+          {src: 'projects/viaticos/inicio-sesion.webp', caption: 'Inicio de sesión con recuperación de contraseña por código'},
+        ],
+      },
+    ],
   },
   {
     title: 'Sistema de Gestión para Café-Bar',
@@ -45,15 +48,18 @@ export const PROJECTS = [
     ],
     tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron', 'Python'],
     links: [{label: 'Versión de escritorio', href: `${githubUrl}/APLICACION-CAFE-BAR`}],
-    media: {
-      type: MEDIA_TYPES.gallery,
-      note: demoNote,
-      images: [
-        {src: 'projects/cafe-bar/caja-mesas.webp', caption: 'Caja: selección de sección y mesa para abrir un pedido'},
-        {src: 'projects/cafe-bar/productos.webp', caption: 'Gestión de productos por categoría y subcategoría'},
-        {src: 'projects/cafe-bar/configuracion.webp', caption: 'Configuración: respaldos, impresoras y reportes automáticos'},
-      ],
-    },
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Capturas',
+        note: demoNote,
+        images: [
+          {src: 'projects/cafe-bar/caja-mesas.webp', caption: 'Caja: selección de sección y mesa para abrir un pedido'},
+          {src: 'projects/cafe-bar/productos.webp', caption: 'Gestión de productos por categoría y subcategoría'},
+          {src: 'projects/cafe-bar/configuracion.webp', caption: 'Configuración: respaldos, impresoras y reportes automáticos'},
+        ],
+      },
+    ],
   },
   {
     title: 'Brasa Brava',
@@ -67,16 +73,19 @@ export const PROJECTS = [
     ],
     tags: ['React', 'Express', 'PostgreSQL', 'Electron', 'Vitest'],
     links: [{label: 'Código', href: `${githubUrl}/BRASA-BRAVA`}],
-    media: {
-      type: MEDIA_TYPES.gallery,
-      note: demoNote,
-      images: [
-        {src: 'projects/brasa-brava/caja.webp', caption: 'Caja con el plano de mesas, ocupación y ventas del día'},
-        {src: 'projects/brasa-brava/cocina.webp', caption: 'Cocina: pedidos pendientes con tiempo de espera'},
-        {src: 'projects/brasa-brava/inicio.webp', caption: 'Página principal con el resumen del día según el cargo'},
-        {src: 'projects/brasa-brava/promociones.webp', caption: 'Promociones con vigencia, horarios y descuento'},
-      ],
-    },
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Capturas',
+        note: demoNote,
+        images: [
+          {src: 'projects/brasa-brava/inicio.webp', caption: 'Página principal con el resumen del día según el cargo'},
+          {src: 'projects/brasa-brava/caja.webp', caption: 'Caja con el plano de mesas, ocupación y ventas del día'},
+          {src: 'projects/brasa-brava/cocina.webp', caption: 'Cocina: pedidos pendientes con tiempo de espera'},
+          {src: 'projects/brasa-brava/promociones.webp', caption: 'Promociones con vigencia, horarios y descuento'},
+        ],
+      },
+    ],
   },
   {
     title: 'Prototipo HTR para código manuscrito',
@@ -90,11 +99,13 @@ export const PROJECTS = [
     ],
     tags: ['Python', 'TrOCR', 'PaddleOCR', 'Tesseract'],
     links: [{label: 'Código', href: `${githubUrl}/prototipo-htr-codigo-manuscrito`}],
-    media: {
-      type: MEDIA_TYPES.code,
-      file: 'piloto/metricas.py',
-      language: 'Python',
-      code: `def levenshtein(a, b):
+    media: [
+      {
+        type: MEDIA_TYPES.code,
+        label: 'Código',
+        file: 'piloto/metricas.py',
+        language: 'Python',
+        code: `def levenshtein(a, b):
     if len(a) < len(b):
         a, b = b, a
 
@@ -113,7 +124,8 @@ export const PROJECTS = [
 
 def cer(referencia, hipotesis):
     return _tasa_error(normalizar(referencia), normalizar(hipotesis))`,
-    },
+      },
+    ],
   },
   {
     title: 'Gestor de portafolios profesionales',
@@ -127,15 +139,18 @@ def cer(referencia, hipotesis):
     ],
     tags: ['React', 'TypeScript', 'Tailwind', 'Vitest', 'Storybook'],
     links: [{label: 'Código', href: 'https://github.com/gonchi2332/six_seven_frontend'}],
-    media: {
-      type: MEDIA_TYPES.gallery,
-      note: 'Capturas del frontend real con datos ficticios.',
-      images: [
-        {src: 'projects/gestor-portafolios/certificados.webp', caption: 'Área de certificados en el perfil público'},
-        {src: 'projects/gestor-portafolios/portada.webp', caption: 'Portada para buscar y verificar perfiles'},
-        {src: 'projects/gestor-portafolios/inicio-sesion.webp', caption: 'Inicio de sesión'},
-      ],
-    },
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Capturas',
+        note: 'Capturas del frontend real con datos ficticios.',
+        images: [
+          {src: 'projects/gestor-portafolios/portada.webp', caption: 'Portada para buscar y verificar perfiles'},
+          {src: 'projects/gestor-portafolios/certificados.webp', caption: 'Área de certificados en el perfil público'},
+          {src: 'projects/gestor-portafolios/inicio-sesion.webp', caption: 'Inicio de sesión'},
+        ],
+      },
+    ],
   },
   {
     title: 'Diagramador de flujo SVG',
@@ -149,13 +164,16 @@ def cer(referencia, hipotesis):
     ],
     tags: ['JavaScript', 'SVG', 'PouchDB'],
     links: [{label: 'Código', href: `${githubUrl}/DIAGRAMADOR-FLUJO-SVG`}],
-    media: {
-      type: MEDIA_TYPES.gallery,
-      note: 'Diagrama de ejemplo cargado con el importador JSON del propio editor.',
-      images: [
-        {src: 'projects/diagramador/editor.webp', caption: 'Editor con figuras, decisiones Sí/No y conexiones ortogonales'},
-      ],
-    },
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Capturas',
+        note: 'Diagrama de ejemplo cargado con el importador JSON del propio editor.',
+        images: [
+          {src: 'projects/diagramador/editor.webp', caption: 'Editor con figuras, decisiones Sí/No y conexiones ortogonales'},
+        ],
+      },
+    ],
   },
   {
     title: 'Simulación de sistemas en R',
@@ -165,15 +183,28 @@ def cer(referencia, hipotesis):
     highlights: [
       'Generadores congruenciales y transformación inversa',
       'Pruebas de Póker, Chi-cuadrada y corridas',
-      'Histogramas, gráficos Q-Q y boxplots',
+      'Simulaciones de Monte Carlo con gráficos de convergencia',
     ],
     tags: ['R', 'ggplot2', 'Estadística'],
     links: [{label: 'Código', href: `${githubUrl}/ANALISIS-DE-DATOS-EN-SIMULACION-DE-SISTEMAS`}],
-    media: {
-      type: MEDIA_TYPES.code,
-      file: 'Generados de variables aleatorias.R',
-      language: 'R',
-      code: `GeneradorCongruencialMixto <- setRefClass("GeneradorCongruencialMixto", fields = list(
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Gráficos',
+        note: 'Gráficos generados al ejecutar las funciones del repositorio con R.',
+        images: [
+          {src: 'projects/simulacion-r/transformada-inversa.webp', caption: 'Transformada inversa: histograma de 5000 valores generados frente a la densidad teórica'},
+          {src: 'projects/simulacion-r/dado-convergencia.webp', caption: 'Convergencia de la frecuencia relativa de cada cara en 5000 lanzamientos de un dado'},
+          {src: 'projects/simulacion-r/dado-frecuencias.webp', caption: 'Frecuencia absoluta de cada cara frente al valor esperado'},
+          {src: 'projects/simulacion-r/estimacion-pi.webp', caption: 'Estimación de π por Monte Carlo con un generador congruencial mixto'},
+        ],
+      },
+      {
+        type: MEDIA_TYPES.code,
+        label: 'Código',
+        file: 'Generados de variables aleatorias.R',
+        language: 'R',
+        code: `GeneradorCongruencialMixto <- setRefClass("GeneradorCongruencialMixto", fields = list(
   semilla = "numeric",
   multiplicador = "numeric",
   incremento = "numeric",
@@ -187,6 +218,7 @@ methods = list(generarNumeros = function(cantidad) {
   }
   return(valores)
 }))`,
-    },
+      },
+    ],
   },
 ];

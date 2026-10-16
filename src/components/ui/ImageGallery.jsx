@@ -8,7 +8,7 @@ const styles = {
   figure: 'flex flex-col gap-2',
   frame: 'group relative block w-full cursor-zoom-in overflow-hidden rounded-xl border border-line bg-ink-raised',
   imageCover: 'aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]',
-  imageContain: 'aspect-[16/10] w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]',
+  imageContain: 'aspect-[4/3] w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]',
   expandHint: 'absolute top-2 right-2 grid h-8 w-8 place-items-center rounded-lg bg-ink/80 text-paper opacity-0 transition-opacity group-hover:opacity-100',
   thumbs: 'flex gap-2',
   thumb: 'h-12 w-20 cursor-pointer overflow-hidden rounded-md border border-line opacity-60 transition-opacity hover:opacity-100',

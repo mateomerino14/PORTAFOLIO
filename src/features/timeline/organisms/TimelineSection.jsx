@@ -20,7 +20,7 @@ function TimelineSection() {
         <StopIndex items={timelineStops} />
       </StopPanel>
       {timelineStops.map((stop) => (
-        <StopPanel key={stop.id} stopId={stop.id}>
+        <StopPanel key={stop.id} stopId={stop.id} variant={TIMELINE[stop.itemIndex].photos ? 'wide' : 'panel'}>
           <TimelinePanel entry={TIMELINE[stop.itemIndex]} />
         </StopPanel>
       ))}

@@ -1,7 +1,10 @@
 import {MapPin} from 'lucide-react';
+import ImageGallery from '../../../components/ui/ImageGallery';
 import {TIMELINE_TYPE_ICONS, TIMELINE_TYPE_LABELS} from '../constants/timelineTypes';
 
 const styles = {
+  layout: 'grid grid-cols-[minmax(0,1fr)] gap-6',
+  layoutWithPhotos: 'grid grid-cols-[minmax(0,1fr)] gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-center md:gap-8',
   header: 'mb-4 flex items-center gap-3',
   badge: 'grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-accent/30 bg-accent/10 text-accent',
   meta: 'font-mono text-xs text-fog',
@@ -17,24 +20,27 @@ const placeIconSize = 14;
 function TimelinePanel({entry}) {
   const Icon = TIMELINE_TYPE_ICONS[entry.type];
   return (
-    <article>
-      <div className={styles.header}>
-        <span className={styles.badge}>
-          <Icon size={badgeIconSize} aria-hidden="true" />
-        </span>
-        <p className={styles.meta}>
-          <span className={styles.type}>{TIMELINE_TYPE_LABELS[entry.type]}</span>
-          {entry.period}
+    <article className={entry.photos ? styles.layoutWithPhotos : styles.layout}>
+      <div>
+        <div className={styles.header}>
+          <span className={styles.badge}>
+            <Icon size={badgeIconSize} aria-hidden="true" />
+          </span>
+          <p className={styles.meta}>
+            <span className={styles.type}>{TIMELINE_TYPE_LABELS[entry.type]}</span>
+            {entry.period}
+          </p>
+        </div>
+        <h3 className={styles.title}>{entry.title}</h3>
+        <p className={styles.place}>
+          <MapPin size={placeIconSize} aria-hidden="true" />
+          {entry.place}
         </p>
+        <ul className={styles.points}>
+          {entry.points.map((point) => <li key={point}>{point}</li>)}
+        </ul>
       </div>
-      <h3 className={styles.title}>{entry.title}</h3>
-      <p className={styles.place}>
-        <MapPin size={placeIconSize} aria-hidden="true" />
-        {entry.place}
-      </p>
-      <ul className={styles.points}>
-        {entry.points.map((point) => <li key={point}>{point}</li>)}
-      </ul>
+      {entry.photos && <ImageGallery images={entry.photos} title={entry.title} fit="contain" />}
     </article>
   );
 }

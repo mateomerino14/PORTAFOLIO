@@ -1,5 +1,19 @@
 export const TIMELINE = [
   {
+    period: 'Sep 2026',
+    title: 'Medalla de Oro · Estudiante Destacado',
+    place: 'Facultad de Ciencias y Tecnología · UMSS',
+    type: 'award',
+    points: [
+      'Primer lugar de Ingeniería Informática por el mejor promedio de la carrera.',
+      'Reconocido en el acto del 47 aniversario de la facultad, en el Palacio de la Ciencia y la Cultura.',
+    ],
+    photos: [
+      {src: 'awards/medalla-oro.webp', caption: 'Con la Medalla de Oro y el reconocimiento de la facultad'},
+      {src: 'awards/destacados-nomina.webp', caption: 'Nómina oficial de estudiantes destacados: primer lugar en Ingeniería Informática'},
+    ],
+  },
+  {
     period: '2025 — Presente',
     title: 'Desarrollador Freelance',
     place: 'Clientes del rubro gastronómico',
@@ -37,7 +51,14 @@ export const TIMELINE = [
     title: 'Premio a la Excelencia Académica',
     place: 'Facultad de Ciencias y Tecnología · UMSS',
     type: 'award',
-    points: ['Reconocimiento al mejor rendimiento académico: entre los 3 mejores estudiantes de la facultad.'],
+    points: [
+      'Reconocimiento al mejor rendimiento académico: entre los 3 mejores estudiantes de la facultad.',
+      'Diploma y medalla de honor entregados en septiembre de 2025.',
+    ],
+    photos: [
+      {src: 'awards/excelencia-director.webp', caption: 'Entrega del diploma y la medalla de honor junto al director de carrera'},
+      {src: 'awards/excelencia-medalla.webp', caption: 'Con la medalla y el diploma de honor en el acto de premiación'},
+    ],
   },
   {
     period: '2023 — 2026',

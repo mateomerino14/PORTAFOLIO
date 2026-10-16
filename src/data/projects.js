@@ -3,7 +3,7 @@ const githubUrl = 'https://github.com/mateomerino14';
 export const PROJECTS = [
   {
     title: 'Sistema de Control de Viáticos',
-    context: 'MAXAM',
+    context: 'Pasantía · MAXAM',
     kind: 'Web full stack',
     description: 'Plataforma para gestionar viajes corporativos y la rendición de gastos, desde la solicitud hasta la aprobación y el pago, con flujos por rol.',
     highlights: [
@@ -19,6 +19,20 @@ export const PROJECTS = [
     accent: 'lime',
   },
   {
+    title: 'Sistema de Gestión para Café-Bar',
+    context: 'Cliente freelance',
+    kind: 'Escritorio y web',
+    description: 'Sistema para controlar ventas, mesas, inventario, cocina y empleados de un café-bar. Empezó como aplicación de escritorio y lo migré a una aplicación web.',
+    highlights: [
+      'Comandas a cocina y tickets en impresoras térmicas mediante un agente local',
+      'Reporte semanal de los productos más vendidos enviado por correo',
+      'Migración de SQLite a PostgreSQL con autenticación JWT',
+    ],
+    tags: ['React', 'Node.js', 'Express', 'Supabase', 'Python'],
+    links: [{label: 'Versión de escritorio', href: `${githubUrl}/APLICACION-CAFE-BAR`}],
+    accent: 'violet',
+  },
+  {
     title: 'Brasa Brava',
     context: 'Restaurante',
     kind: 'Web y escritorio',
@@ -30,7 +44,7 @@ export const PROJECTS = [
     ],
     tags: ['React', 'Express', 'PostgreSQL', 'Electron', 'Vitest'],
     links: [{label: 'Código', href: `${githubUrl}/BRASA-BRAVA`}],
-    accent: 'violet',
+    accent: 'cyan',
   },
   {
     title: 'Prototipo HTR para código manuscrito',
@@ -44,21 +58,21 @@ export const PROJECTS = [
     ],
     tags: ['Python', 'TrOCR', 'PaddleOCR', 'Tesseract'],
     links: [{label: 'Código', href: `${githubUrl}/prototipo-htr-codigo-manuscrito`}],
-    accent: 'cyan',
+    accent: 'lime',
   },
   {
-    title: 'Sistema de Gestión para Café-Bar',
-    context: 'Pequeño negocio',
-    kind: 'App de escritorio',
-    description: 'Aplicación de escritorio para controlar ventas, inventario, productos, mesas y empleados de un café-bar.',
+    title: 'Gestor de portafolios profesionales',
+    context: 'Taller de Ingeniería de Software',
+    kind: 'Web en equipo',
+    description: 'Plataforma para que cada usuario arme su portafolio profesional: datos personales, formación, experiencia, habilidades, proyectos y certificados, con un perfil público y una versión imprimible.',
     highlights: [
-      'Cobro de pedidos e impresión de comprobantes',
-      'Respaldos y reportes mensuales enviados por correo',
-      'Base de datos SQLite local',
+      'Equipo de 10 personas con Scrum, ramas por funcionalidad y Pull Requests',
+      'Área de certificados, perfil público y recuperación de contraseña',
+      'Documentación del frontend y de sus componentes',
     ],
-    tags: ['Python', 'SQLite', 'Automatización'],
-    links: [{label: 'Código', href: `${githubUrl}/APLICACION-CAFE-BAR`}],
-    accent: 'lime',
+    tags: ['React', 'TypeScript', 'Tailwind', 'Vitest', 'Storybook'],
+    links: [{label: 'Código', href: 'https://github.com/gonchi2332/six_seven_frontend'}],
+    accent: 'violet',
   },
   {
     title: 'Diagramador de flujo SVG',
@@ -72,7 +86,7 @@ export const PROJECTS = [
     ],
     tags: ['JavaScript', 'SVG', 'PouchDB'],
     links: [{label: 'Código', href: `${githubUrl}/DIAGRAMADOR-FLUJO-SVG`}],
-    accent: 'violet',
+    accent: 'cyan',
   },
   {
     title: 'Simulación de sistemas en R',
@@ -86,6 +100,6 @@ export const PROJECTS = [
     ],
     tags: ['R', 'ggplot2', 'Estadística'],
     links: [{label: 'Código', href: `${githubUrl}/ANALISIS-DE-DATOS-EN-SIMULACION-DE-SISTEMAS`}],
-    accent: 'cyan',
+    accent: 'lime',
   },
 ];

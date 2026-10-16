@@ -37,3 +37,11 @@ export const computeProgress = (centers, position) => {
 export const smoothstep = (value) => value * value * (3 - 2 * value);
 
 export const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+export const splitProgress = (progress, lastIndex, dwell) => {
+  const from = Math.min(Math.floor(progress), lastIndex);
+  const to = Math.min(from + 1, lastIndex);
+  const fraction = progress - from;
+  const travel = smoothstep(clamp((fraction - dwell.start) / (dwell.end - dwell.start), 0, 1));
+  return {from, to, travel};
+};

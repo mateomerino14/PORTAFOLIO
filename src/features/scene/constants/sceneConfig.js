@@ -12,11 +12,20 @@ export const JOURNEY_LAYOUT = {
 };
 
 export const NODE_SIZES = {
-  main: 0.2,
-  branch: 0.11,
-  activeScale: 1.6,
+  main: 0.16,
+  branch: 0.09,
+  activeScale: 1.35,
+  haloScale: 2.6,
+  haloOpacity: 0.18,
   segments: 24,
 };
+
+export const NODE_FADE = {
+  near: 1.4,
+  far: 4,
+};
+
+export const LABEL_RANGE = 3;
 
 export const NODE_COLORS = {
   main: COLORS.accent,
@@ -40,7 +49,26 @@ export const AMBIENT_FIELD = {
 
 export const LABEL_OFFSET_Y = -0.42;
 
-export const CAMERA_CONFIG = {position: [9, 5, 14], fov: 50, near: 0.1, far: 200};
+export const CAMERA_CONFIG = {position: [-4, 4, 9], fov: 50, near: 0.1, far: 200};
+
+export const CAMERA_VIEWS = {
+  overview: {offset: [-4, 2.4, 9], lookShift: [-6, -1, -6]},
+  stop: {offset: [0.9, 0.7, 5.8], lookShift: [-1.9, 0, 0]},
+};
+
+export const CAMERA_MOTION = {
+  followRate: 3.2,
+  pointerParallax: 0.35,
+  dwell: {start: 0.25, end: 0.75},
+};
+
+export const PULSE_STYLE = {
+  radius: 0.09,
+  maxScale: 1.8,
+  segments: 16,
+  visibleFrom: 0.02,
+  visibleTo: 0.98,
+};
 
 export const SCENE_LIGHTS = [
   {position: [4, 3, 4], intensity: 40, color: COLORS.accent},

@@ -3,6 +3,8 @@ import CoreSphere from '../molecules/CoreSphere';
 import JourneyNodes from '../molecules/JourneyNodes';
 import JourneyRoute from '../molecules/JourneyRoute';
 import AmbientField from '../molecules/AmbientField';
+import JourneyCamera from '../molecules/JourneyCamera';
+import TravelPulse from '../molecules/TravelPulse';
 import useJourneyLayout from '../hooks/useJourneyLayout';
 import {CAMERA_CONFIG, PIXEL_RATIO_RANGE, RENDERER_OPTIONS, SCENE_LIGHTS} from '../constants/sceneConfig';
 
@@ -17,9 +19,11 @@ function JourneyScene() {
       {SCENE_LIGHTS.map((light) => (
         <pointLight key={light.color} position={light.position} intensity={light.intensity} color={light.color} />
       ))}
+      <JourneyCamera positions={layout.positions} />
       <AmbientField />
       <JourneyRoute layout={layout} />
       <JourneyNodes layout={layout} />
+      <TravelPulse positions={layout.positions} />
       <CoreSphere position={layout.positions[heroStopIndex]} />
     </Canvas>
   );

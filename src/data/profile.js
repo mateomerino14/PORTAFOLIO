@@ -4,7 +4,7 @@ export const PROFILE = {
   firstName: 'Mateo',
   lastName: 'Merino',
   initials: 'MM',
-  roles: ['Full Stack Developer', 'Analista de Datos', 'Asistente de Cátedra', 'Estudiante de Informática'],
+  roles: ['Full Stack Developer', 'Desarrollador Freelance', 'Analista de Datos', 'Asistente de Cátedra'],
   location: 'Cochabamba, Bolivia',
   email: 'mateomerino988@gmail.com',
   phone: '+591 68598564',
@@ -18,7 +18,7 @@ export const PROFILE = {
   about: [
     'Estudio Informática en la Universidad Mayor de San Simón, donde estuve entre los 3 mejores estudiantes de la Facultad de Ciencias y Tecnología en 2024.',
     'Desde 2024 soy asistente de cátedra en Introducción a la Programación y Teoría de Grafos: explicar un algoritmo a otra persona es la mejor forma que conozco de entenderlo de verdad.',
-    'Me muevo entre dos mundos que se complementan: el desarrollo full stack (React, Node.js, Express, PostgreSQL) y el análisis de datos (Python, SQL, Power BI).',
+    'Hice mi pasantía en MAXAM FANEXA y desarrollo sistemas como freelance para negocios locales. Me muevo entre el desarrollo full stack (React, Node.js, Express, PostgreSQL) y el análisis de datos (Python, SQL, Power BI).',
   ],
 };
 

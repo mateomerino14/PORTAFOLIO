@@ -1,5 +1,27 @@
 export const TIMELINE = [
   {
+    period: '2025 — Presente',
+    title: 'Desarrollador Freelance',
+    place: 'Clientes del rubro gastronómico',
+    type: 'freelance',
+    points: [
+      'Sistema de gestión para un café-bar: versión de escritorio y su migración a la web.',
+      'Levantamiento de requerimientos y acuerdos directamente con el cliente.',
+      'Despliegue, impresión en ticketeras térmicas y reportes automáticos por correo.',
+    ],
+  },
+  {
+    period: 'May 2026 — Oct 2026',
+    title: 'Pasantía · Desarrollo de Software',
+    place: 'MAXAM FANEXA',
+    type: 'internship',
+    points: [
+      'Desarrollo full stack del Sistema de Control de Viáticos, desde la solicitud del viaje hasta la rendición de gastos.',
+      'Diseño de la arquitectura con el modelo C4.',
+      'Manual técnico, documentación general del sistema y documentación de componentes en Storybook.',
+    ],
+  },
+  {
     period: '2024 — 2025',
     title: 'Asistente de Cátedra · Informática',
     place: 'Universidad Mayor de San Simón',

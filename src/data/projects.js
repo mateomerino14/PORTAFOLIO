@@ -10,6 +10,7 @@ const demoNote = 'Capturas de la aplicación corriendo con datos de ejemplo.';
 export const PROJECTS = [
   {
     title: 'Sistema de Control de Viáticos',
+    cover: 'projects/viaticos/mis-viajes.webp',
     context: 'Pasantía · MAXAM',
     kind: 'Web full stack',
     description: 'Plataforma para gestionar viajes corporativos y la rendición de gastos, desde la solicitud hasta la aprobación y el pago, con flujos por rol.',
@@ -38,6 +39,7 @@ export const PROJECTS = [
   },
   {
     title: 'Sistema de Gestión para Café-Bar',
+    cover: 'projects/cafe-bar/mesas.webp',
     context: 'Cliente freelance',
     kind: 'Escritorio y web',
     description: 'Sistema para controlar ventas, mesas, inventario, cocina y empleados de un café-bar. Empezó como aplicación de escritorio y lo migré a una aplicación web.',

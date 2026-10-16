@@ -2,7 +2,7 @@ import SectionTitle from '../../../components/ui/SectionTitle';
 import StopPanel from '../../journey/molecules/StopPanel';
 import StopIndex from '../../journey/molecules/StopIndex';
 import CertificationGroupPanel from '../molecules/CertificationGroupPanel';
-import useBranchStops from '../../journey/hooks/useBranchStops';
+import useCertificationIndex from '../hooks/useCertificationIndex';
 import {SECTION_IDS} from '../../../constants/navigation';
 import {CERTIFICATION_GROUPS} from '../../../data/certifications';
 
@@ -14,7 +14,7 @@ const totalCertifications = CERTIFICATION_GROUPS.reduce((total, group) => total 
 const totalHours = CERTIFICATION_GROUPS.flatMap((group) => group.items).reduce((total, item) => total + (parseFloat(item.hours) || 0), 0);
 
 function CertificationsSection() {
-  const groupStops = useBranchStops(SECTION_IDS.certifications);
+  const groupStops = useCertificationIndex();
   return (
     <>
       <StopPanel stopId={SECTION_IDS.certifications} size="compact">

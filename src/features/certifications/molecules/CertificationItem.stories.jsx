@@ -9,7 +9,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Fila de una certificación con su emisor, fecha y carga horaria cuando corresponde.',
+        component: 'Fila de una certificación con el ícono de su tecnología, emisor, fecha y carga horaria cuando corresponde.',
       },
     },
   },

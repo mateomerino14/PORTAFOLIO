@@ -4,7 +4,7 @@ import {
   siPandas, siPostgresql, siPostman, siPython, siR, siReact, siAngular, siSqlite, siStorybook, siSupabase, siSvg,
   siTailwindcss, siThreedotjs, siTypescript, siVitest,
 } from 'simple-icons';
-import {ChartColumn, ChartPie, Code, Database, RefreshCcw, ScanText, Sigma, Webhook, Workflow} from 'lucide-react';
+import {Binary, ChartColumn, ChartPie, Code, Database, RefreshCcw, ScanText, Sheet, Sigma, Webhook, Workflow} from 'lucide-react';
 
 export const BRAND_ICONS = {
   'Python': siPython,
@@ -51,6 +51,9 @@ export const FALLBACK_ICONS = {
   'Estadística': Sigma,
   'SQL Server': Database,
   'PouchDB': Database,
+  'Bases de datos': Database,
+  'Excel': Sheet,
+  'Lógica de programación': Binary,
   'Power BI': ChartColumn,
   'Business Intelligence': ChartPie,
   'APIs REST': Webhook,

@@ -3,6 +3,7 @@ import Navbar from './layouts/navbar/Navbar';
 import Footer from './layouts/Footer';
 import ScrollProgress from './layouts/effects/ScrollProgress';
 import CursorGlow from './layouts/effects/CursorGlow';
+import HomePage from './pages/HomePage';
 import useSmoothScroll from './hooks/shared/useSmoothScroll';
 
 const styles = {
@@ -17,6 +18,7 @@ function App() {
         <ScrollProgress />
         <CursorGlow />
         <Navbar />
+        <HomePage />
         <Footer />
       </div>
     </MotionConfig>

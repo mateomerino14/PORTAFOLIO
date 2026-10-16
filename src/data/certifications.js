@@ -1,0 +1,32 @@
+export const CERTIFICATION_GROUPS = [
+  {
+    group: 'Profesionales',
+    items: [
+      {name: 'Desarrollo FullStack con React & NestJS', issuer: '', note: '', date: '2026', hours: 0},
+      {name: 'Desarrollo de APIs REST con Node.js & NestJS', issuer: '', note: '', date: '2026', hours: 0},
+      {name: 'Docker y Docker Compose', issuer: '', note: '', date: '2026', hours: 0},
+      {name: 'Git y GitHub', issuer: '', note: '', date: '2026', hours: 0},
+      {name: 'Bases de Datos Relacionales y NoSQL', issuer: '', note: '', date: '2026', hours: 0},
+      {name: 'Desarrollo Frontend con Angular', issuer: '', note: '', date: '2026', hours: 0},
+    ],
+  },
+  {
+    group: 'Diplomados',
+    items: [
+      {name: 'Diploma in Business Intelligence and Data Analysis', issuer: 'Florida Global University', note: '', date: 'Oct 2024', hours: 150},
+      {name: 'Especialización Ejecutiva: Analista de Datos', issuer: 'WE Educación Ejecutiva · Microsoft & IBM', note: 'SQL Server, Power BI & Python', date: 'Abr 2024', hours: 90},
+    ],
+  },
+  {
+    group: 'Cursos',
+    items: [
+      {name: 'Business Intelligence Foundation Professional (BIFPC™)', issuer: 'CertiProf', note: 'ID 95198312', date: 'Mar 2024', hours: 0},
+      {name: 'Microsoft Power BI', issuer: 'WE Educación Ejecutiva · Microsoft', note: '', date: 'Abr 2024', hours: 30},
+      {name: 'Programación con Python', issuer: 'WE Educación Ejecutiva · IBM', note: '', date: 'Abr 2024', hours: 30},
+      {name: 'MATLAB (Beginners, Insider, Scalable Projects)', issuer: '', note: 'Calificación 100/100', date: '2024', hours: 120},
+      {name: 'Lógica de Programación', issuer: '', note: '', date: '2024', hours: 30},
+      {name: 'Contabilidad y Sistema Contable Automatizado con Excel', issuer: 'Infórmate Academy', note: '3 cursos-taller', date: 'Jul 2024', hours: 72},
+      {name: 'Programación y Formularios en Visual Basic', issuer: 'Infórmate Academy', note: '2 cursos-taller', date: 'Ene 2024', hours: 48},
+    ],
+  },
+];

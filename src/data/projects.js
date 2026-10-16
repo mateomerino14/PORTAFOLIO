@@ -29,9 +29,9 @@ export const PROJECTS = [
         label: 'Capturas',
         note: 'Capturas del frontend real con datos ficticios.',
         images: [
+          {src: 'projects/viaticos/inicio-sesion.webp', caption: 'Inicio de sesión con recuperación de contraseña por código'},
           {src: 'projects/viaticos/mis-viajes.webp', caption: 'Viajes del empleado: borradores, viajes en curso y gasto acumulado'},
           {src: 'projects/viaticos/resumen-administrador.webp', caption: 'Resumen del administrador con indicadores por periodo'},
-          {src: 'projects/viaticos/inicio-sesion.webp', caption: 'Inicio de sesión con recuperación de contraseña por código'},
         ],
       },
     ],
@@ -54,8 +54,10 @@ export const PROJECTS = [
         label: 'Capturas',
         note: demoNote,
         images: [
-          {src: 'projects/cafe-bar/caja-mesas.webp', caption: 'Caja: selección de sección y mesa para abrir un pedido'},
-          {src: 'projects/cafe-bar/productos.webp', caption: 'Gestión de productos por categoría y subcategoría'},
+          {src: 'projects/cafe-bar/inicio-sesion.webp', caption: 'Inicio de sesión con selección rápida del empleado'},
+          {src: 'projects/cafe-bar/mesas.webp', caption: 'Caja: mesas libres y ocupadas de cada sección, con cobro directo'},
+          {src: 'projects/cafe-bar/registrar-pedido.webp', caption: 'Registro de un pedido por categoría con el total en tiempo real'},
+          {src: 'projects/cafe-bar/reporte-productos.webp', caption: 'Reporte de productos vendidos con ingreso, costo y ganancia'},
           {src: 'projects/cafe-bar/configuracion.webp', caption: 'Configuración: respaldos, impresoras y reportes automáticos'},
         ],
       },

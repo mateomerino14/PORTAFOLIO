@@ -1,5 +1,6 @@
 import {Canvas} from '@react-three/fiber';
 import {Sparkles} from '@react-three/drei';
+import CoreSphere from '../molecules/CoreSphere';
 import GraphNetwork from '../molecules/GraphNetwork';
 import {CAMERA_CONFIG, SCENE_LIGHTS} from '../constants/sceneConfig';
 import {COLORS} from '../../../constants';
@@ -15,6 +16,7 @@ function GraphScene() {
       {SCENE_LIGHTS.map((light) => (
         <pointLight key={light.color} position={light.position} intensity={light.intensity} color={light.color} />
       ))}
+      <CoreSphere />
       <GraphNetwork />
       <Sparkles count={60} scale={sparklesScale} size={1.6} speed={0.3} color={COLORS.paper} opacity={0.35} />
     </Canvas>

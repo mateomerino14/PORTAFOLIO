@@ -2,7 +2,7 @@ import {motion} from 'framer-motion';
 import {EASE_OUT} from '../../constants';
 
 const styles = {
-  title: 'mb-12 font-display text-4xl leading-[1.02] font-extrabold tracking-tight md:mb-16 md:text-6xl',
+  title: 'mb-6 font-display text-3xl leading-[1.05] font-extrabold tracking-tight md:text-5xl',
   wordMask: 'mr-[0.25em] inline-block overflow-hidden pb-1 align-bottom',
   word: 'inline-block',
 };

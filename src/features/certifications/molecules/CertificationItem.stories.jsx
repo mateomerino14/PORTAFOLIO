@@ -1,19 +1,19 @@
-import CertificationCard from './CertificationCard';
+import CertificationItem from './CertificationItem';
 import {CERTIFICATION_GROUPS} from '../../../data/certifications';
 
 const [professional, diplomas] = CERTIFICATION_GROUPS;
 
 export default {
-  title: 'Certifications/Molecules/CertificationCard',
-  component: CertificationCard,
+  title: 'Certifications/Molecules/CertificationItem',
+  component: CertificationItem,
   parameters: {
     docs: {
       description: {
-        component: 'Tarjeta de una certificación con su emisor, fecha y carga horaria cuando corresponde.',
+        component: 'Fila de una certificación con su emisor, fecha y carga horaria cuando corresponde.',
       },
     },
   },
-  decorators: [(Story) => <div className="w-[28rem]"><Story /></div>],
+  decorators: [(Story) => <ul className="w-[28rem]"><Story /></ul>],
   args: {
     certification: diplomas.items[0],
   },

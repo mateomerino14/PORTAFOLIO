@@ -2,10 +2,10 @@ import Counter from '../../../components/ui/Counter';
 import TiltCard from '../../../components/ui/TiltCard';
 
 const styles = {
-  tilt: 'h-full rounded-2xl',
-  card: 'flex h-full flex-col justify-between rounded-2xl border border-line bg-ink-soft p-5 md:p-6',
-  value: 'font-display text-3xl font-extrabold text-paper md:text-4xl',
-  label: 'mt-6 text-sm leading-snug text-fog',
+  tilt: 'h-full rounded-xl',
+  card: 'flex h-full flex-col justify-between rounded-xl border border-line bg-ink-soft p-4',
+  value: 'font-display text-2xl font-extrabold text-paper md:text-3xl',
+  label: 'mt-3 text-xs leading-snug text-fog',
 };
 
 function StatCard({stat}) {

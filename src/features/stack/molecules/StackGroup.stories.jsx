@@ -1,17 +1,17 @@
-import StackCard from './StackCard';
+import StackGroup from './StackGroup';
 import {STACK_GROUPS} from '../../../data/stack';
 
 export default {
-  title: 'Stack/Molecules/StackCard',
-  component: StackCard,
+  title: 'Stack/Molecules/StackGroup',
+  component: StackGroup,
   parameters: {
     docs: {
       description: {
-        component: 'Tarjeta de una categoría del stack con su ícono y las tecnologías que la componen.',
+        component: 'Fila de una categoría del stack con su ícono y las tecnologías que la componen.',
       },
     },
   },
-  decorators: [(Story) => <div className="w-80"><Story /></div>],
+  decorators: [(Story) => <div className="w-96"><Story /></div>],
   args: {
     group: STACK_GROUPS[0],
   },

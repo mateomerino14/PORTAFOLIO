@@ -1,33 +1,39 @@
 import {ArrowUpRight} from 'lucide-react';
-import Section from '../../../components/ui/Section';
 import SectionTitle from '../../../components/ui/SectionTitle';
-import Reveal from '../../../components/ui/Reveal';
-import ProjectCard from './ProjectCard';
+import StopPanel from '../../journey/molecules/StopPanel';
+import StopIndex from '../../journey/molecules/StopIndex';
+import ProjectPanel from '../molecules/ProjectPanel';
+import useBranchStops from '../../journey/hooks/useBranchStops';
 import {SECTION_IDS} from '../../../constants/navigation';
 import {PROJECTS} from '../../../data/projects';
 import {PROFILE} from '../../../data/profile';
 
 const styles = {
-  list: 'relative',
-  moreLink: 'mt-10 inline-flex items-center gap-1.5 font-mono text-sm text-fog transition-colors hover:text-accent',
+  intro: 'text-fog',
+  moreLink: 'mt-5 inline-flex items-center gap-1.5 font-mono text-xs text-fog transition-colors hover:text-accent',
 };
 
-const iconSize = 16;
+const iconSize = 14;
 
 function ProjectsSection() {
+  const projectStops = useBranchStops(SECTION_IDS.projects);
   return (
-    <Section id={SECTION_IDS.projects}>
-      <SectionTitle title="Proyectos" />
-      <div className={styles.list}>
-        {PROJECTS.map((project, position) => <ProjectCard key={project.title} project={project} position={position} />)}
-      </div>
-      <Reveal>
+    <>
+      <StopPanel stopId={SECTION_IDS.projects} size="compact">
+        <SectionTitle title="Proyectos" />
+        <p className={styles.intro}>Trabajos para clientes, mi pasantía, la universidad y proyectos en equipo.</p>
+        <StopIndex items={projectStops} />
         <a href={PROFILE.github} target="_blank" rel="noreferrer" className={styles.moreLink}>
           Más en {PROFILE.githubLabel}
           <ArrowUpRight size={iconSize} />
         </a>
-      </Reveal>
-    </Section>
+      </StopPanel>
+      {projectStops.map((stop) => (
+        <StopPanel key={stop.id} stopId={stop.id}>
+          <ProjectPanel project={PROJECTS[stop.itemIndex]} />
+        </StopPanel>
+      ))}
+    </>
   );
 }
 

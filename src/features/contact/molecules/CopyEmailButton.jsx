@@ -3,7 +3,7 @@ import Magnetic from '../../../components/ui/Magnetic';
 import useCopyToClipboard from '../hooks/useCopyToClipboard';
 
 const styles = {
-  wrapper: 'flex flex-col items-center gap-4',
+  wrapper: 'flex flex-col items-start gap-3',
   button: 'cursor-pointer overflow-hidden rounded-full border border-line bg-ink-soft px-8 py-5 font-mono text-sm transition-colors hover:border-accent md:text-lg',
   label: 'block',
   hint: 'font-mono text-xs text-fog',

@@ -10,6 +10,8 @@ import {scrollToSection} from '../../../utils/scroll';
 import {SECTION_IDS} from '../../../constants/navigation';
 import {PROFILE} from '../../../data/profile';
 
+const heroStopIndex = 0;
+
 const GraphScene = lazy(() => import('../../scene/organisms/GraphScene'));
 
 const styles = {
@@ -38,7 +40,7 @@ const fadeUp = (delay) => ({initial: {opacity: 0, y: 20}, animate: {opacity: 1, 
 function HeroSection() {
   const {sectionRef, sceneY, sceneOpacity, contentY} = useHeroParallax();
   return (
-    <section id={SECTION_IDS.hero} ref={sectionRef} className={styles.section}>
+    <section id={SECTION_IDS.hero} ref={sectionRef} data-stop={heroStopIndex} className={styles.section}>
       <div className={styles.ambientSignal} />
       <div className={styles.ambientAccent} />
       <motion.div className={styles.scene} style={{y: sceneY, opacity: sceneOpacity}}>

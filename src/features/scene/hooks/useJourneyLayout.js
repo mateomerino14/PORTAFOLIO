@@ -5,11 +5,11 @@ import {TECH_NODES} from '../../journey/constants/techLinks';
 import {SECTION_IDS} from '../../../constants/navigation';
 import {JOURNEY_LAYOUT, TECH_STYLE} from '../constants/sceneConfig';
 import {stopLabelId, techLabelId} from '../constants/labelIds';
-import {buildRouteEdges, buildSegmentPositions, buildSpokeEdges, layoutJourney, ringAround} from '../../../utils/journeyGraph';
+import {VERTEX_SIZE, buildRouteEdges, buildSegmentPositions, buildSpokeEdges, layoutJourney, ringAround} from '../../../utils/journeyGraph';
 
 const createSegmentsGeometry = (positions, edges) => {
   const geometry = new BufferGeometry();
-  geometry.setAttribute('position', new BufferAttribute(buildSegmentPositions(positions, edges), 3));
+  geometry.setAttribute('position', new BufferAttribute(buildSegmentPositions(positions, edges), VERTEX_SIZE));
   return geometry;
 };
 

@@ -45,3 +45,8 @@ export const splitProgress = (progress, lastIndex, dwell) => {
   const travel = smoothstep(clamp((fraction - dwell.start) / (dwell.end - dwell.start), 0, 1));
   return {from, to, travel};
 };
+
+export const toScreenPoint = (ndc, width, height) => ({
+  x: (ndc.x + 1) / 2 * width,
+  y: (1 - ndc.y) / 2 * height,
+});

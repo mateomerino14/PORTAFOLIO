@@ -1,6 +1,10 @@
 import {Vector3} from 'three';
 import {STOP_LEVELS} from './journey';
 
+export const VERTEX_SIZE = 3;
+
+const SEGMENT_SIZE = VERTEX_SIZE * 2;
+const centerOffset = 0.5;
 const seedMultiplier = 1664525;
 const seedIncrement = 1013904223;
 const seedModulus = 4294967296;
@@ -61,22 +65,31 @@ export const buildSpokeEdges = (stops) => stops.flatMap((stop, index) => {
 });
 
 export const buildSegmentPositions = (positions, edges) => {
-  const segments = new Float32Array(edges.length * 6);
+  const segments = new Float32Array(edges.length * SEGMENT_SIZE);
   edges.forEach(([from, to], edgeIndex) => {
     const start = positions[from];
     const end = positions[to];
-    segments.set([start.x, start.y, start.z, end.x, end.y, end.z], edgeIndex * 6);
+    segments.set([start.x, start.y, start.z, end.x, end.y, end.z], edgeIndex * SEGMENT_SIZE);
+  });
+  return segments;
+};
+
+export const buildLinkSegments = (origin, targets) => {
+  const segments = new Float32Array(targets.length * SEGMENT_SIZE);
+  targets.forEach((target, linkIndex) => {
+    segments.set([origin.x, origin.y, origin.z, target.x, target.y, target.z], linkIndex * SEGMENT_SIZE);
   });
   return segments;
 };
 
 export const scatterPoints = (count, bounds, seed) => {
   const random = createRandom(seed);
-  const points = new Float32Array(count * 3);
+  const points = new Float32Array(count * VERTEX_SIZE);
   for (let index = 0; index < count; index++) {
-    points[index * 3] = (random() - 0.5) * bounds.width;
-    points[index * 3 + 1] = (random() - 0.5) * bounds.height;
-    points[index * 3 + 2] = bounds.near - random() * (bounds.near - bounds.far);
+    const x = (random() - centerOffset) * bounds.width;
+    const y = (random() - centerOffset) * bounds.height;
+    const z = bounds.near - random() * (bounds.near - bounds.far);
+    points.set([x, y, z], index * VERTEX_SIZE);
   }
   return points;
 };

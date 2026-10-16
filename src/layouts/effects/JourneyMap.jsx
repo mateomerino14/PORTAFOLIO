@@ -19,6 +19,7 @@ const styles = {
 };
 
 const lastIndex = JOURNEY_STOPS.length - 1;
+const railInsetPx = 14;
 
 const mainClass = (isActive, isVisited) => {
   if (isActive) {
@@ -43,13 +44,13 @@ const branchClass = (isActive, isVisited) => {
 function JourneyMap() {
   const activeIndex = useActiveStopIndex();
   const activeGroupId = JOURNEY_STOPS[activeIndex].groupId;
-  const fillPercent = (activeIndex / lastIndex) * 100;
+  const fillRatio = activeIndex / lastIndex;
 
   return (
     <nav className={styles.nav} aria-label="Mapa del recorrido">
       <ol className={styles.list}>
         <span className={styles.rail} />
-        <span className={styles.fill} style={{height: `calc((100% - 14px) * ${fillPercent / 100})`}} />
+        <span className={styles.fill} style={{height: `calc((100% - ${railInsetPx}px) * ${fillRatio})`}} />
         {JOURNEY_STOPS.map((stop, index) => {
           const isVisited = index < activeIndex;
           if (stop.level === STOP_LEVELS.main) {

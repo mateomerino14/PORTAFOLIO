@@ -5,6 +5,7 @@ import {labelRegistry} from '../store/labelRegistry';
 import {journeyStore} from '../../journey/store/journeyStore';
 import {JOURNEY_STOPS} from '../../journey/constants/journeyStops';
 import {stopLabelId} from '../constants/labelIds';
+import {toScreenPoint} from '../../../utils/journey';
 import {LABEL_COLLISION_PX, LABEL_OFFSET_PX, NODE_FADE} from '../constants/sceneConfig';
 
 const behindCamera = 1;
@@ -27,7 +28,8 @@ function LabelProjector({anchors}) {
       if (isHidden) {
         return;
       }
-      screen.set(id, {x: (projected.x + 1) / 2 * size.width, y: (1 - projected.y) / 2 * size.height + LABEL_OFFSET_PX});
+      const point = toScreenPoint(projected, size.width, size.height);
+      screen.set(id, {x: point.x, y: point.y + LABEL_OFFSET_PX});
     });
     const activeId = stopLabelId(JOURNEY_STOPS[journeyStore.getActiveIndex()].id);
     const activePoint = screen.get(activeId);

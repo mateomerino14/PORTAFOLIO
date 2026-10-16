@@ -6,6 +6,7 @@ import {JOURNEY_STOPS} from '../../journey/constants/journeyStops';
 import {TECH_NODES} from '../../journey/constants/techLinks';
 import {SECTION_IDS} from '../../../constants/navigation';
 import {TECH_STYLE} from '../constants/sceneConfig';
+import {VERTEX_SIZE, buildLinkSegments} from '../../../utils/journeyGraph';
 
 const nearbyGroups = new Set([SECTION_IDS.stack, SECTION_IDS.projects]);
 
@@ -29,12 +30,8 @@ function useTechLinks(positions, techPositions) {
   const techNodes = useMemo(() => {
     return TECH_NODES.map((node, index) => {
       const geometry = new BufferGeometry();
-      const segments = new Float32Array(node.projectStopIndices.length * 6);
-      node.projectStopIndices.forEach((stopIndex, linkIndex) => {
-        const target = positions[stopIndex];
-        segments.set([techPositions[index].x, techPositions[index].y, techPositions[index].z, target.x, target.y, target.z], linkIndex * 6);
-      });
-      geometry.setAttribute('position', new BufferAttribute(segments, 3));
+      const targets = node.projectStopIndices.map((stopIndex) => positions[stopIndex]);
+      geometry.setAttribute('position', new BufferAttribute(buildLinkSegments(techPositions[index], targets), VERTEX_SIZE));
       return {...node, position: techPositions[index], geometry};
     });
   }, [positions, techPositions]);

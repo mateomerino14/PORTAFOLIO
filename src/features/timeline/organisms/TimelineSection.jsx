@@ -2,7 +2,7 @@ import SectionTitle from '../../../components/ui/SectionTitle';
 import StopPanel from '../../journey/molecules/StopPanel';
 import StopIndex from '../../journey/molecules/StopIndex';
 import TimelinePanel from '../molecules/TimelinePanel';
-import useBranchStops from '../../journey/hooks/useBranchStops';
+import useTimelineIndex from '../hooks/useTimelineIndex';
 import {SECTION_IDS} from '../../../constants/navigation';
 import {TIMELINE} from '../../../data/timeline';
 
@@ -11,7 +11,7 @@ const styles = {
 };
 
 function TimelineSection() {
-  const timelineStops = useBranchStops(SECTION_IDS.timeline);
+  const timelineStops = useTimelineIndex();
   return (
     <>
       <StopPanel stopId={SECTION_IDS.timeline} size="compact">
@@ -20,8 +20,8 @@ function TimelineSection() {
         <StopIndex items={timelineStops} />
       </StopPanel>
       {timelineStops.map((stop) => (
-        <StopPanel key={stop.id} stopId={stop.id} variant={TIMELINE[stop.itemIndex].photos ? 'wide' : 'panel'}>
-          <TimelinePanel entry={TIMELINE[stop.itemIndex]} />
+        <StopPanel key={stop.id} stopId={stop.id} variant={stop.hasAside ? 'wide' : 'panel'}>
+          <TimelinePanel entry={TIMELINE[stop.itemIndex]} relatedProjects={stop.relatedProjects} hasAside={stop.hasAside} />
         </StopPanel>
       ))}
     </>

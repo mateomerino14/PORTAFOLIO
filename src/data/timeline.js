@@ -23,6 +23,8 @@ export const TIMELINE = [
       'Levantamiento de requerimientos y acuerdos directamente con el cliente.',
       'Despliegue, impresión en ticketeras térmicas y reportes automáticos por correo.',
     ],
+    tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron', 'Python'],
+    projects: ['Sistema de Gestión para Café-Bar'],
   },
   {
     period: 'May 2026 — Oct 2026',
@@ -34,6 +36,8 @@ export const TIMELINE = [
       'Diseño de la arquitectura con el modelo C4.',
       'Manual técnico, documentación general del sistema y documentación de componentes en Storybook.',
     ],
+    tags: ['React', 'Node.js', 'Express', 'Supabase', 'Gemini', 'Storybook'],
+    projects: ['Sistema de Control de Viáticos'],
   },
   {
     period: '2024 — 2025',
@@ -44,6 +48,11 @@ export const TIMELINE = [
       'Apoyo en Introducción a la Programación y Teoría de Grafos.',
       'Guía a estudiantes en algoritmos, lógica y resolución de problemas.',
       'Conducción de laboratorios y corrección de tareas y exámenes.',
+    ],
+    tags: ['Algoritmos', 'Teoría de Grafos'],
+    subjects: [
+      {icon: 'Algoritmos', title: 'Introducción a la Programación', meta: 'Algoritmos y lógica de programación'},
+      {icon: 'Teoría de Grafos', title: 'Teoría de Grafos', meta: 'Laboratorios y corrección de exámenes'},
     ],
   },
   {
@@ -69,5 +78,6 @@ export const TIMELINE = [
       'Promedio 84.68/100.',
       'Programación, Estructuras de Datos, Bases de Datos, Teoría de Grafos, Desarrollo Web.',
     ],
+    projects: ['Prototipo HTR para código manuscrito', 'Gestor de portafolios profesionales', 'Diagramador de flujo SVG', 'Simulación de sistemas en R'],
   },
 ];

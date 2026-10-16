@@ -22,10 +22,10 @@ export const PROFILE = {
 };
 
 export const STATS = [
-  {value: 84.68, decimals: 2, prefix: '', suffix: '', label: 'Promedio académico /100'},
-  {value: 3, decimals: 0, prefix: 'Top ', suffix: '', label: 'Facultad de Ciencias y Tecnología 2024'},
-  {value: 2, decimals: 0, prefix: '', suffix: '', label: 'Años como asistente de cátedra'},
-  {value: 500, decimals: 0, prefix: '', suffix: '+', label: 'Horas de formación certificada'},
+  {id: 'average', value: 84.68, decimals: 2, prefix: '', suffix: '', label: 'Promedio académico /100'},
+  {id: 'ranking', value: 3, decimals: 0, prefix: 'Top ', suffix: '', label: 'Facultad de Ciencias y Tecnología 2024'},
+  {id: 'teaching', value: 2, decimals: 0, prefix: '', suffix: '', label: 'Años como asistente de cátedra'},
+  {id: 'training', value: 500, decimals: 0, prefix: '', suffix: '+', label: 'Horas de formación certificada'},
 ];
 
 export const LANGUAGES = [

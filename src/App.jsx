@@ -1,4 +1,5 @@
 import {MotionConfig} from 'framer-motion';
+import Navbar from './layouts/navbar/Navbar';
 import useSmoothScroll from './hooks/shared/useSmoothScroll';
 
 const styles = {
@@ -10,6 +11,7 @@ function App() {
   return (
     <MotionConfig reducedMotion="user">
       <div className={styles.app}>
+        <Navbar />
       </div>
     </MotionConfig>
   );

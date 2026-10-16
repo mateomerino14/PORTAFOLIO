@@ -1,0 +1,91 @@
+const githubUrl = 'https://github.com/mateomerino14';
+
+export const PROJECTS = [
+  {
+    title: 'Sistema de Control de Viáticos',
+    context: 'MAXAM',
+    kind: 'Web full stack',
+    description: 'Plataforma para gestionar viajes corporativos y la rendición de gastos, desde la solicitud hasta la aprobación y el pago, con flujos por rol.',
+    highlights: [
+      'Extracción automática de datos de comprobantes con IA',
+      'Generación de memorándums, planillas y recibos en PDF y Excel',
+      'Resumen de pendientes por correo programado por el administrador',
+    ],
+    tags: ['React', 'Node.js', 'Express', 'Supabase', 'Gemini', 'Storybook'],
+    links: [
+      {label: 'Frontend', href: `${githubUrl}/SCV-Frontend`},
+      {label: 'Backend', href: `${githubUrl}/SCV-Backend`},
+    ],
+    accent: 'lime',
+  },
+  {
+    title: 'Brasa Brava',
+    context: 'Restaurante',
+    kind: 'Web y escritorio',
+    description: 'Sistema interno de un restaurante: caja, cocina, catálogo, stock, mesas, promociones y empleados. El mismo código funciona en la web y como aplicación de escritorio.',
+    highlights: [
+      'Versión de escritorio con PostgreSQL embebido, sin necesidad de internet',
+      'Inicio de sesión por empleado y permisos por cargo',
+      'Pruebas automáticas y revisión de estándares en cada Pull Request',
+    ],
+    tags: ['React', 'Express', 'PostgreSQL', 'Electron', 'Vitest'],
+    links: [{label: 'Código', href: `${githubUrl}/BRASA-BRAVA`}],
+    accent: 'violet',
+  },
+  {
+    title: 'Prototipo HTR para código manuscrito',
+    context: 'Proyecto de Grado',
+    kind: 'Investigación',
+    description: 'Prototipo que integra herramientas de reconocimiento de escritura para transcribir el código Java y Python escrito a mano en exámenes de la FCyT-UMSS.',
+    highlights: [
+      'Comparación de TrOCR, PaddleOCR y Tesseract',
+      'Métricas CER y WER, con y sin indentación',
+      'Segmentación de líneas y análisis estadístico de errores',
+    ],
+    tags: ['Python', 'TrOCR', 'PaddleOCR', 'Tesseract'],
+    links: [{label: 'Código', href: `${githubUrl}/prototipo-htr-codigo-manuscrito`}],
+    accent: 'cyan',
+  },
+  {
+    title: 'Sistema de Gestión para Café-Bar',
+    context: 'Pequeño negocio',
+    kind: 'App de escritorio',
+    description: 'Aplicación de escritorio para controlar ventas, inventario, productos, mesas y empleados de un café-bar.',
+    highlights: [
+      'Cobro de pedidos e impresión de comprobantes',
+      'Respaldos y reportes mensuales enviados por correo',
+      'Base de datos SQLite local',
+    ],
+    tags: ['Python', 'SQLite', 'Automatización'],
+    links: [{label: 'Código', href: `${githubUrl}/APLICACION-CAFE-BAR`}],
+    accent: 'lime',
+  },
+  {
+    title: 'Diagramador de flujo SVG',
+    context: 'Universidad',
+    kind: 'Web interactiva',
+    description: 'Editor web para dibujar diagramas de flujo con SVG puro: figuras, conexiones ortogonales con flechas, zoom y edición de texto en línea.',
+    highlights: [
+      'Conexiones que se recalculan al mover las figuras',
+      'Autoguardado local con PouchDB',
+      'Importación y exportación de diagramas en JSON',
+    ],
+    tags: ['JavaScript', 'SVG', 'PouchDB'],
+    links: [{label: 'Código', href: `${githubUrl}/DIAGRAMADOR-FLUJO-SVG`}],
+    accent: 'violet',
+  },
+  {
+    title: 'Simulación de sistemas en R',
+    context: 'Universidad',
+    kind: 'Datos y estadística',
+    description: 'Generadores de números pseudoaleatorios implementados desde cero y pruebas estadísticas para validar su calidad.',
+    highlights: [
+      'Generadores congruenciales y transformación inversa',
+      'Pruebas de Póker, Chi-cuadrada y corridas',
+      'Histogramas, gráficos Q-Q y boxplots',
+    ],
+    tags: ['R', 'ggplot2', 'Estadística'],
+    links: [{label: 'Código', href: `${githubUrl}/ANALISIS-DE-DATOS-EN-SIMULACION-DE-SISTEMAS`}],
+    accent: 'cyan',
+  },
+];

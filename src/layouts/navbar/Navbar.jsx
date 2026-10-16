@@ -52,7 +52,7 @@ function Navbar() {
           </button>
           <NavLinks items={NAV_ITEMS} activeId={activeId} onNavigate={handleNavigate} />
           <div className={styles.actions}>
-            <a href={PROFILE.cvUrl} download className={styles.cvLink}>
+            <a href={PROFILE.cvUrl} download={PROFILE.cvFileName} target="_blank" rel="noreferrer" className={styles.cvLink}>
               <Download size={downloadIconSize} />
               Descargar CV
             </a>

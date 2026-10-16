@@ -12,6 +12,7 @@ export const PROFILE = {
   githubLabel: 'github.com/mateomerino14',
   linkedin: '',
   cvUrl: 'cv-mateo-merino.pdf',
+  cvFileName: 'CV-Mateo-Merino.pdf',
   headline: 'Construyo aplicaciones web y convierto datos en decisiones. Estudiante de Informática en la UMSS, asistente de cátedra y entre los 3 mejores de mi facultad.',
   availability: 'Disponible para prácticas y proyectos',
   about: [

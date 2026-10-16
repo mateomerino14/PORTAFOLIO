@@ -44,7 +44,7 @@ function ContactSection() {
       <Reveal delay={revealStepSeconds * 4}>
         <div className={styles.links}>
           {CONTACT_LINKS.map((link) => (
-            <a key={link.label} href={link.href} target="_blank" rel="noreferrer" className={styles.link}>
+            <a key={link.label} href={link.href} target={link.target} rel={link.rel} className={styles.link}>
               {link.label}
               <ArrowUpRight size={iconSize} />
             </a>

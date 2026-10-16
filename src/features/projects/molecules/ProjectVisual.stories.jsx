@@ -14,17 +14,17 @@ export default {
   decorators: [(Story) => <div className="w-96"><Story /></div>],
   args: {
     kind: 'Web full stack',
-    accent: PROJECT_ACCENTS.lime,
+    accent: PROJECT_ACCENTS.accent,
     position: 0,
   },
 };
 
-export const Lime = {};
+export const Accent = {};
 
-export const Violet = {
-  args: {accent: PROJECT_ACCENTS.violet, position: 1},
+export const Signal = {
+  args: {accent: PROJECT_ACCENTS.signal, position: 1},
 };
 
-export const Cyan = {
-  args: {accent: PROJECT_ACCENTS.cyan, position: 2},
+export const Mist = {
+  args: {accent: PROJECT_ACCENTS.mist, position: 2},
 };

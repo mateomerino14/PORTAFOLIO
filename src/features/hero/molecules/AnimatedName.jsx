@@ -6,7 +6,7 @@ const styles = {
   line: 'block overflow-hidden',
   letter: 'inline-block',
   outlined: 'inline-block text-outline',
-  accent: 'inline-block text-lime',
+  accent: 'inline-block text-accent',
 };
 
 const initialDelaySeconds = 0.5;

@@ -1,19 +1,18 @@
 // Paleta de colores principales
 export const COLORS = {
-  ink: '#07080c',
-  inkSoft: '#0d0f16',
-  inkRaised: '#151823',
-  line: '#232736',
-  fog: '#8a90a6',
-  paper: '#eef0f6',
-  lime: '#c6ff3d',
-  violet: '#8b7bff',
-  cyan: '#4de1ff',
-  coreSphere: '#241a5c',
-  coreGlow: '#2a1f80',
-  limeGlow: 'rgba(198,255,61,0.45)',
-  limeTint: 'rgba(198,255,61,0.12)',
-  violetTint: 'rgba(139,123,255,0.18)',
+  ink: '#08090a',
+  inkSoft: '#101113',
+  inkRaised: '#17181b',
+  line: '#25272c',
+  fog: '#8a8f98',
+  paper: '#f4f5f6',
+  accent: '#7c86ff',
+  signal: '#4cc9f0',
+  coreSphere: '#1c1f4a',
+  coreGlow: '#2b2f86',
+  accentGlow: 'rgba(124,134,255,0.45)',
+  accentTint: 'rgba(124,134,255,0.12)',
+  signalTint: 'rgba(76,201,240,0.16)',
 };
 
 // Curva de aceleración compartida por todas las animaciones

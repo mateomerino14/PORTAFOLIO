@@ -5,7 +5,7 @@ import {EASE_OUT} from '../../constants';
 const styles = {
   panel: 'fixed inset-0 z-40 flex flex-col justify-center bg-ink-soft px-8 lg:hidden',
   link: 'cursor-pointer py-3 text-left font-display text-4xl font-extrabold',
-  number: 'mr-4 font-mono text-sm text-lime',
+  number: 'mr-4 font-mono text-sm text-accent',
   cvLink: 'mt-8 inline-flex w-fit items-center gap-2 rounded-lg border border-line px-5 py-3 font-medium text-paper',
 };
 

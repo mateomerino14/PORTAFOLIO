@@ -3,7 +3,7 @@ const styles = {
   track: 'flex w-max animate-marquee gap-10 font-display text-3xl font-extrabold whitespace-nowrap md:text-5xl',
   solid: 'flex items-center gap-10 text-paper',
   outlined: 'flex items-center gap-10 text-outline',
-  separator: 'text-lime',
+  separator: 'text-accent',
 };
 
 function TechMarquee({items}) {

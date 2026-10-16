@@ -9,7 +9,7 @@ import {PROFILE} from '../../../data/profile';
 
 const styles = {
   list: 'relative',
-  moreLink: 'mt-10 inline-flex items-center gap-1.5 font-mono text-sm text-fog transition-colors hover:text-lime',
+  moreLink: 'mt-10 inline-flex items-center gap-1.5 font-mono text-sm text-fog transition-colors hover:text-accent',
 };
 
 const iconSize = 16;

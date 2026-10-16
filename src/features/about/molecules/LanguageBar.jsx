@@ -6,7 +6,7 @@ const styles = {
   header: 'mb-2 flex justify-between font-mono text-xs',
   name: 'text-paper',
   track: 'h-1 overflow-hidden rounded-full bg-line',
-  fill: 'h-full rounded-full bg-gradient-to-r from-violet to-lime',
+  fill: 'h-full rounded-full bg-gradient-to-r from-signal to-accent',
 };
 
 const fillDurationSeconds = 1.4;

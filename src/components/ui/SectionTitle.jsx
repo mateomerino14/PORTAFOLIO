@@ -4,9 +4,9 @@ import {EASE_OUT} from '../../constants';
 
 const styles = {
   wrapper: 'mb-14 md:mb-20',
-  kicker: 'mb-4 flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-lime uppercase',
+  kicker: 'mb-4 flex items-center gap-3 font-mono text-xs tracking-[0.2em] text-accent uppercase',
   index: 'text-fog',
-  divider: 'h-px w-10 bg-lime/50',
+  divider: 'h-px w-10 bg-accent/50',
   title: 'font-display text-4xl leading-[1.02] font-extrabold tracking-tight md:text-6xl',
   wordMask: 'mr-[0.25em] inline-block overflow-hidden pb-1 align-bottom',
   word: 'inline-block',

@@ -16,7 +16,7 @@ export const PROJECTS = [
       {label: 'Frontend', href: `${githubUrl}/SCV-Frontend`},
       {label: 'Backend', href: `${githubUrl}/SCV-Backend`},
     ],
-    accent: 'lime',
+    accent: 'accent',
   },
   {
     title: 'Sistema de Gestión para Café-Bar',
@@ -30,7 +30,7 @@ export const PROJECTS = [
     ],
     tags: ['React', 'Node.js', 'Express', 'Supabase', 'Python'],
     links: [{label: 'Versión de escritorio', href: `${githubUrl}/APLICACION-CAFE-BAR`}],
-    accent: 'violet',
+    accent: 'signal',
   },
   {
     title: 'Brasa Brava',
@@ -44,7 +44,7 @@ export const PROJECTS = [
     ],
     tags: ['React', 'Express', 'PostgreSQL', 'Electron', 'Vitest'],
     links: [{label: 'Código', href: `${githubUrl}/BRASA-BRAVA`}],
-    accent: 'cyan',
+    accent: 'mist',
   },
   {
     title: 'Prototipo HTR para código manuscrito',
@@ -58,7 +58,7 @@ export const PROJECTS = [
     ],
     tags: ['Python', 'TrOCR', 'PaddleOCR', 'Tesseract'],
     links: [{label: 'Código', href: `${githubUrl}/prototipo-htr-codigo-manuscrito`}],
-    accent: 'lime',
+    accent: 'accent',
   },
   {
     title: 'Gestor de portafolios profesionales',
@@ -72,7 +72,7 @@ export const PROJECTS = [
     ],
     tags: ['React', 'TypeScript', 'Tailwind', 'Vitest', 'Storybook'],
     links: [{label: 'Código', href: 'https://github.com/gonchi2332/six_seven_frontend'}],
-    accent: 'violet',
+    accent: 'signal',
   },
   {
     title: 'Diagramador de flujo SVG',
@@ -86,7 +86,7 @@ export const PROJECTS = [
     ],
     tags: ['JavaScript', 'SVG', 'PouchDB'],
     links: [{label: 'Código', href: `${githubUrl}/DIAGRAMADOR-FLUJO-SVG`}],
-    accent: 'cyan',
+    accent: 'mist',
   },
   {
     title: 'Simulación de sistemas en R',
@@ -100,6 +100,6 @@ export const PROJECTS = [
     ],
     tags: ['R', 'ggplot2', 'Estadística'],
     links: [{label: 'Código', href: `${githubUrl}/ANALISIS-DE-DATOS-EN-SIMULACION-DE-SISTEMAS`}],
-    accent: 'lime',
+    accent: 'accent',
   },
 ];

@@ -3,8 +3,8 @@ import {motion} from 'framer-motion';
 const styles = {
   badge: 'mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-ink-soft/70 px-3 py-1.5 font-mono text-xs text-fog backdrop-blur',
   dot: 'relative flex h-2 w-2',
-  ping: 'absolute inline-flex h-full w-full animate-ping rounded-full bg-lime opacity-75',
-  core: 'relative inline-flex h-2 w-2 rounded-full bg-lime',
+  ping: 'absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75',
+  core: 'relative inline-flex h-2 w-2 rounded-full bg-accent',
 };
 
 const badgeMotion = {

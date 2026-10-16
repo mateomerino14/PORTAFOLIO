@@ -13,7 +13,7 @@ function usePointerTilt() {
   const pointerY = useMotionValue(centerPosition);
   const rotateX = useSpring(useTransform(pointerY, [0, 1], [maxTiltDegrees, -maxTiltDegrees]), springConfig);
   const rotateY = useSpring(useTransform(pointerX, [0, 1], [-maxTiltDegrees, maxTiltDegrees]), springConfig);
-  const glow = useTransform([pointerX, pointerY], ([x, y]) => `radial-gradient(${glowRadiusPx}px circle at ${x * 100}% ${y * 100}%, ${COLORS.limeTint}, transparent 45%)`);
+  const glow = useTransform([pointerX, pointerY], ([x, y]) => `radial-gradient(${glowRadiusPx}px circle at ${x * 100}% ${y * 100}%, ${COLORS.accentTint}, transparent 45%)`);
 
   const handlePointerMove = (event) => {
     const bounds = ref.current.getBoundingClientRect();

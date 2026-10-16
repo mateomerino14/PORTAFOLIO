@@ -4,7 +4,7 @@ import {EASE_OUT} from '../../../constants';
 
 const styles = {
   mask: 'relative inline-flex h-[1.3em] overflow-hidden align-bottom',
-  role: 'inline-block text-lime',
+  role: 'inline-block text-accent',
 };
 
 const roleIntervalMs = 2600;

@@ -1,5 +1,5 @@
 export const PROJECT_ACCENTS = {
-  lime: {text: 'text-lime', fill: 'bg-lime', gradient: 'from-lime/25'},
-  violet: {text: 'text-violet', fill: 'bg-violet', gradient: 'from-violet/30'},
-  cyan: {text: 'text-cyan', fill: 'bg-cyan', gradient: 'from-cyan/25'},
+  accent: {text: 'text-accent', fill: 'bg-accent', gradient: 'from-accent/25'},
+  signal: {text: 'text-signal', fill: 'bg-signal', gradient: 'from-signal/25'},
+  mist: {text: 'text-paper', fill: 'bg-paper/60', gradient: 'from-paper/15'},
 };

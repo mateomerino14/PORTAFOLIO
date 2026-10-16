@@ -4,10 +4,10 @@ import {STACK_ICONS} from '../constants/stackIcons';
 
 const styles = {
   tilt: 'h-full rounded-2xl',
-  card: 'h-full rounded-2xl border border-line bg-ink-soft p-6 transition-colors duration-500 group-hover:border-lime/40',
+  card: 'h-full rounded-2xl border border-line bg-ink-soft p-6 transition-colors duration-500 group-hover:border-accent/40',
   header: 'mb-6 flex items-center justify-between',
   title: 'font-display text-xl font-semibold',
-  icon: 'grid h-10 w-10 place-items-center rounded-xl bg-ink-raised text-lime transition-transform duration-500 group-hover:rotate-12',
+  icon: 'grid h-10 w-10 place-items-center rounded-xl bg-ink-raised text-accent transition-transform duration-500 group-hover:rotate-12',
   tags: 'flex flex-wrap gap-2',
 };
 

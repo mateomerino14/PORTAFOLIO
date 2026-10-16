@@ -8,7 +8,7 @@ const styles = {
 };
 
 const glowRadiusPx = 250;
-const glowBackground = `radial-gradient(circle, ${COLORS.violetTint}, transparent 65%)`;
+const glowBackground = `radial-gradient(circle, ${COLORS.signalTint}, transparent 65%)`;
 
 function CursorGlow() {
   const hasFinePointer = useMediaQuery(MEDIA_QUERIES.finePointer);

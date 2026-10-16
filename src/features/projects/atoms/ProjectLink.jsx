@@ -1,7 +1,7 @@
 import {ArrowUpRight} from 'lucide-react';
 
 const styles = {
-  link: 'group inline-flex items-center gap-1.5 transition-colors hover:text-lime',
+  link: 'group inline-flex items-center gap-1.5 transition-colors hover:text-accent',
   icon: 'transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5',
 };
 

@@ -25,13 +25,13 @@ export const GRAPH_CONFIG = {
 export const CAMERA_CONFIG = {position: [0, 0, 7], fov: 45};
 
 export const SCENE_LIGHTS = [
-  {position: [4, 3, 4], intensity: 40, color: COLORS.lime},
-  {position: [-4, -2, 2], intensity: 40, color: COLORS.violet},
-  {position: [0, 4, -3], intensity: 25, color: COLORS.cyan},
+  {position: [4, 3, 4], intensity: 40, color: COLORS.accent},
+  {position: [-4, -2, 2], intensity: 40, color: COLORS.signal},
+  {position: [0, 4, -3], intensity: 25, color: COLORS.signal},
 ];
 
 export const NODE_COLORS = {
-  hub: COLORS.lime,
-  accent: COLORS.cyan,
-  base: COLORS.violet,
+  hub: COLORS.accent,
+  accent: COLORS.signal,
+  base: COLORS.signal,
 };

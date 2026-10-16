@@ -29,7 +29,7 @@ function CoreSphere() {
       </mesh>
       <mesh scale={shellScale}>
         <icosahedronGeometry args={[1, shellDetail]} />
-        <meshBasicMaterial color={COLORS.lime} wireframe transparent opacity={shellOpacity} />
+        <meshBasicMaterial color={COLORS.accent} wireframe transparent opacity={shellOpacity} />
       </mesh>
     </Float>
   );

@@ -10,7 +10,7 @@ function GraphNetwork() {
   return (
     <group ref={groupRef}>
       <lineSegments geometry={edgeGeometry}>
-        <lineBasicMaterial color={COLORS.violet} transparent opacity={GRAPH_CONFIG.edgeOpacity} />
+        <lineBasicMaterial color={COLORS.signal} transparent opacity={GRAPH_CONFIG.edgeOpacity} />
       </lineSegments>
       {nodeStyles.map((node, index) => (
         <mesh key={index} position={node.position}>
@@ -20,7 +20,7 @@ function GraphNetwork() {
       ))}
       <instancedMesh ref={pulsesRef} args={[undefined, undefined, GRAPH_CONFIG.pulseCount]}>
         <sphereGeometry args={[GRAPH_CONFIG.pulseRadius, pulseSegments, pulseSegments]} />
-        <meshBasicMaterial color={COLORS.lime} toneMapped={false} />
+        <meshBasicMaterial color={COLORS.accent} toneMapped={false} />
       </instancedMesh>
     </group>
   );

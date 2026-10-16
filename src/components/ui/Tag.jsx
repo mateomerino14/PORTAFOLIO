@@ -1,5 +1,5 @@
 const styles = {
-  square: 'rounded-lg border border-line bg-ink px-3 py-1.5 font-mono text-xs text-fog transition-colors hover:border-violet hover:text-paper',
+  square: 'rounded-lg border border-line bg-ink px-3 py-1.5 font-mono text-xs text-fog transition-colors hover:border-signal hover:text-paper',
   pill: 'rounded-full bg-ink-raised px-3 py-1 font-mono text-xs text-fog',
 };
 

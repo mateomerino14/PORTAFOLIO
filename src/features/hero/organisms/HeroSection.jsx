@@ -16,8 +16,8 @@ const GraphScene = lazy(() => import('../../scene/organisms/GraphScene'));
 
 const styles = {
   section: 'relative flex min-h-[100svh] items-center overflow-hidden bg-grid',
-  ambientViolet: 'pointer-events-none absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-violet/20 blur-[120px]',
-  ambientLime: 'pointer-events-none absolute -right-20 bottom-0 h-[420px] w-[420px] rounded-full bg-lime/10 blur-[120px]',
+  ambientViolet: 'pointer-events-none absolute -top-40 -left-40 h-[520px] w-[520px] rounded-full bg-signal/20 blur-[120px]',
+  ambientLime: 'pointer-events-none absolute -right-20 bottom-0 h-[420px] w-[420px] rounded-full bg-accent/10 blur-[120px]',
   scene: 'absolute inset-0 top-[-45%] bottom-[30%] md:top-0 md:bottom-0 md:left-[42%]',
   sceneFrame: 'h-full w-full',
   fade: 'pointer-events-none absolute inset-0 bg-gradient-to-t from-ink from-40% via-ink/80 to-transparent md:bg-gradient-to-r md:via-ink/40',

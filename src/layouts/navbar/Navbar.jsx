@@ -17,10 +17,10 @@ const styles = {
   navSolid: 'border-line bg-ink/70 backdrop-blur-xl',
   navClear: 'border-transparent bg-transparent',
   brand: 'flex cursor-pointer items-center gap-2 font-display text-lg font-extrabold',
-  logo: 'grid h-8 w-8 place-items-center rounded-lg bg-lime font-mono text-sm text-ink',
+  logo: 'grid h-8 w-8 place-items-center rounded-lg bg-accent font-mono text-sm text-ink',
   brandName: 'hidden sm:inline',
   actions: 'flex items-center gap-2',
-  cvLink: 'hidden items-center gap-2 rounded-lg border border-line px-4 py-2 text-sm font-medium transition-colors hover:border-lime hover:text-lime sm:flex',
+  cvLink: 'hidden items-center gap-2 rounded-lg border border-line px-4 py-2 text-sm font-medium transition-colors hover:border-accent hover:text-accent sm:flex',
 };
 
 const scrollThresholdPx = 40;

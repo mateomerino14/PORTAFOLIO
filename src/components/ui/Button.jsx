@@ -1,5 +1,5 @@
 const styles = {
-  primary: 'group flex cursor-pointer items-center gap-3 rounded-full bg-lime px-7 py-4 font-semibold text-ink transition-shadow hover:shadow-glow',
+  primary: 'group flex cursor-pointer items-center gap-3 rounded-full bg-accent px-7 py-4 font-semibold text-ink transition-shadow hover:shadow-glow',
   secondary: 'cursor-pointer rounded-full border border-line bg-ink-soft/60 px-7 py-4 font-semibold backdrop-blur transition-colors hover:border-paper',
   icon: 'transition-transform group-hover:translate-x-1',
 };

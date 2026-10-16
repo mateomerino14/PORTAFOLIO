@@ -2,13 +2,13 @@ import {motion} from 'framer-motion';
 import {Check} from 'lucide-react';
 
 const styles = {
-  card: 'group flex items-start gap-4 rounded-2xl border border-line bg-ink-soft p-5 transition-colors hover:border-violet/60',
-  icon: 'mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-ink-raised text-lime transition-transform group-hover:scale-110',
+  card: 'group flex items-start gap-4 rounded-2xl border border-line bg-ink-soft p-5 transition-colors hover:border-signal/60',
+  icon: 'mt-1 grid h-9 w-9 shrink-0 place-items-center rounded-lg bg-ink-raised text-accent transition-transform group-hover:scale-110',
   body: 'flex-1',
   name: 'leading-snug font-semibold',
   details: 'mt-1 text-sm text-fog',
   aside: 'text-right font-mono text-xs text-fog',
-  hours: 'text-violet',
+  hours: 'text-signal',
 };
 
 const iconSize = 16;

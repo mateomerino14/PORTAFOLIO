@@ -5,7 +5,7 @@ const styles = {
   tab: 'relative cursor-pointer rounded-full px-4 py-2 text-sm font-medium transition-colors md:px-6',
   activeTab: 'text-ink',
   idleTab: 'text-fog hover:text-paper',
-  pill: 'absolute inset-0 rounded-full bg-lime',
+  pill: 'absolute inset-0 rounded-full bg-accent',
   label: 'relative',
   count: 'opacity-60',
 };

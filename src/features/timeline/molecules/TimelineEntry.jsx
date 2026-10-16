@@ -4,10 +4,10 @@ import {TIMELINE_TYPE_LABELS} from '../constants/timelineTypes';
 
 const styles = {
   row: 'relative mb-14 md:grid md:grid-cols-2 md:gap-16',
-  dot: 'absolute top-2 -left-8 h-[15px] w-[15px] rounded-full border-2 border-lime bg-ink md:left-1/2 md:-translate-x-1/2',
+  dot: 'absolute top-2 -left-8 h-[15px] w-[15px] rounded-full border-2 border-accent bg-ink md:left-1/2 md:-translate-x-1/2',
   leftColumn: 'md:text-right',
   rightColumn: 'md:col-start-2',
-  meta: 'font-mono text-xs text-lime',
+  meta: 'font-mono text-xs text-accent',
   title: 'mt-2 font-display text-2xl font-extrabold',
   place: 'text-fog',
   points: 'mt-4 space-y-1.5 text-sm text-fog',

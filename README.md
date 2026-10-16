@@ -1,6 +1,6 @@
 # Portafolio — Mateo Merino
 
-Sitio personal con mis proyectos, stack, trayectoria y certificaciones. La portada muestra un grafo 3D interactivo, un guiño a Teoría de Grafos, materia en la que soy asistente de cátedra.
+Sitio personal organizado como un grafo 3D que se recorre al hacer scroll. Cada nodo es un aspecto de mi perfil: sobre mí, stack, proyectos, trayectoria, certificaciones y contacto. Es un guiño a Teoría de Grafos, materia en la que soy asistente de cátedra.
 
 ## Requisitos
 
@@ -30,7 +30,7 @@ npm run build-storybook     # sitio estático de Storybook
 | React | Interfaz mediante componentes funcionales y hooks |
 | Vite | Compilación y servidor de desarrollo |
 | Tailwind CSS | Utilidades de maquetado y paleta mediante `@theme` |
-| Three.js + React Three Fiber + Drei | Escena 3D del grafo en la portada |
+| Three.js + React Three Fiber + Drei | Escena 3D del grafo que se recorre |
 | Framer Motion | Revelado al hacer scroll, tarjetas con inclinación, botones magnéticos y transiciones |
 | Lenis | Desplazamiento suave |
 | Lucide React | Iconografía |
@@ -38,25 +38,34 @@ npm run build-storybook     # sitio estático de Storybook
 
 ## Arquitectura
 
-El proyecto combina una organización por secciones con una jerarquía de componentes basada en Atomic Design. La lógica de animación y estado vive en hooks; los componentes solo presentan.
+### El recorrido
+
+La página es una secuencia de **paradas**. Cada sección principal es un nodo, y proyectos, trayectoria y certificaciones se abren en subnodos, uno por elemento. Las paradas se generan a partir de los datos de `data/`, así que agregar un proyecto agrega un nodo al grafo sin tocar la escena.
 
 ```
-Página (pages/HomePage)
-   │  compone las secciones
+data/ (proyectos, trayectoria, certificaciones)
+   │  journeyStops.js arma la lista de paradas
    ▼
-Organismo (features/<sección>/organisms/)
-   │  lee los datos de data/ y distribuye props
+Paradas en el DOM (StopPanel con data-stop)
+   │  useJourneyScroll mide su posición y calcula el avance
    ▼
-Moléculas y átomos
-   │  presentan lo que reciben por props
-   ▼
-Hooks (features/<sección>/hooks/ y hooks/shared/)
-      estado, scroll, puntero y animaciones
+journeyStore (avance, parada actual, tecnología señalada)
+   │
+   ├──► Escena 3D: la cámara viaja entre nodos y un pulso recorre la arista
+   ├──► Mapa del recorrido y barra de navegación
+   └──► Etiquetas de los nodos, proyectadas sobre la pantalla en cada cuadro
 ```
 
-La escena 3D se carga con `React.lazy`, de modo que Three.js genera su propio fragmento de JavaScript y el texto de la portada aparece sin esperarlo.
+- **Avance continuo.** `useJourneyScroll` convierte el scroll en un número decimal: `3.5` significa «a mitad de camino entre la parada 3 y la 4». La escena lo lee en cada cuadro sin volver a renderizar React.
+- **Pausa en cada nodo.** La cámara se queda quieta mientras el panel está centrado y solo viaja en la franja central entre dos paradas (`CAMERA_MOTION.dwell`), para que el texto se pueda leer.
+- **Stack conectado.** Cada tecnología que aparece en un proyecto es un nodo unido a esos proyectos. Al señalarla en el panel del stack, sus aristas se iluminan.
+- **Celular y movimiento reducido.** En pantallas angostas la cámara deja el nodo arriba y el panel abajo. Si el sistema pide menos movimiento, la cámara salta de nodo en nodo sin animación.
 
-Todas las animaciones respetan `prefers-reduced-motion`: si el sistema pide menos movimiento, se desactivan el desplazamiento suave y las transiciones.
+### Componentes
+
+La jerarquía sigue Atomic Design. La lógica de estado, scroll y animación vive en hooks; los componentes solo presentan lo que reciben por props.
+
+La escena 3D se carga con `React.lazy`, de modo que Three.js genera su propio fragmento de JavaScript y el contenido aparece sin esperarlo.
 
 ## Estructura
 
@@ -64,30 +73,30 @@ Todas las animaciones respetan `prefers-reduced-motion`: si el sistema pide meno
 src/
 ├── components/ui/       Componentes genéricos transversales
 ├── features/            Secciones de la página
+│   ├── journey/         Paradas del recorrido, su estado compartido y el panel de cada parada
+│   │   ├── constants/   Lista de paradas y relación entre tecnologías y proyectos
+│   │   ├── hooks/       Scroll, parada actual y subnodos
+│   │   ├── molecules/
+│   │   └── store/       Estado compartido entre el DOM y la escena 3D
+│   ├── scene/           Escena 3D: nodos, aristas, cámara, pulso y etiquetas
 │   ├── hero/
-│   ├── scene/           Grafo 3D y esfera central
 │   ├── about/
 │   ├── stack/
 │   ├── projects/
 │   ├── timeline/
 │   ├── certifications/
 │   └── contact/
-│       ├── atoms/
-│       ├── molecules/
-│       ├── organisms/
-│       ├── hooks/
-│       └── constants/
 ├── hooks/shared/        Hooks reutilizables de scroll, puntero y medios
-├── layouts/             Barra de navegación, pie y efectos globales
+├── layouts/             Barra de navegación, mapa del recorrido y pie
 ├── pages/               Página principal
 ├── data/                Contenido: perfil, proyectos, stack, trayectoria y certificaciones
-├── utils/               Funciones auxiliares puras (grafo y scroll)
+├── utils/               Funciones auxiliares puras (paradas, avance y distribución del grafo)
 └── constants/           Paleta de colores, curvas de animación y navegación
 ```
 
 ## Contenido
 
-Todo el texto del sitio vive en `src/data/`. Para agregar un proyecto, una certificación o una entrada en la trayectoria solo se edita el archivo correspondiente, sin tocar los componentes.
+Todo el texto del sitio vive en `src/data/`. Para agregar un proyecto, una certificación o una entrada en la trayectoria solo se edita el archivo correspondiente: la parada, su nodo en el grafo y su lugar en el mapa se generan solos.
 
 ## Despliegue
 

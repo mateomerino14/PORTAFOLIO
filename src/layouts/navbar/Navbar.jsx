@@ -4,7 +4,7 @@ import {Download} from 'lucide-react';
 import NavLinks from './NavLinks';
 import MenuToggle from './MenuToggle';
 import MobileMenu from './MobileMenu';
-import useActiveSection from '../../hooks/shared/useActiveSection';
+import {useActiveStop} from '../../features/journey/hooks/useJourneyState';
 import useScrolledPast from '../../hooks/shared/useScrolledPast';
 import {scrollToSection, scrollToTop} from '../../utils/scroll';
 import {EASE_OUT} from '../../constants';
@@ -30,11 +30,10 @@ const headerMotion = {
   animate: {y: 0, opacity: 1},
   transition: {delay: 0.3, duration: 0.8, ease: EASE_OUT},
 };
-const sectionIds = NAV_ITEMS.map((item) => item.id);
 
 function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const activeId = useActiveSection(sectionIds);
+  const activeId = useActiveStop().groupId;
   const isScrolled = useScrolledPast(scrollThresholdPx);
 
   const handleNavigate = (sectionId) => {

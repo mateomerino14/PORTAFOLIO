@@ -59,7 +59,7 @@ function Navbar() {
           </div>
         </nav>
       </motion.header>
-      <MobileMenu isOpen={isMenuOpen} items={NAV_ITEMS} cvUrl={PROFILE.cvUrl} cvFileName={PROFILE.cvFileName} onNavigate={handleNavigate} />
+      <MobileMenu isOpen={isMenuOpen} items={NAV_ITEMS} activeId={activeId} cvUrl={PROFILE.cvUrl} cvFileName={PROFILE.cvFileName} onNavigate={handleNavigate} onClose={() => setIsMenuOpen(false)} />
     </>
   );
 }

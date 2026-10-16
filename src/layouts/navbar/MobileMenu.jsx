@@ -1,10 +1,12 @@
 import {AnimatePresence, motion} from 'framer-motion';
+import {Download} from 'lucide-react';
 import {EASE_OUT} from '../../constants';
 
 const styles = {
   panel: 'fixed inset-0 z-40 flex flex-col justify-center bg-ink-soft px-8 lg:hidden',
   link: 'cursor-pointer py-3 text-left font-display text-4xl font-extrabold',
   number: 'mr-4 font-mono text-sm text-lime',
+  cvLink: 'mt-8 inline-flex w-fit items-center gap-2 rounded-lg border border-line px-5 py-3 font-medium text-paper',
 };
 
 const panelTransition = {duration: 0.6, ease: EASE_OUT};
@@ -12,13 +14,14 @@ const linkDelaySeconds = 0.15;
 const linkStaggerSeconds = 0.05;
 const linkHidden = {opacity: 0, x: -30};
 const linkVisible = {opacity: 1, x: 0};
+const cvIconSize = 18;
 
 const panelVariants = {
   hidden: {clipPath: 'circle(0% at 95% 5%)'},
   visible: {clipPath: 'circle(150% at 95% 5%)'},
 };
 
-function MobileMenu({isOpen, items, onNavigate}) {
+function MobileMenu({isOpen, items, cvUrl, cvFileName, onNavigate}) {
   return (
     <AnimatePresence>
       {isOpen && (
@@ -30,6 +33,11 @@ function MobileMenu({isOpen, items, onNavigate}) {
               {item.label}
             </motion.button>
           ))}
+          <motion.a href={cvUrl} download={cvFileName} target="_blank" rel="noreferrer" className={styles.cvLink}
+            initial={linkHidden} animate={linkVisible} transition={{delay: linkDelaySeconds + items.length * linkStaggerSeconds}}>
+            <Download size={cvIconSize} />
+            Descargar CV
+          </motion.a>
         </motion.div>
       )}
     </AnimatePresence>

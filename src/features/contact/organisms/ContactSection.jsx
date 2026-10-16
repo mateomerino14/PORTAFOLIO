@@ -1,7 +1,8 @@
 import {ArrowUpRight} from 'lucide-react';
 import StopPanel from '../../journey/molecules/StopPanel';
 import CopyEmailButton from '../molecules/CopyEmailButton';
-import {CONTACT_LINKS, EMAIL_URL} from '../constants/contactLinks';
+import EmailMenu from '../molecules/EmailMenu';
+import {CONTACT_LINKS, EMAIL_PROVIDERS, EMAIL_URL} from '../constants/contactLinks';
 import {SECTION_IDS} from '../../../constants/navigation';
 import {PROFILE} from '../../../data/profile';
 
@@ -29,6 +30,7 @@ function ContactSection() {
         <CopyEmailButton email={PROFILE.email} fallbackUrl={EMAIL_URL} />
       </div>
       <div className={styles.links}>
+        <EmailMenu email={PROFILE.email} providers={EMAIL_PROVIDERS} fallbackUrl={EMAIL_URL} />
         {CONTACT_LINKS.map((link) => (
           <a key={link.label} href={link.href} target={link.target} rel={link.rel} className={styles.link}>
             {link.label}

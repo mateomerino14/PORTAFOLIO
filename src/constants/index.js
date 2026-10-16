@@ -21,7 +21,7 @@ export const EASE_OUT = [0.22, 1, 0.36, 1];
 
 export const NAVBAR_OFFSET_PX = 70;
 
-// Tamaños de pantalla: sm 640px, md 768px, lg 1024px, xl 1280px
+// Preferencias del usuario consultadas para adaptar las animaciones
 export const MEDIA_QUERIES = {
   reducedMotion: '(prefers-reduced-motion: reduce)',
   finePointer: '(pointer: fine)',

@@ -21,8 +21,8 @@ export const NODE_SIZES = {
 };
 
 export const NODE_FADE = {
-  near: 1.4,
-  far: 4,
+  near: 2.4,
+  far: 5.2,
 };
 
 export const LABEL_RANGE = 3;
@@ -30,7 +30,7 @@ export const LABEL_RANGE = 3;
 export const NODE_COLORS = {
   main: COLORS.accent,
   branch: COLORS.signal,
-  visited: COLORS.paper,
+  visited: COLORS.fog,
 };
 
 export const ROUTE_STYLE = {

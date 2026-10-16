@@ -7,13 +7,17 @@ import {splitProgress} from '../../../utils/journey';
 
 const hiddenScale = 0;
 
-function TravelPulse({positions}) {
+function TravelPulse({positions, isReducedMotion}) {
   const pulseRef = useRef(null);
   const lastIndex = positions.length - 1;
 
   useFrame(() => {
     const pulse = pulseRef.current;
     if (!pulse) {
+      return;
+    }
+    if (isReducedMotion) {
+      pulse.scale.setScalar(hiddenScale);
       return;
     }
     const {from, to, travel} = splitProgress(journeyStore.getProgress(), lastIndex, CAMERA_MOTION.dwell);

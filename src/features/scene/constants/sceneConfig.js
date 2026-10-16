@@ -49,12 +49,22 @@ export const AMBIENT_FIELD = {
 
 export const LABEL_OFFSET_PX = 12;
 
+export const LABEL_COLLISION_PX = {x: 140, y: 18};
+
 export const CAMERA_CONFIG = {position: [-4, 4, 9], fov: 50, near: 0.1, far: 200};
 
 export const CAMERA_VIEWS = {
-  overview: {offset: [-4, 2.4, 9], lookShift: [-6, -1, -6]},
-  stop: {offset: [0.9, 0.7, 5.8], lookShift: [-1.9, 0, 0]},
+  wide: {
+    overview: {offset: [-4, 2.4, 9], lookShift: [-6, -1, -6]},
+    stop: {offset: [0.9, 0.7, 5.8], lookShift: [-1.9, 0, 0]},
+  },
+  compact: {
+    overview: {offset: [-2.5, 3, 11], lookShift: [-0.8, -3.6, -5]},
+    stop: {offset: [0.3, 1, 7.5], lookShift: [0, -1.6, 0]},
+  },
 };
+
+export const COMPACT_MAX_WIDTH_PX = 768;
 
 export const CAMERA_MOTION = {
   followRate: 3.2,

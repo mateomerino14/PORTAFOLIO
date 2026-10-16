@@ -1,7 +1,7 @@
 import useJourneyCamera from '../hooks/useJourneyCamera';
 
-function JourneyCamera({positions}) {
-  useJourneyCamera(positions);
+function JourneyCamera({positions, isReducedMotion}) {
+  useJourneyCamera(positions, isReducedMotion);
   return null;
 }
 

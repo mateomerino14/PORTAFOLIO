@@ -14,7 +14,7 @@ export const CERTIFICATION_GROUPS = [
     group: 'Diplomados',
     items: [
       {name: 'Diploma in Business Intelligence and Data Analysis', tech: 'Business Intelligence', issuer: 'Florida Global University', note: '', date: 'Oct 2024', hours: 150},
-      {name: 'Especialización Ejecutiva: Analista de Datos', tech: 'Power BI', issuer: 'WE Educación Ejecutiva · Microsoft & IBM', note: 'SQL Server, Power BI & Python', date: 'Abr 2024', hours: 90},
+      {name: 'Especialización Ejecutiva: Analista de Datos', tech: 'Power BI', issuer: 'WE Educación Ejecutiva · Microsoft & IBM', note: 'SQL Server, Power BI & Python', date: 'Abr 2024', hours: 90, topics: ['SQL Server', 'Power BI', 'Python']},
     ],
   },
   {

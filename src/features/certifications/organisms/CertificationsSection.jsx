@@ -23,7 +23,7 @@ function CertificationsSection() {
         <StopIndex items={groupStops} />
       </StopPanel>
       {groupStops.map((stop) => (
-        <StopPanel key={stop.id} stopId={stop.id}>
+        <StopPanel key={stop.id} stopId={stop.id} variant="wide">
           <CertificationGroupPanel group={CERTIFICATION_GROUPS[stop.itemIndex]} />
         </StopPanel>
       ))}

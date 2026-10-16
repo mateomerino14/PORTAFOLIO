@@ -7,11 +7,11 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Contenido de la parada de un grupo de certificaciones con su lista completa.',
+        component: 'Contenido de la parada de un grupo de certificaciones: su lista completa y, al costado, un resumen visual del grupo.',
       },
     },
   },
-  decorators: [(Story) => <div className="w-[34rem] rounded-2xl border border-line bg-ink/80 p-8"><Story /></div>],
+  decorators: [(Story) => <div className="w-[60rem] rounded-2xl border border-line bg-ink/80 p-8"><Story /></div>],
   args: {
     group: CERTIFICATION_GROUPS[1],
   },

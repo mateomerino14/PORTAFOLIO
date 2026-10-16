@@ -6,7 +6,7 @@ import CodePreview from './CodePreview';
 import {MEDIA_TYPES} from '../../../data/projects';
 
 const styles = {
-  layout: 'grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:items-start md:gap-8',
+  layout: 'grid grid-cols-[minmax(0,1fr)] gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] md:items-start md:gap-8',
   media: 'md:sticky md:top-24',
   meta: 'mb-3 font-mono text-xs text-fog',
   context: 'text-accent',

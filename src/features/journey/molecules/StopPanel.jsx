@@ -8,6 +8,7 @@ const styles = {
   container: 'mx-auto w-full max-w-6xl pr-10 pl-5 md:px-6',
   panel: 'max-w-xl rounded-2xl border border-line bg-ink/85 p-5 backdrop-blur-md md:p-8',
   bare: 'max-w-2xl',
+  wide: 'max-w-5xl rounded-2xl border border-line bg-ink/85 p-5 backdrop-blur-md md:p-8',
 };
 
 function StopPanel({stopId, size = 'full', variant = 'panel', children}) {

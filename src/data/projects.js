@@ -1,5 +1,12 @@
 const githubUrl = 'https://github.com/mateomerino14';
 
+export const MEDIA_TYPES = {
+  gallery: 'gallery',
+  code: 'code',
+};
+
+const demoNote = 'Capturas de la aplicación corriendo con datos de ejemplo.';
+
 export const PROJECTS = [
   {
     title: 'Sistema de Control de Viáticos',
@@ -16,6 +23,15 @@ export const PROJECTS = [
       {label: 'Frontend', href: `${githubUrl}/SCV-Frontend`},
       {label: 'Backend', href: `${githubUrl}/SCV-Backend`},
     ],
+    media: {
+      type: MEDIA_TYPES.gallery,
+      note: 'Capturas del frontend real con datos ficticios.',
+      images: [
+        {src: 'projects/viaticos/mis-viajes.webp', caption: 'Viajes del empleado: borradores, viajes en curso y gasto acumulado'},
+        {src: 'projects/viaticos/resumen-administrador.webp', caption: 'Resumen del administrador con indicadores por periodo'},
+        {src: 'projects/viaticos/inicio-sesion.webp', caption: 'Inicio de sesión con recuperación de contraseña por código'},
+      ],
+    },
   },
   {
     title: 'Sistema de Gestión para Café-Bar',
@@ -25,10 +41,19 @@ export const PROJECTS = [
     highlights: [
       'Comandas a cocina y tickets en impresoras térmicas mediante un agente local',
       'Reporte semanal de los productos más vendidos enviado por correo',
-      'Migración de SQLite a PostgreSQL con autenticación JWT',
+      'Instalación local con Electron y PostgreSQL embebido, sin depender de internet',
     ],
-    tags: ['React', 'Node.js', 'Express', 'Supabase', 'Python'],
+    tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron', 'Python'],
     links: [{label: 'Versión de escritorio', href: `${githubUrl}/APLICACION-CAFE-BAR`}],
+    media: {
+      type: MEDIA_TYPES.gallery,
+      note: demoNote,
+      images: [
+        {src: 'projects/cafe-bar/caja-mesas.webp', caption: 'Caja: selección de sección y mesa para abrir un pedido'},
+        {src: 'projects/cafe-bar/productos.webp', caption: 'Gestión de productos por categoría y subcategoría'},
+        {src: 'projects/cafe-bar/configuracion.webp', caption: 'Configuración: respaldos, impresoras y reportes automáticos'},
+      ],
+    },
   },
   {
     title: 'Brasa Brava',
@@ -42,6 +67,16 @@ export const PROJECTS = [
     ],
     tags: ['React', 'Express', 'PostgreSQL', 'Electron', 'Vitest'],
     links: [{label: 'Código', href: `${githubUrl}/BRASA-BRAVA`}],
+    media: {
+      type: MEDIA_TYPES.gallery,
+      note: demoNote,
+      images: [
+        {src: 'projects/brasa-brava/caja.webp', caption: 'Caja con el plano de mesas, ocupación y ventas del día'},
+        {src: 'projects/brasa-brava/cocina.webp', caption: 'Cocina: pedidos pendientes con tiempo de espera'},
+        {src: 'projects/brasa-brava/inicio.webp', caption: 'Página principal con el resumen del día según el cargo'},
+        {src: 'projects/brasa-brava/promociones.webp', caption: 'Promociones con vigencia, horarios y descuento'},
+      ],
+    },
   },
   {
     title: 'Prototipo HTR para código manuscrito',
@@ -55,6 +90,30 @@ export const PROJECTS = [
     ],
     tags: ['Python', 'TrOCR', 'PaddleOCR', 'Tesseract'],
     links: [{label: 'Código', href: `${githubUrl}/prototipo-htr-codigo-manuscrito`}],
+    media: {
+      type: MEDIA_TYPES.code,
+      file: 'piloto/metricas.py',
+      language: 'Python',
+      code: `def levenshtein(a, b):
+    if len(a) < len(b):
+        a, b = b, a
+
+    fila_anterior = list(range(len(b) + 1))
+    for i, elem_a in enumerate(a, start=1):
+        fila_actual = [i]
+        for j, elem_b in enumerate(b, start=1):
+            eliminacion = fila_anterior[j] + 1
+            insercion = fila_actual[j - 1] + 1
+            sustitucion = fila_anterior[j - 1] + (elem_a != elem_b)
+            fila_actual.append(min(eliminacion, insercion, sustitucion))
+        fila_anterior = fila_actual
+
+    return fila_anterior[-1]
+
+
+def cer(referencia, hipotesis):
+    return _tasa_error(normalizar(referencia), normalizar(hipotesis))`,
+    },
   },
   {
     title: 'Gestor de portafolios profesionales',
@@ -68,6 +127,15 @@ export const PROJECTS = [
     ],
     tags: ['React', 'TypeScript', 'Tailwind', 'Vitest', 'Storybook'],
     links: [{label: 'Código', href: 'https://github.com/gonchi2332/six_seven_frontend'}],
+    media: {
+      type: MEDIA_TYPES.gallery,
+      note: 'Capturas del frontend real con datos ficticios.',
+      images: [
+        {src: 'projects/gestor-portafolios/certificados.webp', caption: 'Área de certificados en el perfil público'},
+        {src: 'projects/gestor-portafolios/portada.webp', caption: 'Portada para buscar y verificar perfiles'},
+        {src: 'projects/gestor-portafolios/inicio-sesion.webp', caption: 'Inicio de sesión'},
+      ],
+    },
   },
   {
     title: 'Diagramador de flujo SVG',
@@ -81,6 +149,13 @@ export const PROJECTS = [
     ],
     tags: ['JavaScript', 'SVG', 'PouchDB'],
     links: [{label: 'Código', href: `${githubUrl}/DIAGRAMADOR-FLUJO-SVG`}],
+    media: {
+      type: MEDIA_TYPES.gallery,
+      note: 'Diagrama de ejemplo cargado con el importador JSON del propio editor.',
+      images: [
+        {src: 'projects/diagramador/editor.webp', caption: 'Editor con figuras, decisiones Sí/No y conexiones ortogonales'},
+      ],
+    },
   },
   {
     title: 'Simulación de sistemas en R',
@@ -94,5 +169,24 @@ export const PROJECTS = [
     ],
     tags: ['R', 'ggplot2', 'Estadística'],
     links: [{label: 'Código', href: `${githubUrl}/ANALISIS-DE-DATOS-EN-SIMULACION-DE-SISTEMAS`}],
+    media: {
+      type: MEDIA_TYPES.code,
+      file: 'Generados de variables aleatorias.R',
+      language: 'R',
+      code: `GeneradorCongruencialMixto <- setRefClass("GeneradorCongruencialMixto", fields = list(
+  semilla = "numeric",
+  multiplicador = "numeric",
+  incremento = "numeric",
+  modulo = "numeric"
+),
+methods = list(generarNumeros = function(cantidad) {
+  valores <- numeric(cantidad + 1)
+  valores[1] <- semilla
+  for (i in 2:(cantidad + 1)) {
+    valores[i] <- (multiplicador * valores[i - 1] + incremento) %% modulo
+  }
+  return(valores)
+}))`,
+    },
   },
 ];

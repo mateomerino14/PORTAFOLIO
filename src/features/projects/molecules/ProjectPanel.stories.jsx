@@ -11,7 +11,7 @@ export default {
       },
     },
   },
-  decorators: [(Story) => <div className="w-[34rem] rounded-2xl border border-line bg-ink/80 p-8"><Story /></div>],
+  decorators: [(Story) => <div className="w-[64rem] rounded-2xl border border-line bg-ink/80 p-8"><Story /></div>],
   args: {
     project: PROJECTS[0],
   },
@@ -21,4 +21,8 @@ export const MultipleLinks = {};
 
 export const SingleLink = {
   args: {project: PROJECTS[2]},
+};
+
+export const WithCode = {
+  args: {project: PROJECTS[3]},
 };

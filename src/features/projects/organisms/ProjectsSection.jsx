@@ -29,7 +29,7 @@ function ProjectsSection() {
         </a>
       </StopPanel>
       {projectStops.map((stop) => (
-        <StopPanel key={stop.id} stopId={stop.id}>
+        <StopPanel key={stop.id} stopId={stop.id} variant="wide">
           <ProjectPanel project={PROJECTS[stop.itemIndex]} />
         </StopPanel>
       ))}

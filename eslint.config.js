@@ -1,10 +1,11 @@
 import js from '@eslint/js';
+import storybook from 'eslint-plugin-storybook';
 import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import {defineConfig, globalIgnores} from 'eslint/config';
 
-export default defineConfig([globalIgnores(['dist']), {
+export default defineConfig([globalIgnores(['dist', 'storybook-static']), {
   files: ['**/*.{js,jsx}'],
   extends: [
     js.configs.recommended,
@@ -23,4 +24,4 @@ export default defineConfig([globalIgnores(['dist']), {
     'prefer-const': 'error',
     'no-unused-vars': ['error', {varsIgnorePattern: '^[A-Z_]'}],
   },
-}]);
+}, ...storybook.configs['flat/recommended']]);

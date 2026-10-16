@@ -1,6 +1,8 @@
 import {lazy, Suspense} from 'react';
 import {motion} from 'framer-motion';
 import SceneLabels from '../molecules/SceneLabels';
+import ErrorBoundary from '../../../components/ui/ErrorBoundary';
+import {isWebGLAvailable} from '../../../utils/webgl';
 
 const JourneyScene = lazy(() => import('./JourneyScene'));
 
@@ -16,15 +18,21 @@ const sceneEntrance = {
   transition: {duration: 1.6, delay: 0.2},
 };
 
+const canRenderScene = isWebGLAvailable();
+
 function SceneBackdrop() {
   return (
     <div className={styles.layer} aria-hidden>
-      <Suspense fallback={null}>
-        <motion.div className={styles.frame} {...sceneEntrance}>
-          <JourneyScene />
-          <SceneLabels />
-        </motion.div>
-      </Suspense>
+      {canRenderScene && (
+        <ErrorBoundary>
+          <Suspense fallback={null}>
+            <motion.div className={styles.frame} {...sceneEntrance}>
+              <JourneyScene />
+              <SceneLabels />
+            </motion.div>
+          </Suspense>
+        </ErrorBoundary>
+      )}
       <div className={styles.fade} />
     </div>
   );

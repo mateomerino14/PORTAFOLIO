@@ -3,6 +3,7 @@ import {motion} from 'framer-motion';
 import SceneLabels from '../molecules/SceneLabels';
 import ErrorBoundary from '../../../components/ui/ErrorBoundary';
 import {isWebGLAvailable} from '../../../utils/webgl';
+import {useActiveStopIndex, useHoveredTech} from '../../journey/hooks/useJourneyState';
 
 const JourneyScene = lazy(() => import('./JourneyScene'));
 
@@ -21,14 +22,16 @@ const sceneEntrance = {
 const canRenderScene = isWebGLAvailable();
 
 function SceneBackdrop() {
+  const activeIndex = useActiveStopIndex();
+  const hoveredTech = useHoveredTech();
   return (
     <div className={styles.layer} aria-hidden>
       {canRenderScene && (
         <ErrorBoundary>
           <Suspense fallback={null}>
             <motion.div className={styles.frame} {...sceneEntrance}>
-              <JourneyScene />
-              <SceneLabels />
+              <JourneyScene activeIndex={activeIndex} />
+              <SceneLabels activeIndex={activeIndex} hoveredTech={hoveredTech} />
             </motion.div>
           </Suspense>
         </ErrorBoundary>

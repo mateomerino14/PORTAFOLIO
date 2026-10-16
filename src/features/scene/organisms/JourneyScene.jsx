@@ -15,7 +15,7 @@ import {CAMERA_CONFIG, PIXEL_RATIO_RANGE, RENDERER_OPTIONS, SCENE_LIGHTS} from '
 const ambientIntensity = 0.4;
 const heroStopIndex = 0;
 
-function JourneyScene() {
+function JourneyScene({activeIndex}) {
   const layout = useJourneyLayout();
   const isReducedMotion = useMediaQuery(MEDIA_QUERIES.reducedMotion);
   return (
@@ -26,9 +26,9 @@ function JourneyScene() {
       ))}
       <JourneyCamera positions={layout.positions} isReducedMotion={isReducedMotion} />
       <AmbientField />
-      <JourneyRoute layout={layout} />
+      <JourneyRoute layout={layout} activeIndex={activeIndex} />
       <TechLinks positions={layout.positions} techPositions={layout.techPositions} />
-      <JourneyNodes layout={layout} />
+      <JourneyNodes layout={layout} activeIndex={activeIndex} />
       <TravelPulse positions={layout.positions} isReducedMotion={isReducedMotion} />
       <LabelProjector anchors={layout.anchors} />
       <CoreSphere position={layout.positions[heroStopIndex]} isReducedMotion={isReducedMotion} />

@@ -1,4 +1,3 @@
-import {useActiveStopIndex} from '../../journey/hooks/useJourneyState';
 import useNodeFade from '../hooks/useNodeFade';
 import {STOP_LEVELS} from '../../../utils/journey';
 import {NODE_COLORS, NODE_SIZES} from '../constants/sceneConfig';
@@ -22,8 +21,7 @@ const nodeRadius = (stop) => {
   return NODE_SIZES.branch;
 };
 
-function JourneyNodes({layout}) {
-  const activeIndex = useActiveStopIndex();
+function JourneyNodes({layout, activeIndex}) {
   const {stops, positions} = layout;
   const registerNode = useNodeFade(positions);
 

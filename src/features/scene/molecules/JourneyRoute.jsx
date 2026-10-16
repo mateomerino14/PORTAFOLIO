@@ -1,10 +1,8 @@
 import {useMemo} from 'react';
-import {useActiveStopIndex} from '../../journey/hooks/useJourneyState';
 import {COLORS} from '../../../constants';
 import {ROUTE_STYLE} from '../constants/sceneConfig';
 
-function JourneyRoute({layout}) {
-  const activeIndex = useActiveStopIndex();
+function JourneyRoute({layout, activeIndex}) {
   const {positions, routeEdges, spokeGeometry, createSegmentsGeometry} = layout;
 
   const geometries = useMemo(() => ({

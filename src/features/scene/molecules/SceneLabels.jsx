@@ -1,6 +1,5 @@
 import {labelRegistry} from '../store/labelRegistry';
 import {stopLabelId, techLabelId} from '../constants/labelIds';
-import {useActiveStopIndex, useHoveredTech} from '../../journey/hooks/useJourneyState';
 import {JOURNEY_STOPS} from '../../journey/constants/journeyStops';
 import {TECH_NODES} from '../../journey/constants/techLinks';
 import {SECTION_IDS} from '../../../constants/navigation';
@@ -33,9 +32,7 @@ const isStopLabelVisible = (stop, index, activeIndex) => {
   return Math.abs(index - activeIndex) <= LABEL_RANGE;
 };
 
-function SceneLabels() {
-  const activeIndex = useActiveStopIndex();
-  const hoveredTech = useHoveredTech();
+function SceneLabels({activeIndex, hoveredTech}) {
   const isAtStack = JOURNEY_STOPS[activeIndex].id === SECTION_IDS.stack;
 
   return (

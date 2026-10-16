@@ -1,37 +1,11 @@
-import {useRef} from 'react';
-import {useFrame} from '@react-three/fiber';
-import {journeyStore} from '../../journey/store/journeyStore';
+import useTravelPulse, {HIDDEN_SCALE} from '../hooks/useTravelPulse';
 import {COLORS} from '../../../constants';
-import {CAMERA_MOTION, PULSE_STYLE} from '../constants/sceneConfig';
-import {splitProgress} from '../../../utils/journey';
-
-const hiddenScale = 0;
+import {PULSE_STYLE} from '../constants/sceneConfig';
 
 function TravelPulse({positions, isReducedMotion}) {
-  const pulseRef = useRef(null);
-  const lastIndex = positions.length - 1;
-
-  useFrame(() => {
-    const pulse = pulseRef.current;
-    if (!pulse) {
-      return;
-    }
-    if (isReducedMotion) {
-      pulse.scale.setScalar(hiddenScale);
-      return;
-    }
-    const {from, to, travel} = splitProgress(journeyStore.getProgress(), lastIndex, CAMERA_MOTION.dwell);
-    const isTravelling = from !== to && travel > PULSE_STYLE.visibleFrom && travel < PULSE_STYLE.visibleTo;
-    if (!isTravelling) {
-      pulse.scale.setScalar(hiddenScale);
-      return;
-    }
-    pulse.position.lerpVectors(positions[from], positions[to], travel);
-    pulse.scale.setScalar(1 + Math.sin(travel * Math.PI) * (PULSE_STYLE.maxScale - 1));
-  });
-
+  const pulseRef = useTravelPulse(positions, isReducedMotion);
   return (
-    <mesh ref={pulseRef} scale={hiddenScale}>
+    <mesh ref={pulseRef} scale={HIDDEN_SCALE}>
       <sphereGeometry args={[PULSE_STYLE.radius, PULSE_STYLE.segments, PULSE_STYLE.segments]} />
       <meshBasicMaterial color={COLORS.signal} toneMapped={false} />
     </mesh>

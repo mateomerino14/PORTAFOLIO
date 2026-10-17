@@ -9,7 +9,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Galería con miniaturas para cambiar de imagen. Al tocar la imagen principal se abre ampliada; se cierra con un clic o con Escape. Con `fit="contain"` muestra la imagen completa, útil para fotos verticales.',
+        component: 'Galería con miniaturas para cambiar de imagen. Avanza sola cada 5 segundos con un fundido suave mientras está a la vista; se pausa al pasar el cursor, al abrirla o si el sistema pide menos movimiento. Al tocar la imagen principal se abre ampliada; se cierra con un clic o con Escape. Con `fit="contain"` muestra la imagen completa, útil para fotos verticales.',
       },
     },
   },

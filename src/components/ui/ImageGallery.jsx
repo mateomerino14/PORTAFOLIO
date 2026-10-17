@@ -6,13 +6,15 @@ import {publicAsset} from '../../utils/assets';
 
 const styles = {
   figure: 'flex flex-col gap-2',
-  frame: 'group relative block w-full cursor-zoom-in overflow-hidden rounded-xl border border-line bg-ink-raised',
-  imageCover: 'aspect-[16/10] w-full object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]',
-  imageContain: 'aspect-[4/3] w-full object-contain transition-transform duration-500 group-hover:scale-[1.02]',
+  frameCover: 'group relative block aspect-[16/10] w-full cursor-zoom-in overflow-hidden rounded-xl border border-line bg-ink-raised',
+  frameContain: 'group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-xl border border-line bg-ink-raised',
+  imageCover: 'absolute inset-0 h-full w-full object-cover object-top',
+  imageContain: 'absolute inset-0 h-full w-full object-contain',
   expandHint: 'absolute top-2 right-2 grid h-8 w-8 place-items-center rounded-lg bg-ink/80 text-paper opacity-0 transition-opacity group-hover:opacity-100',
   thumbs: 'flex gap-2 overflow-x-auto pb-1',
-  thumb: 'h-12 w-20 shrink-0 cursor-pointer overflow-hidden rounded-md border border-line opacity-60 transition-opacity hover:opacity-100',
-  activeThumb: 'h-12 w-20 shrink-0 cursor-pointer overflow-hidden rounded-md border-2 border-accent',
+  thumb: 'relative h-12 w-20 shrink-0 cursor-pointer overflow-hidden rounded-md border border-line opacity-60 transition-opacity hover:opacity-100',
+  activeThumb: 'relative h-12 w-20 shrink-0 cursor-pointer overflow-hidden rounded-md border-2 border-accent',
+  progress: 'absolute bottom-0 left-0 h-0.5 bg-accent',
   thumbImageCover: 'h-full w-full object-cover object-top',
   thumbImageContain: 'h-full w-full object-cover object-center',
   caption: 'text-xs text-fog',
@@ -28,9 +30,19 @@ const closeIconSize = 20;
 const overlayMotion = {initial: {opacity: 0}, animate: {opacity: 1}, exit: {opacity: 0}};
 
 const fitStyles = {
-  cover: {image: styles.imageCover, thumb: styles.thumbImageCover},
-  contain: {image: styles.imageContain, thumb: styles.thumbImageContain},
+  cover: {frame: styles.frameCover, image: styles.imageCover, thumb: styles.thumbImageCover},
+  contain: {frame: styles.frameContain, image: styles.imageContain, thumb: styles.thumbImageContain},
 };
+
+const slideMotion = {
+  initial: {opacity: 0, scale: 1.04},
+  animate: {opacity: 1, scale: 1},
+  exit: {opacity: 0},
+  transition: {duration: 0.7, ease: 'easeOut'},
+};
+const millisecondsPerSecond = 1000;
+const progressStart = {width: '0%'};
+const progressEnd = {width: '100%'};
 
 const thumbClass = (isActive) => {
   if (isActive) {
@@ -40,13 +52,16 @@ const thumbClass = (isActive) => {
 };
 
 function ImageGallery({images, note, title, fit = 'cover'}) {
-  const {activeIndex, isExpanded, select, expand, collapse} = useGallery();
+  const {containerRef, activeIndex, isExpanded, isPlaying, autoplayMs, select, expand, collapse, pause, resume} = useGallery(images.length);
   const activeImage = images[activeIndex];
   const fitStyle = fitStyles[fit];
+  const progressTransition = {duration: autoplayMs / millisecondsPerSecond, ease: 'linear'};
   return (
-    <figure className={styles.figure}>
-      <button type="button" className={styles.frame} onClick={expand} aria-label={`Ampliar imagen: ${activeImage.caption}`}>
-        <img src={publicAsset(activeImage.src)} alt={`${title}: ${activeImage.caption}`} loading="lazy" className={fitStyle.image} />
+    <figure ref={containerRef} className={styles.figure} onMouseEnter={pause} onMouseLeave={resume} onFocus={pause} onBlur={resume}>
+      <button type="button" className={fitStyle.frame} onClick={expand} aria-label={`Ampliar imagen: ${activeImage.caption}`}>
+        <AnimatePresence initial={false}>
+          <motion.img key={activeImage.src} src={publicAsset(activeImage.src)} alt={`${title}: ${activeImage.caption}`} loading="lazy" className={fitStyle.image} {...slideMotion} />
+        </AnimatePresence>
         <span className={styles.expandHint}><Expand size={expandIconSize} /></span>
       </button>
       {images.length > 1 && (
@@ -54,6 +69,9 @@ function ImageGallery({images, note, title, fit = 'cover'}) {
           {images.map((image, position) => (
             <button key={image.src} type="button" className={thumbClass(position === activeIndex)} onClick={() => select(position)} aria-label={image.caption}>
               <img src={publicAsset(image.src)} alt="" loading="lazy" className={fitStyle.thumb} />
+              {isPlaying && position === activeIndex && (
+                <motion.span key={activeIndex} className={styles.progress} initial={progressStart} animate={progressEnd} transition={progressTransition} />
+              )}
             </button>
           ))}
         </div>

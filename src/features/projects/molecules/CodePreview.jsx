@@ -19,7 +19,7 @@ function CodePreview({file, language, code}) {
         </div>
         <pre className={styles.code}><code>{code}</code></pre>
       </div>
-      <p className={styles.note}>Fragmento del código del repositorio.</p>
+      <p className={styles.note}>Fragmento real del código del proyecto.</p>
     </div>
   );
 }

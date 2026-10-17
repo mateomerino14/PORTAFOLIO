@@ -1,4 +1,4 @@
-import {ChevronRight} from 'lucide-react';
+import {ChevronRight, Lock} from 'lucide-react';
 import TechList from '../../../components/ui/TechList';
 import ProjectLink from '../atoms/ProjectLink';
 import ProjectMedia from './ProjectMedia';
@@ -14,10 +14,12 @@ const styles = {
   highlight: 'flex items-start gap-2',
   bullet: 'mt-0.5 shrink-0 text-signal',
   tags: 'mt-5',
-  links: 'mt-6 flex flex-wrap gap-5 text-sm font-semibold',
+  links: 'mt-6 flex flex-wrap items-center gap-5 text-sm font-semibold',
+  privateCode: 'inline-flex items-center gap-1.5 rounded-full border border-line px-3 py-1 font-mono text-[11px] font-normal text-fog',
 };
 
 const bulletSize = 16;
+const lockSize = 12;
 const metaSeparator = ' · ';
 
 function ProjectPanel({project}) {
@@ -42,6 +44,12 @@ function ProjectPanel({project}) {
         <TechList items={project.tags} className={styles.tags} />
         <div className={styles.links}>
           {project.links.map((link) => <ProjectLink key={link.href} href={link.href} label={link.label} />)}
+          {project.isPrivateCode && (
+            <span className={styles.privateCode}>
+              <Lock size={lockSize} aria-hidden="true" />
+              Código privado
+            </span>
+          )}
         </div>
       </div>
       <div className={styles.media}>

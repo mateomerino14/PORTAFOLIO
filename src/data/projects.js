@@ -20,10 +20,8 @@ export const PROJECTS = [
       'Resumen de pendientes por correo programado por el administrador',
     ],
     tags: ['React', 'Node.js', 'Express', 'Supabase', 'Gemini', 'Storybook'],
-    links: [
-      {label: 'Frontend', href: `${githubUrl}/SCV-Frontend`},
-      {label: 'Backend', href: `${githubUrl}/SCV-Backend`},
-    ],
+    links: [],
+    isPrivateCode: true,
     media: [
       {
         type: MEDIA_TYPES.gallery,
@@ -52,6 +50,7 @@ export const PROJECTS = [
     ],
     tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron', 'Python'],
     links: [{label: 'Versión de escritorio', href: `${githubUrl}/APLICACION-CAFE-BAR`}],
+    isPrivateCode: true,
     media: [
       {
         type: MEDIA_TYPES.gallery,
@@ -78,7 +77,8 @@ export const PROJECTS = [
       'Pruebas automáticas y revisión de estándares en cada Pull Request',
     ],
     tags: ['React', 'Express', 'PostgreSQL', 'Electron', 'Vitest'],
-    links: [{label: 'Código', href: `${githubUrl}/BRASA-BRAVA`}],
+    links: [],
+    isPrivateCode: true,
     media: [
       {
         type: MEDIA_TYPES.gallery,
@@ -104,7 +104,8 @@ export const PROJECTS = [
       'Segmentación de líneas y análisis estadístico de errores',
     ],
     tags: ['Python', 'TrOCR', 'PaddleOCR', 'Tesseract'],
-    links: [{label: 'Código', href: `${githubUrl}/prototipo-htr-codigo-manuscrito`}],
+    links: [],
+    isPrivateCode: true,
     media: [
       {
         type: MEDIA_TYPES.code,

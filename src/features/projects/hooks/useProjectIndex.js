@@ -28,6 +28,8 @@ function useProjectIndex() {
       meta: [project.context, project.kind].join(metaSeparator),
       thumbnail: coverImage(project),
       icon: FileCode,
+      highlights: project.highlights,
+      tags: project.tags,
     };
   }), [projectStops]);
 }

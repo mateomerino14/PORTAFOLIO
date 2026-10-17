@@ -10,7 +10,9 @@ function useTimelineIndex() {
   const projectIndex = useProjectIndex();
   return useMemo(() => timelineStops.map((stop) => {
     const entry = TIMELINE[stop.itemIndex];
-    const relatedProjects = projectIndex.filter((project) => entry.projects?.includes(project.label));
+    const relatedProjects = projectIndex
+      .filter((project) => entry.projects?.includes(project.label))
+      .map((project) => ({...project, thumbnail: null}));
     return {
       id: stop.id,
       label: stop.label,

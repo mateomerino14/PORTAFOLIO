@@ -1,10 +1,10 @@
 import {Clock, MapPin} from 'lucide-react';
 import useLocalTime from '../../../hooks/shared/useLocalTime';
-import {publicAsset} from '../../../utils/assets';
 
 const styles = {
   card: 'overflow-hidden rounded-2xl border border-line bg-ink-soft/90 backdrop-blur-md',
-  photo: 'aspect-[4/3] w-full object-cover object-[50%_20%]',
+  header: 'flex items-center gap-4 border-b border-line p-5',
+  avatar: 'grid h-16 w-16 shrink-0 place-items-center rounded-2xl bg-gradient-to-br from-accent to-signal font-display text-2xl font-extrabold text-ink',
   body: 'space-y-4 p-5',
   name: 'font-display text-xl font-extrabold text-paper',
   role: 'mt-0.5 text-sm text-accent',
@@ -19,16 +19,18 @@ const styles = {
 
 const factIconSize = 15;
 
-function ContactCard({name, role, photo, location, city, timeZone, availability}) {
+function ContactCard({name, initials, role, location, city, timeZone, availability}) {
   const localTime = useLocalTime(timeZone);
   return (
     <aside className={styles.card}>
-      <img src={publicAsset(photo)} alt={name} loading="lazy" className={styles.photo} />
-      <div className={styles.body}>
+      <div className={styles.header}>
+        <span className={styles.avatar} aria-hidden="true">{initials}</span>
         <div>
           <p className={styles.name}>{name}</p>
           <p className={styles.role}>{role}</p>
         </div>
+      </div>
+      <div className={styles.body}>
         <ul className={styles.facts}>
           <li className={styles.fact}>
             <MapPin size={factIconSize} className={styles.factIcon} aria-hidden="true" />

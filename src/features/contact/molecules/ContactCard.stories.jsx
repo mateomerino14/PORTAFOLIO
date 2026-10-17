@@ -7,7 +7,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Tarjeta de contacto con foto, ubicación, la hora local actualizada y para qué estoy disponible.',
+        component: 'Tarjeta de contacto con iniciales, ubicación, la hora local actualizada y para qué estoy disponible.',
       },
     },
   },
@@ -15,7 +15,7 @@ export default {
   args: {
     name: PROFILE.name,
     role: PROFILE.roles[0],
-    photo: PROFILE.photo,
+    initials: PROFILE.initials,
     location: PROFILE.location,
     city: PROFILE.city,
     timeZone: PROFILE.timeZone,

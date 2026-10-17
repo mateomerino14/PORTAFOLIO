@@ -6,7 +6,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Vista previa de un proyecto con su captura principal. Al tocarla lleva a la parada del proyecto en el recorrido.',
+        component: 'Vista previa de un proyecto con sus logros y tecnologías. Al tocarla lleva a la parada del proyecto en el recorrido.',
       },
     },
   },
@@ -16,7 +16,8 @@ export default {
       id: 'proyecto-1',
       label: 'Sistema de Control de Viáticos',
       meta: 'Pasantía · MAXAM · Web full stack',
-      thumbnail: 'projects/viaticos/inicio-sesion.webp',
+      highlights: ['Extracción automática de datos de comprobantes con IA', 'Generación de memorándums, planillas y recibos en PDF y Excel'],
+      tags: ['React', 'Node.js', 'Express', 'Supabase'],
     },
   },
 };

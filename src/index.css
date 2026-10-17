@@ -30,6 +30,33 @@ body {
   overflow-x: hidden;
 }
 
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-line) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-line);
+  border-radius: 9999px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-fog);
+}
+
+*::-webkit-scrollbar-button {
+  display: none;
+}
+
 ::selection {
   background: var(--color-accent);
   color: var(--color-ink);

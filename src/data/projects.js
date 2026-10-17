@@ -49,7 +49,7 @@ export const PROJECTS = [
       'Instalación local con Electron y PostgreSQL embebido, sin depender de internet',
     ],
     tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron', 'Python'],
-    links: [{label: 'Versión de escritorio', href: `${githubUrl}/APLICACION-CAFE-BAR`}],
+    links: [],
     isPrivateCode: true,
     media: [
       {

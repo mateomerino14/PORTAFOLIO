@@ -40,7 +40,7 @@ export const PROJECTS = [
   {
     title: 'Sistema de Gestión para Café-Bar',
     cover: 'projects/cafe-bar/mesas.webp',
-    context: 'Cliente freelance',
+    context: 'Cliente freelance · Entregado',
     kind: 'Escritorio y web',
     description: 'Sistema para controlar ventas, mesas, inventario, cocina y empleados de un café-bar. Empezó como aplicación de escritorio y lo migré a una aplicación web.',
     highlights: [
@@ -67,7 +67,7 @@ export const PROJECTS = [
   },
   {
     title: 'Brasa Brava',
-    context: 'Restaurante',
+    context: 'Cliente freelance · En curso',
     kind: 'Web y escritorio',
     description: 'Sistema interno de un restaurante: caja, cocina, catálogo, stock, mesas, promociones y empleados. El mismo código funciona en la web y como aplicación de escritorio.',
     highlights: [
@@ -149,9 +149,35 @@ def cer(referencia, hipotesis):
         label: 'Capturas',
         note: 'Capturas del frontend real con datos ficticios.',
         images: [
+          {src: 'projects/gestor-portafolios/inicio-sesion.webp', caption: 'Inicio de sesión'},
           {src: 'projects/gestor-portafolios/portada.webp', caption: 'Portada para buscar y verificar perfiles'},
           {src: 'projects/gestor-portafolios/certificados.webp', caption: 'Área de certificados en el perfil público'},
-          {src: 'projects/gestor-portafolios/inicio-sesion.webp', caption: 'Inicio de sesión'},
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Sitio web del Centro MEMI',
+    context: 'Universidad',
+    kind: 'Sitio institucional',
+    description: 'Sitio web institucional del Centro de Mejoramiento de la Enseñanza de la Matemática e Informática de la FCyT-UMSS: el centro, sus cursos, publicaciones, servicios y la sección ICPC UMSS.',
+    highlights: [
+      'Diseño mobile first, adaptable a celular, tablet y escritorio',
+      'Carrusel de novedades, menú con submenús y filtros de publicaciones',
+      'Formularios para registrar cursos, publicaciones, afiches y fotos',
+    ],
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    links: [{label: 'Código', href: `${githubUrl}/CENTRO-MEMI-WEBSITE`}],
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Capturas',
+        note: 'Capturas del sitio funcionando con su propio contenido.',
+        images: [
+          {src: 'projects/centro-memi/inicio.webp', caption: 'Portada con el lema del centro y acceso a la navegación'},
+          {src: 'projects/centro-memi/mision-vision.webp', caption: 'Misión, visión y valores del centro'},
+          {src: 'projects/centro-memi/cursos.webp', caption: 'Cursos y seminarios con su formulario de registro'},
+          {src: 'projects/centro-memi/servicios.webp', caption: 'Servicios que ofrece el centro'},
         ],
       },
     ],
@@ -175,6 +201,32 @@ def cer(referencia, hipotesis):
         note: 'Diagrama de ejemplo cargado con el importador JSON del propio editor.',
         images: [
           {src: 'projects/diagramador/editor.webp', caption: 'Editor con figuras, decisiones Sí/No y conexiones ortogonales'},
+        ],
+      },
+    ],
+  },
+  {
+    title: 'Landing page Academia Digital Pro',
+    context: 'Proyecto web',
+    kind: 'Landing page',
+    description: 'Landing page para promocionar una plataforma de cursos online, pensada para convertir visitas en inscripciones.',
+    highlights: [
+      'Fondo animado con esferas de luz y efecto de vidrio',
+      'Animaciones al hacer scroll con Intersection Observer',
+      'Secciones de estadísticas, beneficios y llamados a la acción',
+    ],
+    tags: ['HTML', 'CSS', 'JavaScript'],
+    links: [{label: 'Código', href: `${githubUrl}/PRIMERA-LANDING-PAGE`}],
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Capturas',
+        note: 'El video de la portada se carga desde YouTube y no aparece en la captura.',
+        images: [
+          {src: 'projects/landing-academia/inicio.webp', caption: 'Portada con la propuesta principal'},
+          {src: 'projects/landing-academia/estadisticas.webp', caption: 'Llamado a la acción y estadísticas clave'},
+          {src: 'projects/landing-academia/beneficios.webp', caption: 'Beneficios en tarjetas con efecto de vidrio'},
+          {src: 'projects/landing-academia/llamado.webp', caption: 'Cierre con el llamado a la acción final'},
         ],
       },
     ],

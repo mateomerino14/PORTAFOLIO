@@ -21,28 +21,25 @@ const buildDetailStat = (totalHours, topicCount) => {
   return {value: topicCount, label: 'Temas'};
 };
 
-function useCertificationSummary(group, {compact, showCertificates}) {
+function useCertificationSummary(group, overview) {
   return useMemo(() => {
     const totalHours = group.items.reduce((total, item) => total + item.hours, 0);
-    const hourItems = group.items.filter((item) => item.hours > 0).sort((first, second) => second.hours - first.hours);
-    const maxHours = Math.max(0, ...hourItems.map((item) => item.hours));
     const certificates = group.items.filter((item) => item.image).map((item) => ({src: item.image, caption: item.name}));
-    const hasCertificates = showCertificates && certificates.length > 0;
     const topics = [...new Set(group.items.flatMap((item) => item.topics ?? [item.tech]))];
-    const detailStat = buildDetailStat(totalHours, topics.length);
+    const hasCertificates = !overview && certificates.length > 0;
     return {
       certificates,
       hasCertificates,
-      isCompact: compact || hasCertificates,
+      showTopicTiles: !overview && !hasCertificates,
+      showTopicTags: overview,
+      showIssuers: overview,
       count: group.items.length,
-      totalHours,
       period: formatPeriod(yearsOf(group.items)),
       topics,
-      detailStat,
+      detailStat: buildDetailStat(totalHours, topics.length),
       issuers: [...new Set(group.items.flatMap((item) => item.issuer.split(issuerSeparator)).filter(Boolean))],
-      hourBars: hourItems.map((item) => ({name: item.name, hours: item.hours, ratio: item.hours / maxHours})),
     };
-  }, [group, compact, showCertificates]);
+  }, [group, overview]);
 }
 
 export default useCertificationSummary;

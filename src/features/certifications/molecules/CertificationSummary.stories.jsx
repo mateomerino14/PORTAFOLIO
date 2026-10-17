@@ -1,7 +1,7 @@
 import CertificationSummary from './CertificationSummary';
 import {CERTIFICATION_GROUPS} from '../../../data/certifications';
 
-const [professional, diplomas, courses] = CERTIFICATION_GROUPS;
+const [professional, , courses] = CERTIFICATION_GROUPS;
 
 export default {
   title: 'Certifications/Molecules/CertificationSummary',
@@ -9,7 +9,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Resumen visual de un grupo de certificaciones: cantidad, horas y periodo, los temas con su ícono, las horas de cada certificado y quién los emitió. En modo compacto muestra los temas como etiquetas y omite las horas por certificado. Con `showCertificates` agrega una galería con las imágenes de los certificados.',
+        component: 'Resumen de un grupo de certificaciones. En un grupo muestra sus certificados escaneados y tres cifras; si no hay certificados, los temas con su ícono. En modo `overview` resume todas las certificaciones con sus temas y quién las emitió.',
       },
     },
   },
@@ -17,20 +17,12 @@ export default {
   args: {group: courses},
 };
 
-export const Courses = {};
+export const WithCertificates = {};
 
-export const Diplomas = {
-  args: {group: diplomas},
-};
-
-export const WithoutHours = {
+export const WithoutCertificates = {
   args: {group: professional},
 };
 
-export const Compact = {
-  args: {group: {group: 'Todas', items: CERTIFICATION_GROUPS.flatMap((group) => group.items)}, compact: true},
-};
-
-export const WithCertificates = {
-  args: {group: courses, showCertificates: true},
+export const Overview = {
+  args: {group: {group: 'Todas', items: CERTIFICATION_GROUPS.flatMap((group) => group.items)}, overview: true},
 };

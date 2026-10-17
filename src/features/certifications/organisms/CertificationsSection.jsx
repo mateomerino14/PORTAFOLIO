@@ -25,7 +25,7 @@ function CertificationsSection() {
             <p className={styles.intro}>Diplomados, cursos y certificaciones profesionales que complementan mi formación.</p>
             <StopIndex items={groupStops} />
           </div>
-          <CertificationSummary group={allCertifications} compact />
+          <CertificationSummary group={allCertifications} overview />
         </div>
       </StopPanel>
       {groupStops.map((stop) => (

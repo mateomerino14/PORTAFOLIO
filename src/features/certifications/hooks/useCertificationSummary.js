@@ -2,16 +2,14 @@ import {useMemo} from 'react';
 
 const issuerSeparator = ' · ';
 const yearPattern = /\d{4}/;
-const rangeSeparator = '–';
-const shortYearStart = 2;
 
 const yearsOf = (items) => [...new Set(items.map((item) => item.date.match(yearPattern)[0]))].sort();
 
-const formatPeriod = (years) => {
+const buildPeriodStat = (years) => {
   if (years.length === 1) {
-    return years[0];
+    return {value: years[0], label: 'Periodo'};
   }
-  return `${years[0]}${rangeSeparator}${years[years.length - 1].slice(shortYearStart)}`;
+  return {value: years[0], label: 'Desde'};
 };
 
 const buildDetailStat = (totalHours, topicCount) => {
@@ -33,10 +31,12 @@ function useCertificationSummary(group, overview) {
       showTopicTiles: !overview && !hasCertificates,
       showTopicTags: overview,
       showIssuers: overview,
-      count: group.items.length,
-      period: formatPeriod(yearsOf(group.items)),
       topics,
-      detailStat: buildDetailStat(totalHours, topics.length),
+      stats: [
+        {value: group.items.length, label: 'Certificados'},
+        buildDetailStat(totalHours, topics.length),
+        buildPeriodStat(yearsOf(group.items)),
+      ],
       issuers: [...new Set(group.items.flatMap((item) => item.issuer.split(issuerSeparator)).filter(Boolean))],
     };
   }, [group, overview]);

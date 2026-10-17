@@ -1,3 +1,5 @@
+import StatTiles from '../../../components/ui/StatTiles';
+
 const styles = {
   wrapper: 'grid grid-cols-[minmax(0,1fr)] gap-3',
   chart: 'rounded-xl border border-line bg-ink-soft p-4',
@@ -10,10 +12,6 @@ const styles = {
   point: 'absolute top-1/2 h-3.5 w-3.5 -translate-x-1/2 -translate-y-1/2 rotate-45 rounded-[3px] bg-paper shadow-[0_0_10px] shadow-paper/50',
   axis: 'relative mt-3 ml-[calc(7.5rem+0.75rem)] h-4 border-t border-line',
   tick: 'absolute top-1 -translate-x-1/2 font-mono text-[10px] text-fog',
-  stats: 'grid grid-cols-3 gap-2',
-  stat: 'rounded-xl border border-line bg-ink-soft px-3 py-2.5',
-  statValue: 'block font-display text-xl font-extrabold text-paper md:text-2xl',
-  statLabel: 'mt-0.5 block font-mono text-[10px] tracking-wider text-fog uppercase',
 };
 
 const barColors = {
@@ -45,20 +43,7 @@ function TimelineOverview({overview}) {
           ))}
         </div>
       </div>
-      <div className={styles.stats}>
-        <div className={styles.stat}>
-          <span className={styles.statValue}>{overview.stages}</span>
-          <span className={styles.statLabel}>Etapas</span>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.statValue}>{overview.since}</span>
-          <span className={styles.statLabel}>Desde</span>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.statValue}>{overview.awards}</span>
-          <span className={styles.statLabel}>Premios</span>
-        </div>
-      </div>
+      <StatTiles stats={overview.stats} />
     </div>
   );
 }

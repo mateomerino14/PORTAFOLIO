@@ -1,14 +1,11 @@
 import TechIcon from '../../../components/ui/TechIcon';
 import TechList from '../../../components/ui/TechList';
 import ImageGallery from '../../../components/ui/ImageGallery';
+import StatTiles from '../../../components/ui/StatTiles';
 import useCertificationSummary from '../hooks/useCertificationSummary';
 
 const styles = {
   wrapper: 'flex flex-col gap-4',
-  stats: 'grid grid-cols-3 gap-2',
-  stat: 'rounded-xl border border-line bg-ink-soft px-3 py-2.5',
-  statValue: 'block font-display text-xl font-extrabold text-paper md:text-2xl',
-  statLabel: 'mt-0.5 block font-mono text-[10px] tracking-wider text-fog uppercase',
   sectionTitle: 'mb-2 font-mono text-[11px] tracking-widest text-fog uppercase',
   topics: 'grid grid-cols-3 gap-2 sm:grid-cols-4',
   topic: 'flex flex-col items-center gap-1.5 rounded-xl border border-line bg-ink-soft px-2 py-2.5 text-center',
@@ -29,20 +26,7 @@ function CertificationSummary({group, overview = false}) {
   return (
     <div className={styles.wrapper}>
       {summary.hasCertificates && <ImageGallery images={summary.certificates} title={group.group} fit="contain" />}
-      <div className={styles.stats}>
-        <div className={styles.stat}>
-          <span className={styles.statValue}>{summary.count}</span>
-          <span className={styles.statLabel}>Certificados</span>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.statValue}>{summary.detailStat.value}</span>
-          <span className={styles.statLabel}>{summary.detailStat.label}</span>
-        </div>
-        <div className={styles.stat}>
-          <span className={styles.statValue}>{summary.period}</span>
-          <span className={styles.statLabel}>Periodo</span>
-        </div>
-      </div>
+      <StatTiles stats={summary.stats} />
       {summary.showTopicTiles && (
         <ul className={styles.topics}>
           {summary.topics.map((topic) => (

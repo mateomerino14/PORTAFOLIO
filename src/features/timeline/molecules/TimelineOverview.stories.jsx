@@ -13,9 +13,7 @@ export default {
   decorators: [(Story) => <div className="w-[26rem]"><Story /></div>],
   args: {
     overview: {
-      stages: 4,
-      since: 2023,
-      awards: 1,
+      stats: [{value: 4, label: 'Etapas'}, {value: 2023, label: 'Desde'}, {value: 1, label: 'Premios'}],
       years: [{year: 2023, offset: 0}, {year: 2024, offset: 25}, {year: 2025, offset: 50}, {year: 2026, offset: 75}, {year: 2027, offset: 100}],
       rows: [
         {title: 'Licenciatura en Informática', type: 'education', isPoint: false, left: 0, width: 100},

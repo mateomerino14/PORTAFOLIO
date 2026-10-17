@@ -5,9 +5,9 @@ import {STAT_ICONS} from '../constants/statIcons';
 const styles = {
   tilt: 'h-full rounded-xl',
   card: 'relative flex h-full flex-col justify-between gap-3 overflow-hidden rounded-xl border border-line bg-ink-soft p-4',
-  header: 'flex items-start justify-between gap-2',
-  value: 'font-display text-2xl font-extrabold text-paper md:text-3xl',
-  badge: 'grid h-8 w-8 shrink-0 place-items-center rounded-lg bg-accent/15 text-accent',
+  header: 'flex min-w-0 items-start justify-between gap-2',
+  value: 'min-w-0 font-display text-xl font-extrabold whitespace-nowrap text-paper sm:text-2xl md:text-3xl',
+  badge: 'grid h-7 w-7 shrink-0 place-items-center rounded-lg bg-accent/15 text-accent sm:h-8 sm:w-8',
   watermark: 'pointer-events-none absolute -right-4 -bottom-4 text-accent/5',
   label: 'relative text-xs leading-snug text-fog',
 };

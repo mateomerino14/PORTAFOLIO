@@ -13,9 +13,11 @@ function useTimelineOverview() {
     const span = lastYear - firstYear;
     const toPercent = (value) => (value - firstYear) / span * percent;
     return {
-      stages: TIMELINE.length,
-      since: firstYear,
-      awards: TIMELINE.filter((entry) => entry.type === awardType).length,
+      stats: [
+        {value: TIMELINE.length, label: 'Etapas'},
+        {value: firstYear, label: 'Desde'},
+        {value: TIMELINE.filter((entry) => entry.type === awardType).length, label: 'Premios'},
+      ],
       years: Array.from({length: span + 1}, (_, index) => ({year: firstYear + index, offset: index / span * percent})),
       rows: [...periods].sort((first, second) => first.start - second.start).map((item) => ({
         title: item.entry.title,

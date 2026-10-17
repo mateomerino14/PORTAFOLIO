@@ -4,7 +4,7 @@ const styles = {
   row: 'flex items-center gap-3 border-t border-line py-3 first:border-t-0',
   icon: 'grid h-9 w-9 shrink-0 place-items-center rounded-lg border border-line bg-ink-raised',
   body: 'min-w-0 flex-1',
-  name: 'text-sm leading-snug font-semibold text-paper',
+  name: 'text-sm leading-snug font-semibold wrap-break-word text-paper',
   details: 'mt-0.5 text-xs text-fog',
   aside: 'shrink-0 text-right font-mono text-xs text-fog',
   hours: 'text-signal',

@@ -42,8 +42,8 @@ function CertificationSummary({group, compact = false, showCertificates = false}
           <span className={styles.statLabel}>Certificados</span>
         </div>
         <div className={styles.stat}>
-          <span className={styles.statValue}>{summary.totalHours > 0 ? `${summary.totalHours} h` : '—'}</span>
-          <span className={styles.statLabel}>Formación</span>
+          <span className={styles.statValue}>{summary.detailStat.value}</span>
+          <span className={styles.statLabel}>{summary.detailStat.label}</span>
         </div>
         <div className={styles.stat}>
           <span className={styles.statValue}>{summary.period}</span>

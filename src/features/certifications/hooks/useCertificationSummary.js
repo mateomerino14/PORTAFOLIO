@@ -14,6 +14,13 @@ const formatPeriod = (years) => {
   return `${years[0]}${rangeSeparator}${years[years.length - 1].slice(shortYearStart)}`;
 };
 
+const buildDetailStat = (totalHours, topicCount) => {
+  if (totalHours > 0) {
+    return {value: `${totalHours} h`, label: 'Formación'};
+  }
+  return {value: topicCount, label: 'Temas'};
+};
+
 function useCertificationSummary(group, {compact, showCertificates}) {
   return useMemo(() => {
     const totalHours = group.items.reduce((total, item) => total + item.hours, 0);
@@ -21,6 +28,8 @@ function useCertificationSummary(group, {compact, showCertificates}) {
     const maxHours = Math.max(0, ...hourItems.map((item) => item.hours));
     const certificates = group.items.filter((item) => item.image).map((item) => ({src: item.image, caption: item.name}));
     const hasCertificates = showCertificates && certificates.length > 0;
+    const topics = [...new Set(group.items.flatMap((item) => item.topics ?? [item.tech]))];
+    const detailStat = buildDetailStat(totalHours, topics.length);
     return {
       certificates,
       hasCertificates,
@@ -28,7 +37,8 @@ function useCertificationSummary(group, {compact, showCertificates}) {
       count: group.items.length,
       totalHours,
       period: formatPeriod(yearsOf(group.items)),
-      topics: [...new Set(group.items.flatMap((item) => item.topics ?? [item.tech]))],
+      topics,
+      detailStat,
       issuers: [...new Set(group.items.flatMap((item) => item.issuer.split(issuerSeparator)).filter(Boolean))],
       hourBars: hourItems.map((item) => ({name: item.name, hours: item.hours, ratio: item.hours / maxHours})),
     };

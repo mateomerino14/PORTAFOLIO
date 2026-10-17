@@ -34,7 +34,7 @@ npm run build-storybook     # sitio estático de Storybook
 | Framer Motion | Revelado al hacer scroll, tarjetas con inclinación, botones magnéticos y transiciones |
 | Lenis | Desplazamiento suave |
 | Lucide React | Iconografía |
-| Storybook | Documentación interactiva de `components/ui/` y de los átomos y moléculas de `features/` |
+| Storybook | Documentación interactiva de `components/ui/` y de los átomos y moléculas de `features/`, salvo las de la escena 3D |
 
 ## Arquitectura
 
@@ -65,13 +65,17 @@ journeyStore (avance, parada actual, tecnología señalada)
 
 La jerarquía sigue Atomic Design. La lógica de estado, scroll y animación vive en hooks; los componentes solo presentan lo que reciben por props.
 
-La escena 3D se carga con `React.lazy`, de modo que Three.js genera su propio fragmento de JavaScript y el contenido aparece sin esperarlo.
+La escena 3D se carga con `React.lazy`, de modo que Three.js genera su propio fragmento de JavaScript y el contenido aparece sin esperarlo. Sus moléculas no tienen historias en Storybook porque necesitan el lienzo WebGL y el estado del recorrido; se revisan directamente en la página.
+
+### Galerías
+
+`ImageGallery` muestra capturas, gráficos, fotos y certificados. Avanza sola cada 5 segundos con un fundido mientras está a la vista, se pausa al pasar el cursor o al ampliar una imagen, y no se mueve si el sistema pide menos movimiento.
 
 ## Estructura
 
 ```
 src/
-├── components/ui/       Componentes genéricos transversales
+├── components/ui/       Componentes genéricos: galería, íconos de tecnologías, diagrama de arquitectura, botones
 ├── features/            Secciones de la página
 │   ├── journey/         Paradas del recorrido, su estado compartido y el panel de cada parada
 │   │   ├── constants/   Lista de paradas y relación entre tecnologías y proyectos
@@ -91,12 +95,19 @@ src/
 ├── pages/               Página principal
 ├── data/                Contenido: perfil, proyectos, stack, trayectoria y certificaciones
 ├── utils/               Funciones auxiliares puras (paradas, avance y distribución del grafo)
-└── constants/           Paleta de colores, curvas de animación y navegación
+└── constants/           Paleta de colores, curvas de animación, navegación e íconos de tecnologías
+
+public/
+├── projects/            Capturas de cada proyecto en WebP
+├── certificates/        Certificados escaneados
+├── awards/, timeline/   Fotos de reconocimientos y de la trayectoria
+├── profile/             Foto de perfil
+└── cv-mateo-merino.pdf  CV que se descarga desde la barra de navegación
 ```
 
 ## Contenido
 
-Todo el texto del sitio vive en `src/data/`. Para agregar un proyecto, una certificación o una entrada en la trayectoria solo se edita el archivo correspondiente: la parada, su nodo en el grafo y su lugar en el mapa se generan solos.
+Todo el texto del sitio vive en `src/data/` y las imágenes en `public/`. Para agregar un proyecto, una certificación o una entrada en la trayectoria solo se edita el archivo correspondiente: la parada, su nodo en el grafo, su lugar en el mapa y su índice se generan solos. Un proyecto con `isPrivateCode` muestra la etiqueta «Código privado» en lugar del enlace al repositorio.
 
 ## Despliegue
 

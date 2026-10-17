@@ -42,7 +42,7 @@ export const TIMELINE = [
     architecture: {
       title: 'Arquitectura del sistema · Modelo C4',
       layers: [
-        {label: 'Personas', nodes: [{title: 'Empleado', detail: 'Solicita viajes y rinde gastos'}, {title: 'Administrador', detail: 'Aprueba, paga y supervisa'}]},
+        {label: 'Personas · 5 roles', compact: true, nodes: [{title: 'Empleado'}, {title: 'Supervisor'}, {title: 'Revisor'}, {title: 'Aprobador'}, {title: 'Administrador'}]},
         {label: 'Sistema de Control de Viáticos', nodes: [{title: 'Aplicación web', detail: 'React · Vite', tech: 'React'}, {title: 'API REST', detail: 'Node.js · Express · JWT', tech: 'Node.js'}]},
         {label: 'Servicios externos', nodes: [{title: 'Supabase', detail: 'Base de datos y archivos', tech: 'Supabase'}, {title: 'Gemini', detail: 'Lectura de comprobantes', tech: 'Gemini'}, {title: 'Brevo', detail: 'Correos programados', tech: 'Correo'}]},
       ],

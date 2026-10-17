@@ -13,7 +13,7 @@ export default {
   },
   argTypes: {
     size: {control: 'select', options: ['hero', 'full', 'compact']},
-    variant: {control: 'select', options: ['panel', 'wide', 'bare']},
+    variant: {control: 'select', options: ['panel', 'wide', 'bare', 'bareWide']},
   },
   args: {
     stopId: 'sobre-mi',

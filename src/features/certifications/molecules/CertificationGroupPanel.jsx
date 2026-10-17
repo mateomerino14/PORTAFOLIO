@@ -31,7 +31,7 @@ function CertificationGroupPanel({group}) {
           {group.items.map((certification) => <CertificationItem key={certification.name} certification={certification} />)}
         </ul>
       </div>
-      <CertificationSummary group={group} />
+      <CertificationSummary group={group} showCertificates />
     </article>
   );
 }

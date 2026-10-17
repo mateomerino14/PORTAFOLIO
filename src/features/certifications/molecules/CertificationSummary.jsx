@@ -1,5 +1,6 @@
 import TechIcon from '../../../components/ui/TechIcon';
 import TechList from '../../../components/ui/TechList';
+import ImageGallery from '../../../components/ui/ImageGallery';
 import useCertificationSummary from '../hooks/useCertificationSummary';
 
 const styles = {
@@ -30,10 +31,11 @@ const capitalizedWord = /^[A-ZÁÉÍÓÚ]/;
 
 const monogramOf = (name) => name.split(' ').filter((word) => capitalizedWord.test(word)).map((word) => word[0]).join('').slice(0, monogramLength);
 
-function CertificationSummary({group, compact = false}) {
-  const summary = useCertificationSummary(group);
+function CertificationSummary({group, compact = false, showCertificates = false}) {
+  const summary = useCertificationSummary(group, {compact, showCertificates});
   return (
     <div className={styles.wrapper}>
+      {summary.hasCertificates && <ImageGallery images={summary.certificates} title={group.group} fit="contain" />}
       <div className={styles.stats}>
         <div className={styles.stat}>
           <span className={styles.statValue}>{summary.count}</span>
@@ -50,8 +52,8 @@ function CertificationSummary({group, compact = false}) {
       </div>
       <div>
         <p className={styles.sectionTitle}>Temas</p>
-        {compact && <TechList items={summary.topics} />}
-        {!compact && (
+        {summary.isCompact && <TechList items={summary.topics} />}
+        {!summary.isCompact && (
           <ul className={styles.topics}>
             {summary.topics.map((topic) => (
               <li key={topic} className={styles.topic}>
@@ -62,7 +64,7 @@ function CertificationSummary({group, compact = false}) {
           </ul>
         )}
       </div>
-      {!compact && summary.hourBars.length > 0 && (
+      {!summary.isCompact && summary.hourBars.length > 0 && (
         <div>
           <p className={styles.sectionTitle}>Horas por certificado</p>
           <ul className={styles.bars}>

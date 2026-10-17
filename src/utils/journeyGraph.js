@@ -9,7 +9,7 @@ const seedMultiplier = 1664525;
 const seedIncrement = 1013904223;
 const seedModulus = 4294967296;
 
-export const createRandom = (seed) => {
+const createRandom = (seed) => {
   let value = seed;
   return () => {
     value = (value * seedMultiplier + seedIncrement) % seedModulus;

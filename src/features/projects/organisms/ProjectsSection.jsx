@@ -14,6 +14,7 @@ const styles = {
 };
 
 const iconSize = 14;
+const indexColumns = 2;
 
 function ProjectsSection() {
   const projectStops = useProjectIndex();
@@ -22,7 +23,7 @@ function ProjectsSection() {
       <StopPanel stopId={SECTION_IDS.projects} size="compact" variant="wide">
         <SectionTitle title="Proyectos" />
         <p className={styles.intro}>Trabajos para clientes, mi pasantía, la universidad y proyectos en equipo.</p>
-        <StopIndex items={projectStops} columns={2} />
+        <StopIndex items={projectStops} columns={indexColumns} />
         <a href={PROFILE.github} target="_blank" rel="noreferrer" className={styles.moreLink}>
           Más en {PROFILE.githubLabel}
           <ArrowUpRight size={iconSize} />

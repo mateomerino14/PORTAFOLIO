@@ -34,7 +34,7 @@ export const computeProgress = (centers, position) => {
   return index + (position - centers[index]) / span;
 };
 
-export const smoothstep = (value) => value * value * (3 - 2 * value);
+const smoothstep = (value) => value * value * (3 - 2 * value);
 
 export const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 

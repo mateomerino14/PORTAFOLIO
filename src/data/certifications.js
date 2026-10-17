@@ -2,12 +2,11 @@ export const CERTIFICATION_GROUPS = [
   {
     group: 'Profesionales',
     items: [
-      {name: 'Desarrollo FullStack con React & NestJS', tech: 'React', issuer: '', note: '', date: '2026', hours: 0},
-      {name: 'Desarrollo de APIs REST con Node.js & NestJS', tech: 'NestJS', issuer: '', note: '', date: '2026', hours: 0},
-      {name: 'Docker y Docker Compose', tech: 'Docker', issuer: '', note: '', date: '2026', hours: 0},
-      {name: 'Git y GitHub', tech: 'Git', issuer: '', note: '', date: '2026', hours: 0},
-      {name: 'Bases de Datos Relacionales y NoSQL', tech: 'Bases de datos', issuer: '', note: '', date: '2026', hours: 0},
-      {name: 'Desarrollo Frontend con Angular', tech: 'Angular', issuer: '', note: '', date: '2026', hours: 0},
+      {name: 'Desarrollo Web Frontend con Angular', tech: 'Angular', issuer: 'Blumbit', note: 'ID ED-MAMV-5158', date: 'Feb 2026', hours: 24, image: 'certificates/angular.webp'},
+      {name: 'Servicios Web API REST con Node.js y NestJS', tech: 'NestJS', issuer: 'Blumbit', note: 'ID ED-MAMV-5132', date: 'Feb 2026', hours: 24, image: 'certificates/api-rest-nestjs.webp'},
+      {name: 'Diseño y Análisis de Bases de Datos SQL y NoSQL', tech: 'Bases de datos', issuer: 'Blumbit', note: 'ID ED-MAMV-5089', date: 'Feb 2026', hours: 24, topics: ['PostgreSQL', 'MongoDB'], image: 'certificates/bases-de-datos.webp'},
+      {name: 'Docker y Docker Compose', tech: 'Docker', issuer: 'Blumbit', note: 'ID ED-MAMV-5059', date: 'Feb 2026', hours: 10, image: 'certificates/docker.webp'},
+      {name: 'Git y GitHub', tech: 'Git', issuer: 'Blumbit', note: 'ID ED-MAMV-5029', date: 'Feb 2026', hours: 10, image: 'certificates/git-github.webp'},
     ],
   },
   {

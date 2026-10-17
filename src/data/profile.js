@@ -27,9 +27,9 @@ export const PROFILE = {
 
 export const STATS = [
   {id: 'average', value: 84.68, decimals: 2, prefix: '', suffix: '', label: 'Promedio académico /100'},
-  {id: 'ranking', value: 1, decimals: 0, prefix: '', suffix: '.er lugar', label: 'Ingeniería Informática 2026 · Medalla de Oro'},
+  {id: 'ranking', value: 1, decimals: 0, prefix: '', suffix: '.er', label: 'Lugar en Ingeniería Informática 2026 · Medalla de Oro'},
   {id: 'teaching', value: 2, decimals: 0, prefix: '', suffix: '', label: 'Años como asistente de cátedra'},
-  {id: 'training', value: 500, decimals: 0, prefix: '', suffix: '+', label: 'Horas de formación certificada'},
+  {id: 'training', value: 650, decimals: 0, prefix: '', suffix: '+', label: 'Horas de formación certificada'},
 ];
 
 export const LANGUAGES = [

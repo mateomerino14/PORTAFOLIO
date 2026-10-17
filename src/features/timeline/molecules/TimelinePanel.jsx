@@ -1,7 +1,6 @@
 import {MapPin} from 'lucide-react';
 import ImageGallery from '../../../components/ui/ImageGallery';
 import TechList from '../../../components/ui/TechList';
-import IconList from '../../../components/ui/IconList';
 import ArchitectureDiagram from '../../../components/ui/ArchitectureDiagram';
 import StopIndex from '../../journey/molecules/StopIndex';
 import ProjectPreviewCard from '../../projects/molecules/ProjectPreviewCard';
@@ -57,7 +56,6 @@ function TimelineAside({entry, relatedProjects}) {
       {entry.architecture && <ArchitectureDiagram title={entry.architecture.title} layers={entry.architecture.layers} />}
       {entry.architecture && <StopIndex items={relatedProjects} />}
       {!entry.architecture && <RelatedProjects projects={relatedProjects} />}
-      {entry.subjects && <IconList items={entry.subjects} />}
     </div>
   );
 }

@@ -60,10 +60,6 @@ export const TIMELINE = [
     ],
     tags: ['Algoritmos', 'Teoría de Grafos'],
     photos: [{src: 'timeline/catedra.webp', caption: 'Exponiendo frente al curso en la facultad'}],
-    subjects: [
-      {icon: 'Algoritmos', title: 'Introducción a la Programación', meta: 'Algoritmos y lógica de programación'},
-      {icon: 'Teoría de Grafos', title: 'Teoría de Grafos', meta: 'Laboratorios y corrección de exámenes'},
-    ],
   },
   {
     period: '2024',

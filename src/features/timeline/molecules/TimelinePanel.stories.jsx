@@ -36,7 +36,7 @@ export const Freelance = {
   },
 };
 
-export const WithSubjects = {
+export const Teaching = {
   args: {entry: teaching, relatedProjects: []},
 };
 

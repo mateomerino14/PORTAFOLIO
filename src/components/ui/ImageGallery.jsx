@@ -3,6 +3,7 @@ import {AnimatePresence, motion} from 'framer-motion';
 import {Expand, X} from 'lucide-react';
 import useGallery from '../../hooks/shared/useGallery';
 import {publicAsset} from '../../utils/assets';
+import {EASE_OUT} from '../../constants';
 
 const styles = {
   figure: 'flex flex-col gap-2',
@@ -38,7 +39,7 @@ const slideMotion = {
   initial: {opacity: 0, scale: 1.04},
   animate: {opacity: 1, scale: 1},
   exit: {opacity: 0},
-  transition: {duration: 0.7, ease: 'easeOut'},
+  transition: {duration: 0.7, ease: EASE_OUT},
 };
 const millisecondsPerSecond = 1000;
 const progressStart = {width: '0%'};

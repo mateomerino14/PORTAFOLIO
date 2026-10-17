@@ -12,7 +12,7 @@ export default {
     },
   },
   argTypes: {
-    size: {control: 'select', options: ['full', 'compact']},
+    size: {control: 'select', options: ['hero', 'full', 'compact']},
     variant: {control: 'select', options: ['panel', 'wide', 'bare']},
   },
   args: {

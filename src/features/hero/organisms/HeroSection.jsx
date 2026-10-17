@@ -21,7 +21,7 @@ const fadeUp = (delay) => ({initial: {opacity: 0, y: 20}, animate: {opacity: 1, 
 
 function HeroSection() {
   return (
-    <StopPanel stopId={SECTION_IDS.hero} variant="bare">
+    <StopPanel stopId={SECTION_IDS.hero} size="hero" variant="bare">
       <AnimatedName firstName={PROFILE.firstName} lastName={PROFILE.lastName} />
       <motion.p className={styles.role} {...fadeUp(contentDelays.role)}>
         <RotatingRole roles={PROFILE.roles} />

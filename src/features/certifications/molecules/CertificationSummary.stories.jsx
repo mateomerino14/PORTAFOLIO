@@ -9,7 +9,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Resumen visual de un grupo de certificaciones: cantidad, horas y periodo, los temas con su ícono, las horas de cada certificado y quién los emitió.',
+        component: 'Resumen visual de un grupo de certificaciones: cantidad, horas y periodo, los temas con su ícono, las horas de cada certificado y quién los emitió. En modo compacto muestra los temas como etiquetas y omite las horas por certificado.',
       },
     },
   },
@@ -25,4 +25,8 @@ export const Diplomas = {
 
 export const WithoutHours = {
   args: {group: professional},
+};
+
+export const Compact = {
+  args: {group: {group: 'Todas', items: CERTIFICATION_GROUPS.flatMap((group) => group.items)}, compact: true},
 };

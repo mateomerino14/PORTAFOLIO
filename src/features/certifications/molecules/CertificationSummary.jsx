@@ -1,4 +1,5 @@
 import TechIcon from '../../../components/ui/TechIcon';
+import TechList from '../../../components/ui/TechList';
 import useCertificationSummary from '../hooks/useCertificationSummary';
 
 const styles = {
@@ -29,7 +30,7 @@ const capitalizedWord = /^[A-ZÁÉÍÓÚ]/;
 
 const monogramOf = (name) => name.split(' ').filter((word) => capitalizedWord.test(word)).map((word) => word[0]).join('').slice(0, monogramLength);
 
-function CertificationSummary({group}) {
+function CertificationSummary({group, compact = false}) {
   const summary = useCertificationSummary(group);
   return (
     <div className={styles.wrapper}>
@@ -49,16 +50,19 @@ function CertificationSummary({group}) {
       </div>
       <div>
         <p className={styles.sectionTitle}>Temas</p>
-        <ul className={styles.topics}>
-          {summary.topics.map((topic) => (
-            <li key={topic} className={styles.topic}>
-              <TechIcon name={topic} size={topicIconSize} />
-              <span className={styles.topicName}>{topic}</span>
-            </li>
-          ))}
-        </ul>
+        {compact && <TechList items={summary.topics} />}
+        {!compact && (
+          <ul className={styles.topics}>
+            {summary.topics.map((topic) => (
+              <li key={topic} className={styles.topic}>
+                <TechIcon name={topic} size={topicIconSize} />
+                <span className={styles.topicName}>{topic}</span>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-      {summary.hourBars.length > 0 && (
+      {!compact && summary.hourBars.length > 0 && (
         <div>
           <p className={styles.sectionTitle}>Horas por certificado</p>
           <ul className={styles.bars}>

@@ -2,7 +2,8 @@ import {useMemo} from 'react';
 
 const issuerSeparator = ' · ';
 const yearPattern = /\d{4}/;
-const rangeSeparator = ' — ';
+const rangeSeparator = '–';
+const shortYearStart = 2;
 
 const yearsOf = (items) => [...new Set(items.map((item) => item.date.match(yearPattern)[0]))].sort();
 
@@ -10,7 +11,7 @@ const formatPeriod = (years) => {
   if (years.length === 1) {
     return years[0];
   }
-  return `${years[0]}${rangeSeparator}${years[years.length - 1]}`;
+  return `${years[0]}${rangeSeparator}${years[years.length - 1].slice(shortYearStart)}`;
 };
 
 function useCertificationSummary(group) {

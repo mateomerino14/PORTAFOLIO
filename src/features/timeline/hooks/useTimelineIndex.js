@@ -20,7 +20,7 @@ function useTimelineIndex() {
       meta: entry.period,
       icon: TIMELINE_TYPE_ICONS[entry.type],
       relatedProjects,
-      hasAside: Boolean(entry.photos || entry.subjects) || relatedProjects.length > 0,
+      hasAside: Boolean(entry.photos || entry.subjects || entry.architecture) || relatedProjects.length > 0,
     };
   }), [timelineStops, projectIndex]);
 }

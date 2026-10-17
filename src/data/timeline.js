@@ -19,12 +19,13 @@ export const TIMELINE = [
     place: 'Clientes del rubro gastronómico',
     type: 'freelance',
     points: [
-      'Sistema de gestión para un café-bar: versión de escritorio y su migración a la web.',
+      'Sistema de gestión para un café-bar: versión de escritorio y su migración a la web, entregado en 2026.',
+      'Actualmente desarrollo el sistema del restaurante Brasa Brava.',
       'Levantamiento de requerimientos y acuerdos directamente con el cliente.',
       'Despliegue, impresión en ticketeras térmicas y reportes automáticos por correo.',
     ],
     tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron', 'Python'],
-    projects: ['Sistema de Gestión para Café-Bar'],
+    projects: ['Sistema de Gestión para Café-Bar', 'Brasa Brava'],
   },
   {
     period: 'May 2026 — Oct 2026',
@@ -38,6 +39,14 @@ export const TIMELINE = [
     ],
     tags: ['React', 'Node.js', 'Express', 'Supabase', 'Gemini', 'Storybook'],
     projects: ['Sistema de Control de Viáticos'],
+    architecture: {
+      title: 'Arquitectura del sistema · Modelo C4',
+      layers: [
+        {label: 'Personas', nodes: [{title: 'Empleado', detail: 'Solicita viajes y rinde gastos'}, {title: 'Administrador', detail: 'Aprueba, paga y supervisa'}]},
+        {label: 'Sistema de Control de Viáticos', nodes: [{title: 'Aplicación web', detail: 'React · Vite', tech: 'React'}, {title: 'API REST', detail: 'Node.js · Express · JWT', tech: 'Node.js'}]},
+        {label: 'Servicios externos', nodes: [{title: 'Supabase', detail: 'Base de datos y archivos', tech: 'Supabase'}, {title: 'Gemini', detail: 'Lectura de comprobantes', tech: 'Gemini'}, {title: 'Brevo', detail: 'Correos programados', tech: 'Correo'}]},
+      ],
+    },
   },
   {
     period: '2024 — 2025',
@@ -50,6 +59,7 @@ export const TIMELINE = [
       'Conducción de laboratorios y corrección de tareas y exámenes.',
     ],
     tags: ['Algoritmos', 'Teoría de Grafos'],
+    photos: [{src: 'timeline/catedra.webp', caption: 'Exponiendo frente al curso en la facultad'}],
     subjects: [
       {icon: 'Algoritmos', title: 'Introducción a la Programación', meta: 'Algoritmos y lógica de programación'},
       {icon: 'Teoría de Grafos', title: 'Teoría de Grafos', meta: 'Laboratorios y corrección de exámenes'},
@@ -78,6 +88,6 @@ export const TIMELINE = [
       'Promedio 84.68/100.',
       'Programación, Estructuras de Datos, Bases de Datos, Teoría de Grafos, Desarrollo Web.',
     ],
-    projects: ['Prototipo HTR para código manuscrito', 'Gestor de portafolios profesionales', 'Diagramador de flujo SVG', 'Simulación de sistemas en R'],
+    projects: ['Prototipo HTR para código manuscrito', 'Gestor de portafolios profesionales', 'Sitio web del Centro MEMI', 'Diagramador de flujo SVG', 'Landing page Academia Digital Pro', 'Simulación de sistemas en R'],
   },
 ];

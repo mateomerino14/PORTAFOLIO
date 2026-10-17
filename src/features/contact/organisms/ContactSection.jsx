@@ -43,7 +43,7 @@ function ContactSection() {
             ))}
           </div>
         </div>
-        <ContactCard name={PROFILE.name} role={PROFILE.roles[0]} initials={PROFILE.initials} location={PROFILE.location} city={PROFILE.city} timeZone={PROFILE.timeZone} availability={PROFILE.availability} />
+        <ContactCard name={PROFILE.name} role={PROFILE.roles[0]} photo={PROFILE.photo} location={PROFILE.location} city={PROFILE.city} timeZone={PROFILE.timeZone} availability={PROFILE.availability} />
       </div>
     </StopPanel>
   );

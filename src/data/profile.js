@@ -12,6 +12,7 @@ export const PROFILE = {
   github: 'https://github.com/mateomerino14',
   githubLabel: 'github.com/mateomerino14',
   linkedin: '',
+  photo: 'profile/retrato.webp',
   timeZone: 'America/La_Paz',
   availability: ['Prácticas', 'Proyectos freelance', 'Trabajo en equipo'],
   cvUrl: 'cv-mateo-merino.pdf',

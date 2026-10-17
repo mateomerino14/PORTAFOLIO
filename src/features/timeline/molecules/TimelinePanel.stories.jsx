@@ -20,7 +20,7 @@ export default {
     entry: internship,
     hasAside: true,
     relatedProjects: [
-      {id: 'proyecto-1', label: 'Sistema de Control de Viáticos', meta: 'Pasantía · MAXAM · Web full stack', highlights: ['Extracción automática de datos de comprobantes con IA'], tags: ['React', 'Supabase']},
+      {id: 'proyecto-1', label: 'Sistema de Control de Viáticos', meta: 'Pasantía · MAXAM · Web full stack'},
     ],
   },
 };
@@ -31,7 +31,7 @@ export const Freelance = {
   args: {
     entry: freelance,
     relatedProjects: [
-      {id: 'proyecto-2', label: 'Sistema de Gestión para Café-Bar', meta: 'Cliente freelance · Escritorio y web', highlights: ['Comandas a cocina y tickets en impresoras térmicas'], tags: ['React', 'PostgreSQL']},
+      {id: 'proyecto-2', label: 'Sistema de Gestión para Café-Bar', meta: 'Cliente freelance · Escritorio y web'},
     ],
   },
 };

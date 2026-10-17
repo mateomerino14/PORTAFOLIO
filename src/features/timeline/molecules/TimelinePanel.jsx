@@ -3,7 +3,6 @@ import ImageGallery from '../../../components/ui/ImageGallery';
 import TechList from '../../../components/ui/TechList';
 import ArchitectureDiagram from '../../../components/ui/ArchitectureDiagram';
 import StopIndex from '../../journey/molecules/StopIndex';
-import ProjectPreviewCard from '../../projects/molecules/ProjectPreviewCard';
 import {TIMELINE_TYPE_ICONS, TIMELINE_TYPE_LABELS} from '../constants/timelineTypes';
 
 const styles = {
@@ -19,27 +18,14 @@ const styles = {
   tags: 'mt-5',
   asideTitle: 'font-mono text-xs tracking-widest text-fog uppercase',
   aside: 'flex flex-col gap-4',
-  cards: 'mt-3 flex flex-col gap-3',
 };
 
 const badgeIconSize = 20;
 const placeIconSize = 14;
 
-const maxPreviewCards = 2;
-
 function RelatedProjects({projects}) {
   if (projects.length === 0) {
     return null;
-  }
-  if (projects.length <= maxPreviewCards) {
-    return (
-      <div>
-        <p className={styles.asideTitle}>Proyectos de esta etapa</p>
-        <div className={styles.cards}>
-          {projects.map((project) => <ProjectPreviewCard key={project.id} project={project} />)}
-        </div>
-      </div>
-    );
   }
   return (
     <div>

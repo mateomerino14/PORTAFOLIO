@@ -19,8 +19,7 @@ export const TIMELINE = [
     place: 'Clientes del rubro gastronómico',
     type: 'freelance',
     points: [
-      'Sistema de gestión para un café-bar: versión de escritorio y su migración a la web, entregado en 2026.',
-      'Actualmente desarrollo el sistema del restaurante Brasa Brava.',
+      'Sistemas de gestión a medida, de escritorio y web, para negocios gastronómicos.',
       'Levantamiento de requerimientos y acuerdos directamente con el cliente.',
       'Despliegue, impresión en ticketeras térmicas y reportes automáticos por correo.',
     ],

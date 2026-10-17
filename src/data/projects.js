@@ -32,6 +32,8 @@ export const PROJECTS = [
         images: [
           {src: 'projects/viaticos/inicio-sesion.webp', caption: 'Inicio de sesión con recuperación de contraseña por código'},
           {src: 'projects/viaticos/mis-viajes.webp', caption: 'Viajes del empleado: borradores, viajes en curso y gasto acumulado'},
+          {src: 'projects/viaticos/nuevo-viaje.webp', caption: 'Solicitud de viaje con el presupuesto calculado según el cargo y los días'},
+          {src: 'projects/viaticos/detalle-viaje.webp', caption: 'Detalle del viaje en curso con el gasto acumulado y los gastos registrados'},
           {src: 'projects/viaticos/resumen-administrador.webp', caption: 'Resumen del administrador con indicadores por periodo'},
         ],
       },
@@ -151,6 +153,8 @@ def cer(referencia, hipotesis):
         images: [
           {src: 'projects/gestor-portafolios/inicio-sesion.webp', caption: 'Inicio de sesión'},
           {src: 'projects/gestor-portafolios/portada.webp', caption: 'Portada para buscar y verificar perfiles'},
+          {src: 'projects/gestor-portafolios/perfil-publico.webp', caption: 'Perfil público con datos personales y de contacto'},
+          {src: 'projects/gestor-portafolios/habilidades.webp', caption: 'Habilidades técnicas con su nivel de dominio'},
           {src: 'projects/gestor-portafolios/certificados.webp', caption: 'Área de certificados en el perfil público'},
         ],
       },

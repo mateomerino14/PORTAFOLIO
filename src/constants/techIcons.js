@@ -17,7 +17,6 @@ export const BRAND_ICONS = {
   'C': siC,
   'C++': siCplusplus,
   'R': siR,
-  'ggplot2': siR,
   'React': siReact,
   'Angular': siAngular,
   'Tailwind': siTailwindcss,

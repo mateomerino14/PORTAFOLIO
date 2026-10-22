@@ -33,7 +33,7 @@ export const CERTIFICATION_GROUPS = [
       {name: 'Microsoft Power BI', tech: 'Power BI', issuer: 'WE Educación Ejecutiva · Microsoft', note: 'Nota 15 · parte de Analista de Datos', date: 'Mar 2024', hours: 30, isPartOfProgram: true, image: 'certificates/power-bi.webp'},
       {name: 'Business Intelligence Foundation Professional (BIFPC™)', tech: 'Business Intelligence', issuer: 'CertiProf', note: 'ID 95198312 · vigente hasta 2027', date: 'Mar 2024', hours: 0, image: 'certificates/bifpc.webp'},
       {name: 'SQL Server for Analytics', tech: 'SQL Server', issuer: 'WE Educación Ejecutiva · Microsoft', note: 'Nota 17.5 · parte de Analista de Datos', date: 'Feb 2024', hours: 30, isPartOfProgram: true, image: 'certificates/sql-server.webp'},
-      {name: 'Inteligencia Artificial', tech: 'Inteligencia artificial', issuer: 'Facultad Nacional de Ingeniería · Oruro', note: 'Ingeniería de Sistemas e Informática', date: 'Feb 2024', hours: 40, image: 'certificates/inteligencia-artificial.webp'},
+      {name: 'Inteligencia Artificial', tech: 'Inteligencia artificial', issuer: 'Facultad Nacional de Ingeniería, Oruro', note: 'Ingeniería de Sistemas e Informática', date: 'Feb 2024', hours: 40, image: 'certificates/inteligencia-artificial.webp'},
     ],
   },
   {
@@ -42,8 +42,8 @@ export const CERTIFICATION_GROUPS = [
       {name: 'Tecnologías .NET', tech: '.NET', issuer: 'Educomser', note: 'C#, ASP.NET Core, .NET MAUI y .NET avanzado', date: 'Oct 2024', hours: 0, image: 'certificates/tecnologias-net.webp'},
       {name: 'Desarrollo Web con Python', tech: 'Python', issuer: 'iCEI tech', note: 'Puntaje 100 %', date: 'Jun 2024', hours: 40, image: 'certificates/desarrollo-web-python.webp'},
       {name: 'Lógica de Programación', tech: 'Lógica de programación', issuer: 'LatinCode', note: 'Algoritmos y estructuras de datos', date: '2024', hours: 30, image: 'certificates/logica-programacion.webp'},
-      {name: 'Desarrollo de Sistemas Web', tech: 'PHP', issuer: 'Facultad Nacional de Ingeniería · Oruro', note: 'MariaDB, PHP y Bootstrap', date: 'Mar 2024', hours: 100, topics: ['PHP', 'MariaDB', 'Bootstrap'], image: 'certificates/desarrollo-sistemas-web.webp'},
-      {name: 'Diseño de Sistemas Web', tech: 'HTML', issuer: 'Facultad Nacional de Ingeniería · Oruro', note: 'HTML, CSS, JavaScript y Bootstrap', date: 'Mar 2024', hours: 100, topics: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'], image: 'certificates/diseno-sistemas-web.webp'},
+      {name: 'Desarrollo de Sistemas Web', tech: 'PHP', issuer: 'Facultad Nacional de Ingeniería, Oruro', note: 'MariaDB, PHP y Bootstrap', date: 'Mar 2024', hours: 100, topics: ['PHP', 'MariaDB', 'Bootstrap'], image: 'certificates/desarrollo-sistemas-web.webp'},
+      {name: 'Diseño de Sistemas Web', tech: 'HTML', issuer: 'Facultad Nacional de Ingeniería, Oruro', note: 'HTML, CSS, JavaScript y Bootstrap', date: 'Mar 2024', hours: 100, topics: ['HTML', 'CSS', 'JavaScript', 'Bootstrap'], image: 'certificates/diseno-sistemas-web.webp'},
       {name: 'Programación Arduino Avanzado', tech: 'Arduino', issuer: 'CIE · Cesbol Ingeniería', note: 'Curso taller aprobado', date: 'Ene 2024', hours: 30, image: 'certificates/arduino-avanzado.webp'},
       {name: 'Estructuras de Control y Programación en Visual Basic', tech: 'Visual Basic', issuer: 'Infórmate Academy', note: 'Curso taller', date: 'Ene 2024', hours: 24, image: 'certificates/vb-estructuras-control.webp'},
       {name: 'Diseño y Manejo de Formularios en Visual Basic', tech: 'Visual Basic', issuer: 'Infórmate Academy', note: 'Curso taller', date: 'Ene 2024', hours: 24, image: 'certificates/vb-formularios.webp'},
@@ -63,7 +63,7 @@ export const CERTIFICATION_GROUPS = [
     group: 'Idiomas',
     items: [
       {name: 'Inglés Técnico en Tecnología · Nivel A2', tech: 'Inglés', issuer: 'Universidad San Francisco Xavier de Chuquisaca · First English', note: 'Con valor curricular', date: 'Abr 2025', hours: 204, image: 'certificates/ingles-tecnico-a2.webp'},
-      {name: 'Intermediate Program of English as a Foreign Language', tech: 'Inglés', issuer: 'Centro Boliviano Americano · Cochabamba', note: 'Diploma N.º 3920', date: 'Jun 2022', hours: 0, image: 'certificates/cba-intermediate.webp'},
+      {name: 'Intermediate Program of English as a Foreign Language', tech: 'Inglés', issuer: 'Centro Boliviano Americano, Cochabamba', note: 'Diploma N.º 3920', date: 'Jun 2022', hours: 0, image: 'certificates/cba-intermediate.webp'},
     ],
   },
 ];

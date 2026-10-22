@@ -26,7 +26,7 @@ export const TIMELINE = [
     ],
     tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron', 'Python'],
     projects: ['Sistema Cafebar · Web y escritorio', 'Sistema Cafebar · Escritorio en Python', 'Brasa Brava'],
-    photos: [{src: 'timeline/carta-conformidad-cafe.webp', caption: 'Carta de conformidad del cliente por el sistema del café-bar'}],
+    photos: [{src: 'timeline/carta-conformidad-cafe.webp', caption: 'Carta de conformidad del cliente por el Sistema Cafebar'}],
   },
   {
     period: 'May 2026 — Oct 2026',
@@ -68,7 +68,7 @@ export const TIMELINE = [
     place: 'Facultad de Ciencias y Tecnología · UMSS',
     type: 'award',
     points: [
-      'Reconocimiento al mejor rendimiento académico: entre los 3 mejores estudiantes de la facultad.',
+      'Tercer lugar de rendimiento académico de la Facultad de Ciencias y Tecnología.',
       'Diploma y medalla de honor entregados en septiembre de 2025.',
     ],
     photos: [
@@ -102,7 +102,7 @@ export const TIMELINE = [
   {
     period: 'Dic 2022',
     title: 'Bachiller y Técnico Medio en Sistemas Informáticos',
-    place: 'Unidad Educativa Privada Eugenia Ravasco · Cochabamba',
+    place: 'Unidad Educativa Privada Eugenia Ravasco, Cochabamba',
     type: 'education',
     points: [
       'Bachiller en Humanidades con formación técnica en Sistemas Informáticos.',

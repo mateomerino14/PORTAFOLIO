@@ -12,7 +12,7 @@ export const PROJECTS = [
   {
     title: 'Sistema de Control de Viáticos',
     cover: 'projects/viaticos/mis-viajes.webp',
-    context: 'Pasantía · MAXAM',
+    context: 'Pasantía · MAXAM FANEXA',
     kind: 'Web full stack',
     description: 'Plataforma para gestionar viajes corporativos y la rendición de gastos, desde la solicitud hasta la aprobación y el pago, con flujos por rol.',
     highlights: [
@@ -447,7 +447,7 @@ private void enviar(String mensaje, Socket clienteOtro) {
       'Pruebas de Póker, Chi-cuadrada y corridas',
       'Simulaciones de Monte Carlo con gráficos de convergencia',
     ],
-    tags: ['R', 'ggplot2', 'Estadística'],
+    tags: ['R', 'Estadística'],
     links: [{label: 'Código', href: `${githubUrl}/ANALISIS-DE-DATOS-EN-SIMULACION-DE-SISTEMAS`}],
     media: [
       {

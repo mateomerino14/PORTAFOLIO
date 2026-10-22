@@ -28,7 +28,7 @@ function GroupAside({group, summary}) {
 
 function CertificationGroupPanel({group}) {
   const Icon = GROUP_ICONS[group.group];
-  const summary = useCertificationSummary(group, false);
+  const summary = useCertificationSummary(group);
   return (
     <article className={styles.layout}>
       <div className={styles.content}>

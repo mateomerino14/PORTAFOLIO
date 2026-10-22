@@ -2,8 +2,7 @@ import SectionTitle from '../../../components/ui/SectionTitle';
 import StopPanel from '../../journey/molecules/StopPanel';
 import StopIndex from '../../journey/molecules/StopIndex';
 import CertificationGroupPanel from '../molecules/CertificationGroupPanel';
-import CertificationSummary from '../molecules/CertificationSummary';
-import useAllCertifications from '../hooks/useAllCertifications';
+import CertificationOverview from '../molecules/CertificationOverview';
 import useCertificationIndex from '../hooks/useCertificationIndex';
 import {SECTION_IDS} from '../../../constants/navigation';
 import {CERTIFICATION_GROUPS} from '../../../data/certifications';
@@ -15,7 +14,6 @@ const styles = {
 
 function CertificationsSection() {
   const groupStops = useCertificationIndex();
-  const allCertifications = useAllCertifications();
   return (
     <>
       <StopPanel stopId={SECTION_IDS.certifications} size="compact" variant="wide">
@@ -25,7 +23,7 @@ function CertificationsSection() {
             <p className={styles.intro}>Diplomados, cursos y certificaciones profesionales que complementan mi formación.</p>
             <StopIndex items={groupStops} />
           </div>
-          <CertificationSummary group={allCertifications} overview />
+          <CertificationOverview />
         </div>
       </StopPanel>
       {groupStops.map((stop) => (

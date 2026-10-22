@@ -46,8 +46,8 @@ npm run build-storybook     # sitio estático de Storybook
 | Sobre mí | Presentación, cifras destacadas e idiomas |
 | Stack | Tecnologías por área; al señalar una se iluminan los proyectos que la usan |
 | Proyectos | Índice con miniaturas y una parada por proyecto con capturas, gráficos o código |
-| Trayectoria | Línea de tiempo con cifras y una parada por etapa con fotos, arquitectura o proyectos |
-| Certificaciones | Resumen general y una parada por grupo con sus certificados escaneados |
+| Trayectoria | Línea de tiempo desde el colegio, con cifras y una parada por etapa con fotos, diplomas, arquitectura o proyectos |
+| Certificaciones | Resumen general y una parada por área (profesionales, diplomados, datos e IA, desarrollo de software, competencias y comunidad, idiomas) con sus certificados escaneados |
 | Contacto | Correo para copiar, menú para escribir desde Gmail, Outlook o la app de correo, redes y tarjeta con foto y hora local |
 
 El CV en PDF se descarga desde la barra de navegación y desde el menú del celular.
@@ -87,6 +87,7 @@ La jerarquía sigue Atomic Design: átomos, moléculas y organismos dentro de ca
 | `TechIcon` y `TechList` | Logo de cada tecnología con su color, o un ícono equivalente si no tiene logo |
 | `StatTiles` | Fila de tres cifras de la trayectoria y las certificaciones |
 | `ArchitectureDiagram` | Diagrama de contenedores al estilo del modelo C4 |
+| `ModelViewer` | Visor de modelos glTF que se recorre en vivo con la cámara limitada al interior del modelo. Carga Three.js solo cuando se abre y muestra un aviso si no hay WebGL |
 | `StopPanel` y `StopIndex` | Panel de cada parada e índice de subnodos con miniatura o ícono |
 
 La escena 3D se carga con `React.lazy`, de modo que Three.js genera su propio fragmento de JavaScript y el contenido aparece sin esperarlo. Si el navegador no tiene WebGL, la página se muestra igual sin la escena.
@@ -128,7 +129,8 @@ src/
 public/
 ├── projects/            Capturas de cada proyecto en WebP
 ├── certificates/        Certificados escaneados
-├── awards/, timeline/   Fotos de reconocimientos y de la trayectoria
+├── school/              Diplomas y títulos del colegio
+├── awards/, timeline/   Fotos y diplomas de reconocimientos y de la trayectoria
 ├── profile/             Foto de perfil
 └── cv-mateo-merino.pdf  CV que se descarga desde la página
 ```
@@ -140,12 +142,14 @@ Todo el texto vive en `src/data/` y las imágenes en `public/`. Para agregar un 
 | Archivo | Campos principales |
 |---|---|
 | `profile.js` | Datos personales, presentación, cifras, idiomas, foto y CV |
-| `projects.js` | `context`, `kind`, `description`, `highlights`, `tags`, `links`, `media` (capturas o código) y `isPrivateCode` |
+| `projects.js` | `context`, `kind`, `description`, `highlights`, `tags`, `links`, `media` (capturas, código o modelo 3D) y `isPrivateCode` |
 | `timeline.js` | `period`, `type`, `points`, `tags` y, según la etapa, `photos`, `architecture` o `projects` |
 | `certifications.js` | Por grupo: `name`, `issuer`, `date`, `hours`, `tech` e `image` del certificado |
 | `stack.js` | Tecnologías agrupadas por área |
 
 Un proyecto con `isPrivateCode` muestra la etiqueta «Código privado» en lugar del enlace al repositorio.
+
+Un bloque `model` de `media` recibe el archivo `.glb` (comprimido con meshopt), la posición inicial de la cámara, sus luces y los límites de giro y acercamiento. Las capturas de cada proyecto van en orden de uso, empezando por el inicio de sesión cuando la aplicación lo tiene, y los datos personales de los certificados escaneados (CI, RUDE, teléfonos y códigos QR) se difuminan antes de publicarlos.
 
 ## Despliegue
 

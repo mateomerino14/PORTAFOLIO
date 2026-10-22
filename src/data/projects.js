@@ -43,13 +43,13 @@ export const PROJECTS = [
     cover: 'projects/cafe-bar/mesas.webp',
     context: 'Cliente freelance · Entregado',
     kind: 'Web y escritorio',
-    description: 'Segunda versión del sistema de gestión de un café temático: caja por mesas, pedidos a cocina, inventario, promociones, empleados y reportes. Funciona en la computadora de caja y se usa desde celulares y tablets conectados al Wi-Fi del local.',
+    description: 'Sistema de gestión de un café temático con dos versiones: primero una aplicación web con Supabase y luego su conversión a la aplicación de escritorio que usa hoy el local. Cubre caja por mesas, pedidos a cocina, inventario, promociones, empleados y reportes.',
     highlights: [
-      'Comandas a cocina y tickets en impresoras térmicas mediante un agente local',
-      'Reporte semanal de los productos más vendidos enviado por correo',
-      'Instalación local con Electron y PostgreSQL embebido, sin depender de internet',
+      'Versión web con React, Node.js y Supabase en la nube',
+      'Versión de escritorio con Electron y PostgreSQL embebido, sin costos mensuales ni depender de internet, usable desde celulares y tablets en el Wi-Fi del local',
+      'Comandas y tickets en impresoras térmicas y reporte semanal de los productos más vendidos por correo',
     ],
-    tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron'],
+    tags: ['React', 'Node.js', 'Express', 'Supabase', 'PostgreSQL', 'Electron'],
     links: [],
     isPrivateCode: true,
     media: [
@@ -72,7 +72,7 @@ export const PROJECTS = [
     cover: 'projects/cafe-bar-python/mesas.webp',
     context: 'Cliente freelance · Primera versión',
     kind: 'Escritorio',
-    description: 'Primera versión del sistema del café, hecha como aplicación de escritorio en Python. Cubre ventas por mesa, cocina, inventario de ingredientes, productos, promociones, empleados con permisos por cargo y reportes.',
+    description: 'Primera versión del sistema del café, hecha como aplicación de escritorio en Python antes de pasar a las versiones web y de escritorio. Cubre ventas por mesa, cocina, inventario de ingredientes, productos, promociones, empleados con permisos por cargo y reportes.',
     highlights: [
       'Control de stock por ingredientes, con extras y exclusiones en cada pedido',
       'Impresión de tickets y comandas en impresoras térmicas USB y seriales',

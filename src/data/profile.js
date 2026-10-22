@@ -17,9 +17,9 @@ export const PROFILE = {
   availability: ['Prácticas', 'Proyectos freelance', 'Trabajo en equipo'],
   cvUrl: 'cv-mateo-merino.pdf',
   cvFileName: 'CV-Mateo-Merino.pdf',
-  headline: 'Construyo aplicaciones web y convierto datos en decisiones. Estudiante de Informática en la UMSS y Medalla de Oro al mejor promedio de mi carrera.',
+  headline: 'Construyo aplicaciones web y convierto datos en decisiones. Estudiante de Ingeniería Informática en la UMSS y Medalla de Oro al mejor promedio de mi carrera.',
   about: [
-    'Estudio Informática en la Universidad Mayor de San Simón. En 2026 recibí la Medalla de Oro al mejor promedio de Ingeniería Informática, y en 2024 estuve entre los 3 mejores estudiantes de la Facultad de Ciencias y Tecnología.',
+    'Estudio Ingeniería Informática en la Universidad Mayor de San Simón. En 2026 recibí la Medalla de Oro al mejor promedio de la carrera, y en 2024 estuve entre los 3 mejores estudiantes de la Facultad de Ciencias y Tecnología.',
     'Entre 2024 y 2025 fui asistente de cátedra en Introducción a la Programación y Teoría de Grafos: explicar un algoritmo a otra persona es la mejor forma que conozco de entenderlo de verdad.',
     'Hice mi pasantía en MAXAM FANEXA y desarrollo sistemas como freelance para negocios locales. Me muevo entre el desarrollo full stack (React, Node.js, Express, PostgreSQL) y el análisis de datos (Python, SQL, Power BI).',
   ],

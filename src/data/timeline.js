@@ -79,7 +79,7 @@ export const TIMELINE = [
   },
   {
     period: '2023 — 2026',
-    title: 'Licenciatura en Informática',
+    title: 'Licenciatura en Ingeniería Informática',
     place: 'Universidad Mayor de San Simón',
     type: 'education',
     points: [

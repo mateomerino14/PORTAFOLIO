@@ -1,7 +1,9 @@
 import CertificationSummary from './CertificationSummary';
 import {CERTIFICATION_GROUPS} from '../../../data/certifications';
 
-const [professional, , courses] = CERTIFICATION_GROUPS;
+const courses = CERTIFICATION_GROUPS.find((group) => group.group === 'Datos e IA');
+const [professional] = CERTIFICATION_GROUPS;
+const withoutImages = {group: professional.group, items: professional.items.map((item) => ({...item, image: undefined}))};
 
 export default {
   title: 'Certifications/Molecules/CertificationSummary',
@@ -20,7 +22,7 @@ export default {
 export const WithCertificates = {};
 
 export const WithoutCertificates = {
-  args: {group: professional},
+  args: {group: withoutImages},
 };
 
 export const Overview = {

@@ -8,7 +8,7 @@ const styles = {
   badge: 'grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-accent/30 bg-accent/10 text-accent',
   title: 'font-display text-2xl font-extrabold md:text-3xl',
   count: 'mt-0.5 font-mono text-xs text-fog',
-  list: 'mt-4',
+  list: 'mt-4 md:max-h-[28rem] md:overflow-y-auto md:pr-2',
 };
 
 const badgeIconSize = 20;

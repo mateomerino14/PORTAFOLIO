@@ -1,10 +1,13 @@
 import {
-  siC, siCplusplus, siCss, siDocker, siElectron, siExpress, siFigma, siFramer, siGit, siGithubactions, siGooglegemini,
-  siHtml5, siJavascript, siJsonwebtokens, siMongodb, siMysql, siNestjs, siNodedotjs, siNumpy, siOpenjdk, siPaddlepaddle,
-  siPandas, siPostgresql, siPostman, siPython, siR, siReact, siAngular, siSqlite, siStorybook, siSupabase, siSvg,
-  siTailwindcss, siThreedotjs, siTypescript, siVitest,
+  siAngular, siArduino, siBlender, siBootstrap, siC, siCisco, siCplusplus, siCss, siDocker, siDotnet, siElectron, siExpress,
+  siFigma, siFramer, siGit, siGithubactions, siGoogle, siGooglegemini, siHtml5, siJavascript, siJsonwebtokens, siMariadb,
+  siMongodb, siMysql, siNestjs, siNodedotjs, siNumpy, siOpenjdk, siPaddlepaddle, siPandas, siPhp, siPostgresql, siPostman,
+  siPython, siQt, siR, siReact, siSqlite, siStorybook, siSupabase, siSvg, siTailwindcss, siThreedotjs, siTypescript, siVitest,
 } from 'simple-icons';
-import {Binary, ChartColumn, ChartPie, Code, Database, Mail, Network, RefreshCcw, ScanText, Sheet, Sigma, Webhook, Workflow} from 'lucide-react';
+import {
+  Binary, BrainCircuit, Cable, ChartColumn, ChartPie, Code, Database, FileCode, Languages, Mail, Network, RefreshCcw,
+  ScanText, Sheet, Sigma, Trophy, Users, Webhook, Workflow,
+} from 'lucide-react';
 
 export const BRAND_ICONS = {
   'Python': siPython,
@@ -44,6 +47,15 @@ export const BRAND_ICONS = {
   'SVG': siSvg,
   'Framer Motion': siFramer,
   'Three.js': siThreedotjs,
+  'Cisco': siCisco,
+  'Bootstrap': siBootstrap,
+  '.NET': siDotnet,
+  'PHP': siPhp,
+  'MariaDB': siMariadb,
+  'Arduino': siArduino,
+  'Google': siGoogle,
+  'Blender': siBlender,
+  'PyQt': siQt,
 };
 
 export const FALLBACK_ICONS = {
@@ -64,6 +76,13 @@ export const FALLBACK_ICONS = {
   'Automatización': Workflow,
   'TrOCR': ScanText,
   'Tesseract': ScanText,
+  'Redes': Network,
+  'Sockets TCP': Cable,
+  'Visual Basic': FileCode,
+  'Inteligencia artificial': BrainCircuit,
+  'Inglés': Languages,
+  'Programación competitiva': Trophy,
+  'Comunidad': Users,
 };
 
 export const DEFAULT_TECH_ICON = Code;

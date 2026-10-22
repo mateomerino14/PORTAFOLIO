@@ -11,7 +11,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Contenido de la parada de una etapa de la trayectoria: tipo, periodo, cargo, lugar, logros y tecnologías. Al costado muestra las fotos de la etapa, sus proyectos o sus materias.',
+        component: 'Contenido de la parada de una etapa de la trayectoria: tipo, periodo, cargo, lugar, logros y tecnologías. Al costado muestra las fotos de la etapa, que ocupan el alto del texto, o su arquitectura. Los proyectos de la etapa van debajo del texto, en dos columnas cuando la etapa no tiene fotos.',
       },
     },
   },

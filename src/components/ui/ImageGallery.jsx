@@ -7,8 +7,10 @@ import {EASE_OUT} from '../../constants';
 
 const styles = {
   figure: 'flex flex-col gap-2',
+  figureFill: 'flex h-full flex-col gap-2',
   frameCover: 'group relative block aspect-[16/10] w-full cursor-zoom-in overflow-hidden rounded-xl border border-line bg-ink-raised',
   frameContain: 'group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-xl border border-line bg-ink-raised',
+  frameFill: 'group relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-xl border border-line bg-ink-raised md:aspect-auto md:min-h-60 md:flex-1',
   imageCover: 'absolute inset-0 h-full w-full object-cover object-top',
   imageContain: 'absolute inset-0 h-full w-full object-contain',
   expandHint: 'absolute top-2 right-2 grid h-8 w-8 place-items-center rounded-lg bg-ink/80 text-paper opacity-0 transition-opacity group-hover:opacity-100',
@@ -31,8 +33,9 @@ const closeIconSize = 20;
 const overlayMotion = {initial: {opacity: 0}, animate: {opacity: 1}, exit: {opacity: 0}};
 
 const fitStyles = {
-  cover: {frame: styles.frameCover, image: styles.imageCover, thumb: styles.thumbImageCover},
-  contain: {frame: styles.frameContain, image: styles.imageContain, thumb: styles.thumbImageContain},
+  cover: {figure: styles.figure, frame: styles.frameCover, image: styles.imageCover, thumb: styles.thumbImageCover},
+  contain: {figure: styles.figure, frame: styles.frameContain, image: styles.imageContain, thumb: styles.thumbImageContain},
+  fill: {figure: styles.figureFill, frame: styles.frameFill, image: styles.imageContain, thumb: styles.thumbImageContain},
 };
 
 const slideMotion = {
@@ -58,7 +61,7 @@ function ImageGallery({images, note, title, fit = 'cover'}) {
   const fitStyle = fitStyles[fit];
   const progressTransition = {duration: autoplayMs / millisecondsPerSecond, ease: 'linear'};
   return (
-    <figure ref={containerRef} className={styles.figure} onMouseEnter={pause} onMouseLeave={resume} onFocus={pause} onBlur={resume}>
+    <figure ref={containerRef} className={fitStyle.figure} onMouseEnter={pause} onMouseLeave={resume} onFocus={pause} onBlur={resume}>
       <button type="button" className={fitStyle.frame} onClick={expand} aria-label={`Ampliar imagen: ${activeImage.caption}`}>
         <AnimatePresence initial={false}>
           <motion.img key={activeImage.src} src={publicAsset(activeImage.src)} alt={`${title}: ${activeImage.caption}`} loading="lazy" className={fitStyle.image} {...slideMotion} />

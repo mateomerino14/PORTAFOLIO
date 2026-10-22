@@ -9,7 +9,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Contenido de la parada de un grupo de certificaciones: su lista completa y, al costado, un resumen visual del grupo.',
+        component: 'Contenido de la parada de un grupo de certificaciones: su lista completa con las cifras del grupo y, al costado, sus certificados escaneados ocupando el alto de la lista para que ambas columnas queden equilibradas. Si el grupo no tiene certificados escaneados, muestra el resumen con sus temas.',
       },
     },
   },

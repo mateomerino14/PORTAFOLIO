@@ -10,7 +10,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Galería con miniaturas para cambiar de imagen. Avanza sola cada 5 segundos con un fundido suave mientras está a la vista; se pausa al pasar el cursor, al abrirla o si el sistema pide menos movimiento. Al tocar la imagen principal se abre ampliada; se cierra con un clic o con Escape. Con `fit="contain"` muestra la imagen completa, útil para fotos verticales.',
+        component: 'Galería con miniaturas para cambiar de imagen. Avanza sola cada 5 segundos con un fundido suave mientras está a la vista; se pausa al pasar el cursor, al abrirla o si el sistema pide menos movimiento. Al tocar la imagen principal se abre ampliada; se cierra con un clic o con Escape. Con `fit="contain"` muestra la imagen completa, útil para fotos verticales. Con `fit="fill"` la imagen ocupa el alto disponible de su columna, para que el panel quede equilibrado con el texto de al lado.',
       },
     },
   },
@@ -26,4 +26,9 @@ export const SeveralImages = {};
 
 export const OtherProject = {
   args: {title: viaticos.title, images: viaticos.media[0].images, note: viaticos.media[0].note},
+};
+
+export const FillHeight = {
+  args: {fit: 'fill'},
+  decorators: [(Story) => <div className="flex h-[28rem] flex-col"><Story /></div>],
 };

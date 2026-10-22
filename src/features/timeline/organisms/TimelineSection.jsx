@@ -29,7 +29,7 @@ function TimelineSection() {
         </div>
       </StopPanel>
       {timelineStops.map((stop) => (
-        <StopPanel key={stop.id} stopId={stop.id} variant={stop.hasAside ? 'wide' : 'panel'}>
+        <StopPanel key={stop.id} stopId={stop.id} variant={stop.isWide ? 'wide' : 'panel'}>
           <TimelinePanel entry={TIMELINE[stop.itemIndex]} relatedProjects={stop.relatedProjects} hasAside={stop.hasAside} />
         </StopPanel>
       ))}

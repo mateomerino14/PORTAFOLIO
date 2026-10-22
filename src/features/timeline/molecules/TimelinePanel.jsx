@@ -7,7 +7,8 @@ import {TIMELINE_TYPE_ICONS, TIMELINE_TYPE_LABELS} from '../constants/timelineTy
 
 const styles = {
   layout: 'grid grid-cols-[minmax(0,1fr)] gap-6',
-  layoutWithAside: 'grid grid-cols-[minmax(0,1fr)] gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-center md:gap-8',
+  layoutWithAside: 'grid grid-cols-[minmax(0,1fr)] gap-6 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] md:items-stretch md:gap-8',
+  content: 'flex flex-col justify-center',
   header: 'mb-4 flex items-center gap-3',
   badge: 'grid h-11 w-11 shrink-0 place-items-center rounded-xl border border-accent/30 bg-accent/10 text-accent',
   meta: 'font-mono text-xs text-fog',
@@ -16,21 +17,30 @@ const styles = {
   place: 'mt-1 flex items-center gap-1.5 text-fog',
   points: 'mt-4 list-disc space-y-1.5 pl-5 text-sm text-fog marker:text-signal',
   tags: 'mt-5',
+  projects: 'mt-6',
   asideTitle: 'font-mono text-xs tracking-widest text-fog uppercase',
-  aside: 'flex flex-col gap-4',
+  aside: 'flex flex-col justify-center gap-4',
 };
 
 const badgeIconSize = 20;
 const placeIconSize = 14;
+const projectColumns = {single: 1, double: 2};
 
-function RelatedProjects({projects}) {
+const columnsFor = (hasAside) => {
+  if (hasAside) {
+    return projectColumns.single;
+  }
+  return projectColumns.double;
+};
+
+function RelatedProjects({projects, columns}) {
   if (projects.length === 0) {
     return null;
   }
   return (
-    <div>
+    <div className={styles.projects}>
       <p className={styles.asideTitle}>Proyectos de esta etapa</p>
-      <StopIndex items={projects} />
+      <StopIndex items={projects} columns={columns} />
     </div>
   );
 }
@@ -38,19 +48,20 @@ function RelatedProjects({projects}) {
 function TimelineAside({entry, relatedProjects}) {
   return (
     <div className={styles.aside}>
-      {entry.photos && <ImageGallery images={entry.photos} title={entry.title} fit="contain" />}
+      {entry.photos && <ImageGallery images={entry.photos} title={entry.title} fit="fill" />}
       {entry.architecture && <ArchitectureDiagram title={entry.architecture.title} layers={entry.architecture.layers} />}
       {entry.architecture && <StopIndex items={relatedProjects} />}
-      {!entry.architecture && <RelatedProjects projects={relatedProjects} />}
     </div>
   );
 }
 
 function TimelinePanel({entry, relatedProjects = [], hasAside = false}) {
   const Icon = TIMELINE_TYPE_ICONS[entry.type];
+  const showProjectsInContent = !entry.architecture;
+  const columns = columnsFor(hasAside);
   return (
     <article className={hasAside ? styles.layoutWithAside : styles.layout}>
-      <div>
+      <div className={styles.content}>
         <div className={styles.header}>
           <span className={styles.badge}>
             <Icon size={badgeIconSize} aria-hidden="true" />
@@ -69,6 +80,7 @@ function TimelinePanel({entry, relatedProjects = [], hasAside = false}) {
           {entry.points.map((point) => <li key={point}>{point}</li>)}
         </ul>
         {entry.tags && <TechList items={entry.tags} className={styles.tags} />}
+        {showProjectsInContent && <RelatedProjects projects={relatedProjects} columns={columns} />}
       </div>
       {hasAside && <TimelineAside entry={entry} relatedProjects={relatedProjects} />}
     </article>

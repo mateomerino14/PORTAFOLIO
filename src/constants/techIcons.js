@@ -1,6 +1,6 @@
 import {
-  siAngular, siArduino, siBlender, siBootstrap, siC, siCisco, siCplusplus, siCss, siDocker, siDotnet, siElectron, siExpress,
-  siFigma, siFramer, siGit, siGithubactions, siGoogle, siGooglegemini, siHtml5, siJavascript, siJsonwebtokens, siMariadb,
+  siAngular, siArduino, siAstro, siBlender, siBootstrap, siC, siCisco, siCplusplus, siCss, siDocker, siDotnet, siElectron, siExpress,
+  siFigma, siFirebase, siFramer, siGit, siGithubactions, siGoogle, siGooglegemini, siHtml5, siJavascript, siJsonwebtokens, siMariadb,
   siMongodb, siMysql, siNestjs, siNodedotjs, siNumpy, siOpenjdk, siPaddlepaddle, siPandas, siPhp, siPostgresql, siPostman,
   siPython, siQt, siR, siReact, siSqlite, siStorybook, siSupabase, siSvg, siTailwindcss, siThreedotjs, siTypescript, siVitest,
 } from 'simple-icons';
@@ -56,6 +56,8 @@ export const BRAND_ICONS = {
   'Google': siGoogle,
   'Blender': siBlender,
   'PyQt': siQt,
+  'Astro': siAstro,
+  'Firebase': siFirebase,
 };
 
 export const FALLBACK_ICONS = {

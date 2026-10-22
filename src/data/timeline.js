@@ -86,7 +86,7 @@ export const TIMELINE = [
       'Promedio 84.68/100.',
       'Programación, Estructuras de Datos, Bases de Datos, Teoría de Grafos, Desarrollo Web.',
     ],
-    projects: ['Prototipo HTR para código manuscrito', 'Gestor de portafolios profesionales', 'Sitio web del Centro MEMI', 'Chat grupal con sockets', 'Capilla con bibliotecaria en 3D', 'Diagramador de flujo SVG', 'Landing page Academia Digital Pro', 'Simulación de sistemas en R'],
+    projects: ['Prototipo HTR para código manuscrito', 'SansiStore', 'Gestor de portafolios profesionales', 'Sitio web del Centro MEMI', 'Chat grupal con sockets', 'Capilla con bibliotecaria en 3D', 'Diagramador de flujo SVG', 'Landing page Academia Digital Pro', 'Simulación de sistemas en R'],
   },
   {
     period: 'Dic 2022',

@@ -1,7 +1,8 @@
 import ImageGallery from './ImageGallery';
 import {PROJECTS} from '../../data/projects';
 
-const [viaticos, , brasaBrava] = PROJECTS;
+const viaticos = PROJECTS.find((project) => project.title === 'Sistema de Control de Viáticos');
+const brasaBrava = PROJECTS.find((project) => project.title === 'Brasa Brava');
 
 export default {
   title: 'UI/ImageGallery',

@@ -1,6 +1,8 @@
 import ProjectPanel from './ProjectPanel';
 import {PROJECTS} from '../../../data/projects';
 
+const projectNamed = (title) => PROJECTS.find((project) => project.title === title);
+
 export default {
   title: 'Projects/Molecules/ProjectPanel',
   component: ProjectPanel,
@@ -13,16 +15,20 @@ export default {
   },
   decorators: [(Story) => <div className="w-[64rem] rounded-2xl border border-line bg-ink/80 p-8"><Story /></div>],
   args: {
-    project: PROJECTS[0],
+    project: projectNamed('Sistema de Control de Viáticos'),
   },
 };
 
-export const MultipleLinks = {};
+export const PrivateCode = {};
 
 export const SingleLink = {
-  args: {project: PROJECTS[2]},
+  args: {project: projectNamed('Diagramador de flujo SVG')},
 };
 
 export const WithCode = {
-  args: {project: PROJECTS[3]},
+  args: {project: projectNamed('Chat grupal con sockets')},
+};
+
+export const WithModel = {
+  args: {project: projectNamed('Capilla con bibliotecaria en 3D')},
 };

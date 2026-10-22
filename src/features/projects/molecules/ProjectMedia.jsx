@@ -1,4 +1,5 @@
 import ImageGallery from '../../../components/ui/ImageGallery';
+import ModelViewer from '../../../components/ui/ModelViewer';
 import CodePreview from './CodePreview';
 import useActiveTab from '../hooks/useActiveTab';
 import {MEDIA_TYPES} from '../../../data/projects';
@@ -19,6 +20,9 @@ const tabClass = (isActive) => {
 function MediaBlock({block, title}) {
   if (block.type === MEDIA_TYPES.code) {
     return <CodePreview file={block.file} language={block.language} code={block.code} />;
+  }
+  if (block.type === MEDIA_TYPES.model) {
+    return <ModelViewer src={block.src} title={title} rotation={block.rotation} camera={block.camera} lights={block.lights} controls={block.controls} note={block.note} />;
   }
   return <ImageGallery images={block.images} note={block.note} title={title} />;
 }

@@ -1,8 +1,9 @@
 import ProjectMedia from './ProjectMedia';
-import {PROJECTS} from '../../../data/projects';
+import {MEDIA_TYPES, PROJECTS} from '../../../data/projects';
 
 const simulation = PROJECTS.find((project) => project.media.length > 1);
 const [viaticos] = PROJECTS;
+const chapel = PROJECTS.find((project) => project.media.some((block) => block.type === MEDIA_TYPES.model));
 
 export default {
   title: 'Projects/Molecules/ProjectMedia',
@@ -25,4 +26,8 @@ export const WithTabs = {};
 
 export const SingleBlock = {
   args: {title: viaticos.title, blocks: viaticos.media},
+};
+
+export const WithModel = {
+  args: {title: chapel.title, blocks: chapel.media},
 };

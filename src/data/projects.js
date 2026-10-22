@@ -3,6 +3,7 @@ const githubUrl = 'https://github.com/mateomerino14';
 export const MEDIA_TYPES = {
   gallery: 'gallery',
   code: 'code',
+  model: 'model',
 };
 
 const demoNote = 'Capturas de la aplicación corriendo con datos de ejemplo.';
@@ -38,17 +39,17 @@ export const PROJECTS = [
     ],
   },
   {
-    title: 'Sistema de Gestión para Café-Bar',
+    title: 'Sistema Cafebar · Web y escritorio',
     cover: 'projects/cafe-bar/mesas.webp',
     context: 'Cliente freelance · Entregado',
-    kind: 'Escritorio y web',
-    description: 'Sistema para controlar ventas, mesas, inventario, cocina y empleados de un café-bar. Empezó como aplicación de escritorio y lo migré a una aplicación web.',
+    kind: 'Web y escritorio',
+    description: 'Segunda versión del sistema de gestión de un café temático: caja por mesas, pedidos a cocina, inventario, promociones, empleados y reportes. Funciona en la computadora de caja y se usa desde celulares y tablets conectados al Wi-Fi del local.',
     highlights: [
       'Comandas a cocina y tickets en impresoras térmicas mediante un agente local',
       'Reporte semanal de los productos más vendidos enviado por correo',
       'Instalación local con Electron y PostgreSQL embebido, sin depender de internet',
     ],
-    tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron', 'Python'],
+    tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron'],
     links: [],
     isPrivateCode: true,
     media: [
@@ -67,7 +68,37 @@ export const PROJECTS = [
     ],
   },
   {
+    title: 'Sistema Cafebar · Escritorio en Python',
+    cover: 'projects/cafe-bar-python/mesas.webp',
+    context: 'Cliente freelance · Primera versión',
+    kind: 'Escritorio',
+    description: 'Primera versión del sistema del café, hecha como aplicación de escritorio en Python. Cubre ventas por mesa, cocina, inventario de ingredientes, productos, promociones, empleados con permisos por cargo y reportes.',
+    highlights: [
+      'Control de stock por ingredientes, con extras y exclusiones en cada pedido',
+      'Impresión de tickets y comandas en impresoras térmicas USB y seriales',
+      'Reportes en PDF con gráficos, respaldos por correo e importación desde Excel',
+    ],
+    tags: ['Python', 'PyQt', 'SQLite', 'Pandas'],
+    links: [],
+    isPrivateCode: true,
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Capturas',
+        note: demoNote,
+        images: [
+          {src: 'projects/cafe-bar-python/inicio-sesion.webp', caption: 'Inicio de sesión con el carrusel de empleados'},
+          {src: 'projects/cafe-bar-python/mesas.webp', caption: 'Mesas de cada salón: ocupadas en rojo, con su mesero y el cobro'},
+          {src: 'projects/cafe-bar-python/registrar-pedido.webp', caption: 'Registro de un pedido con productos por categoría y el total'},
+          {src: 'projects/cafe-bar-python/reporte-ventas.webp', caption: 'Reporte de ventas detalladas por fecha, mesero, salón y método de pago'},
+          {src: 'projects/cafe-bar-python/secciones.webp', caption: 'Administración de los salones del local'},
+        ],
+      },
+    ],
+  },
+  {
     title: 'Brasa Brava',
+    cover: 'projects/brasa-brava/caja.webp',
     context: 'Cliente freelance · En curso',
     kind: 'Web y escritorio',
     description: 'Sistema interno de un restaurante: caja, cocina, catálogo, stock, mesas, promociones y empleados. El mismo código funciona en la web y como aplicación de escritorio.',
@@ -85,6 +116,7 @@ export const PROJECTS = [
         label: 'Capturas',
         note: demoNote,
         images: [
+          {src: 'projects/brasa-brava/inicio-sesion.webp', caption: 'Inicio de sesión con selección rápida del empleado'},
           {src: 'projects/brasa-brava/inicio.webp', caption: 'Página principal con el resumen del día según el cargo'},
           {src: 'projects/brasa-brava/caja.webp', caption: 'Caja con el plano de mesas, ocupación y ventas del día'},
           {src: 'projects/brasa-brava/cocina.webp', caption: 'Cocina: pedidos pendientes con tiempo de espera'},
@@ -131,6 +163,63 @@ export const PROJECTS = [
 
 def cer(referencia, hipotesis):
     return _tasa_error(normalizar(referencia), normalizar(hipotesis))`,
+      },
+    ],
+  },
+  {
+    title: 'SansiStore',
+    cover: 'projects/sansistore/inicio.webp',
+    context: 'Procesos Ágiles · Proyecto en equipo',
+    kind: 'E-commerce',
+    description: 'Tienda en línea de la comunidad UMSS construida por varios equipos con Scrum: catálogo, carrito, pedidos, inventario, vendedores y repartidores. Formé parte del equipo Divinity Minds.',
+    highlights: [
+      'Carrito de compras sincronizado con Firestore y guardado local para visitantes',
+      'Filtro de productos por categorías y mejoras en las tarjetas de producto',
+      'Aviso por correo cuando un producto agotado vuelve a tener stock, con Cloud Functions',
+    ],
+    tags: ['Astro', 'React', 'TypeScript', 'Firebase', 'Tailwind'],
+    links: [{label: 'Código', href: 'https://github.com/ProcesosAgilesUMSS/sansistore'}],
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Capturas',
+        note: 'Capturas del sitio publicado en Vercel.',
+        images: [
+          {src: 'projects/sansistore/inicio-sesion.webp', caption: 'Inicio de sesión con la cuenta institucional de la UMSS'},
+          {src: 'projects/sansistore/inicio.webp', caption: 'Portada con buscador, categorías y ofertas'},
+          {src: 'projects/sansistore/filtro-categorias.webp', caption: 'Catálogo con el filtro por categorías'},
+          {src: 'projects/sansistore/detalle-producto.webp', caption: 'Detalle de un producto agotado'},
+          {src: 'projects/sansistore/carrito.webp', caption: 'Carrito con el resumen de pago'},
+        ],
+      },
+      {
+        type: MEDIA_TYPES.code,
+        label: 'Código',
+        file: 'functions/index.js',
+        language: 'JavaScript',
+        code: `export const notificarStockDisponible = onDocumentUpdated(
+    {
+      document: "inventory/{productId}",
+      region: "southamerica-east1",
+      secrets: [gmailUser, gmailPass],
+    },
+    async (event) => {
+      const before = event.data.before.data();
+      const after = event.data.after.data();
+
+      const stockAntes = before.stockAvailable ?? 0;
+      const stockDespues = after.stockAvailable ?? 0;
+
+      if (stockAntes > 0 || stockDespues <= 0) {
+        return;
+      }
+
+      const productId = event.params.productId;
+      const subscribersSnap = await db
+          .collection("stockAlerts")
+          .doc(productId)
+          .collection("subscribers")
+          .get();`,
       },
     ],
   },
@@ -183,12 +272,119 @@ def cer(referencia, hipotesis):
           {src: 'projects/centro-memi/mision-vision.webp', caption: 'Misión, visión y valores del centro'},
           {src: 'projects/centro-memi/cursos.webp', caption: 'Cursos y seminarios con su formulario de registro'},
           {src: 'projects/centro-memi/servicios.webp', caption: 'Servicios que ofrece el centro'},
+          {src: 'projects/centro-memi/icpc.webp', caption: 'Sección ICPC UMSS con el registro de afiches'},
         ],
       },
     ],
   },
   {
+    title: 'Chat grupal con sockets',
+    cover: 'projects/chat-sockets/terminales.webp',
+    context: 'Universidad · Redes',
+    kind: 'Consola',
+    description: 'Chat por consola en el que varios clientes conversan a través de un servidor TCP. Cada mensaje que escribe un cliente llega al resto de los conectados.',
+    highlights: [
+      'Servidor multihilo con un hilo por cliente conectado',
+      'Recepción en segundo plano para leer y escribir al mismo tiempo',
+      'Lista de conexiones segura entre hilos y envíos sincronizados por socket',
+    ],
+    tags: ['Java', 'Sockets TCP', 'Redes'],
+    links: [{label: 'Código', href: `${githubUrl}/CHAT-SOCKETS-JAVA`}],
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Capturas',
+        note: 'Servidor y tres clientes ejecutándose en la misma computadora.',
+        images: [
+          {src: 'projects/chat-sockets/conexion.webp', caption: 'Un cliente elige su nombre y se conecta al chat'},
+          {src: 'projects/chat-sockets/servidor.webp', caption: 'El servidor escucha en el puerto 5000 y cuenta los clientes en línea'},
+          {src: 'projects/chat-sockets/conversacion.webp', caption: 'Conversación vista desde uno de los clientes'},
+          {src: 'projects/chat-sockets/terminales.webp', caption: 'Servidor y tres clientes conversando al mismo tiempo'},
+          {src: 'projects/chat-sockets/desconexion.webp', caption: 'Los clientes salen y el servidor cierra cada conexión'},
+        ],
+      },
+      {
+        type: MEDIA_TYPES.code,
+        label: 'Código',
+        file: 'src/ThreadServidor.java',
+        language: 'Java',
+        code: `@Override
+public void run() {
+    try {
+        while (true) {
+            String mensaje = flujo.readUTF();
+            enviarTodosDemas(mensaje);
+        }
+    } catch (IOException e) {
+        desconectar();
+    }
+}
+
+private void enviarTodosDemas(String mensaje) {
+    for (Socket user : Servidor.listaUsuarios) {
+        if (user != client) {
+            enviar(mensaje, user);
+        }
+    }
+}
+
+private void enviar(String mensaje, Socket clienteOtro) {
+    synchronized (clienteOtro) {
+        try {
+            DataOutputStream flujoSalida = new DataOutputStream(clienteOtro.getOutputStream());
+            flujoSalida.writeUTF(mensaje);
+        } catch (IOException e) {
+            System.out.println("Error enviando mensaje");
+        }
+    }
+}`,
+      },
+    ],
+  },
+  {
+    title: 'Capilla con bibliotecaria en 3D',
+    cover: 'projects/capilla/pasillo.webp',
+    context: 'Universidad',
+    kind: 'Modelado 3D',
+    description: 'Escena modelada en Blender: el interior de una capilla convertida en biblioteca, con estanterías, lámpara colgante, puerta de arco y una bibliotecaria al fondo del pasillo.',
+    highlights: [
+      'Modelado de la arquitectura, el mobiliario y la iluminación interior',
+      'Renders con Cycles desde varios puntos de la escena',
+      'Modelo exportado a glTF para recorrerlo en vivo en el navegador',
+    ],
+    tags: ['Blender', 'Three.js'],
+    links: [{label: 'Código', href: `${githubUrl}/CAPILLA-BLENDER`}],
+    media: [
+      {
+        type: MEDIA_TYPES.gallery,
+        label: 'Renders',
+        note: 'Renders generados con Cycles a partir del archivo .blend del repositorio.',
+        images: [
+          {src: 'projects/capilla/pasillo.webp', caption: 'Pasillo central con las estanterías y la bibliotecaria al fondo'},
+          {src: 'projects/capilla/lampara.webp', caption: 'Lámpara colgante y vegetación sobre la entrada'},
+          {src: 'projects/capilla/bibliotecaria.webp', caption: 'Bibliotecaria con un libro frente a la puerta de arco'},
+          {src: 'projects/capilla/estanterias.webp', caption: 'Detalle de las estanterías con libros'},
+          {src: 'projects/capilla/recorrido.webp', caption: 'Vista del pasillo desde la puerta de arco'},
+        ],
+      },
+      {
+        type: MEDIA_TYPES.model,
+        label: 'Modelo 3D',
+        src: 'projects/capilla/capilla.glb',
+        rotation: [0, Math.PI, 0],
+        camera: {position: [-205, 55, 362], target: [-205, 42, 0]},
+        lights: [
+          {position: [-206, 58, 98], intensity: 2.2, color: '#ffd9a0', decay: 0, distance: 420},
+          {position: [-205, 60, -10], intensity: 1.4, color: '#ffe7c2', decay: 0, distance: 260},
+        ],
+        controls: {minDistance: 40, maxDistance: 380, minAzimuthAngle: -0.08, maxAzimuthAngle: 0.08, minPolarAngle: 1.45, maxPolarAngle: 1.66},
+        note: 'Arrastra para girar, rueda o pellizca para acercar.',
+      },
+    ],
+  },
+  {
     title: 'Diagramador de flujo SVG',
+    cover: 'projects/diagramador/editor.webp',
     context: 'Universidad',
     kind: 'Web interactiva',
     description: 'Editor web para dibujar diagramas de flujo con SVG puro: figuras, conexiones ortogonales con flechas, zoom y edición de texto en línea.',
@@ -205,7 +401,11 @@ def cer(referencia, hipotesis):
         label: 'Capturas',
         note: 'Diagrama de ejemplo cargado con el importador JSON del propio editor.',
         images: [
-          {src: 'projects/diagramador/editor.webp', caption: 'Editor con figuras, decisiones Sí/No y conexiones ortogonales'},
+          {src: 'projects/diagramador/editor-vacio.webp', caption: 'Editor vacío con la paleta de figuras y los modos de trabajo'},
+          {src: 'projects/diagramador/construccion.webp', caption: 'Diagrama en construcción con entrada, proceso y decisión'},
+          {src: 'projects/diagramador/editor.webp', caption: 'Diagrama completo con decisiones Sí/No y conexiones ortogonales'},
+          {src: 'projects/diagramador/edicion-texto.webp', caption: 'Edición del texto de un proceso con el editor en línea'},
+          {src: 'projects/diagramador/zoom.webp', caption: 'Zoom sobre la decisión y sus salidas'},
         ],
       },
     ],
@@ -232,6 +432,7 @@ def cer(referencia, hipotesis):
           {src: 'projects/landing-academia/estadisticas.webp', caption: 'Llamado a la acción y estadísticas clave'},
           {src: 'projects/landing-academia/beneficios.webp', caption: 'Beneficios en tarjetas con efecto de vidrio'},
           {src: 'projects/landing-academia/llamado.webp', caption: 'Cierre con el llamado a la acción final'},
+          {src: 'projects/landing-academia/movil.webp', caption: 'Vista en celular de la portada, las estadísticas y los beneficios'},
         ],
       },
     ],
@@ -258,6 +459,7 @@ def cer(referencia, hipotesis):
           {src: 'projects/simulacion-r/dado-convergencia.webp', caption: 'Convergencia de la frecuencia relativa de cada cara en 5000 lanzamientos de un dado'},
           {src: 'projects/simulacion-r/dado-frecuencias.webp', caption: 'Frecuencia absoluta de cada cara frente al valor esperado'},
           {src: 'projects/simulacion-r/estimacion-pi.webp', caption: 'Estimación de π por Monte Carlo con un generador congruencial mixto'},
+          {src: 'projects/simulacion-r/distribucion-tir.webp', caption: 'Distribución acumulada de la TIR de un proyecto en 1000 corridas'},
         ],
       },
       {

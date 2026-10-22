@@ -1,4 +1,4 @@
-import {Braces, ChartColumn, Database, LayoutTemplate, Server, Workflow} from 'lucide-react';
+import {Braces, ChartColumn, Database, LayoutTemplate, Network, Server, Workflow} from 'lucide-react';
 
 export const STACK_ICONS = {
   languages: Braces,
@@ -7,4 +7,5 @@ export const STACK_ICONS = {
   databases: Database,
   data: ChartColumn,
   devops: Workflow,
+  networks: Network,
 };

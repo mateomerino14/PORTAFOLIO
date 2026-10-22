@@ -15,7 +15,7 @@ export default {
   args: {
     items: [
       {id: 'proyecto-1', label: 'Sistema de Control de Viáticos', meta: 'Pasantía · MAXAM · Web full stack', thumbnail: 'projects/viaticos/mis-viajes.webp'},
-      {id: 'proyecto-2', label: 'Sistema de Gestión para Café-Bar', meta: 'Cliente freelance · Escritorio y web', thumbnail: 'projects/cafe-bar/mesas.webp'},
+      {id: 'proyecto-2', label: 'Sistema Cafebar · Web y escritorio', meta: 'Cliente freelance · Web y escritorio', thumbnail: 'projects/cafe-bar/mesas.webp'},
       {id: 'proyecto-3', label: 'Brasa Brava', meta: 'Restaurante · Web y escritorio', thumbnail: 'projects/brasa-brava/inicio.webp'},
     ],
   },

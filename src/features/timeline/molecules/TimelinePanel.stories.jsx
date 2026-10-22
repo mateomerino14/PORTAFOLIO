@@ -31,7 +31,7 @@ export const Freelance = {
   args: {
     entry: freelance,
     relatedProjects: [
-      {id: 'proyecto-2', label: 'Sistema de Gestión para Café-Bar', meta: 'Cliente freelance · Escritorio y web'},
+      {id: 'proyecto-2', label: 'Sistema Cafebar · Web y escritorio', meta: 'Cliente freelance · Web y escritorio'},
     ],
   },
 };

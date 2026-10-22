@@ -10,6 +10,7 @@ export const TIMELINE = [
     ],
     photos: [
       {src: 'awards/medalla-oro.webp', caption: 'Con la Medalla de Oro y el reconocimiento de la facultad'},
+      {src: 'awards/reconocimiento-medalla-oro.webp', caption: 'Reconocimiento de la facultad como mejor estudiante de Ingeniería Informática'},
       {src: 'awards/destacados-nomina.webp', caption: 'Nómina oficial de estudiantes destacados: primer lugar en Ingeniería Informática'},
     ],
   },
@@ -24,7 +25,8 @@ export const TIMELINE = [
       'Despliegue, impresión en ticketeras térmicas y reportes automáticos por correo.',
     ],
     tags: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Electron', 'Python'],
-    projects: ['Sistema de Gestión para Café-Bar', 'Brasa Brava'],
+    projects: ['Sistema Cafebar · Web y escritorio', 'Sistema Cafebar · Escritorio en Python', 'Brasa Brava'],
+    photos: [{src: 'timeline/carta-conformidad-cafe.webp', caption: 'Carta de conformidad del cliente por el sistema del café-bar'}],
   },
   {
     period: 'May 2026 — Oct 2026',
@@ -53,7 +55,7 @@ export const TIMELINE = [
     place: 'Universidad Mayor de San Simón',
     type: 'work',
     points: [
-      'Apoyo en Introducción a la Programación y Teoría de Grafos.',
+      'Apoyo durante un año en Introducción a la Programación y Teoría de Grafos.',
       'Guía a estudiantes en algoritmos, lógica y resolución de problemas.',
       'Conducción de laboratorios y corrección de tareas y exámenes.',
     ],
@@ -72,6 +74,7 @@ export const TIMELINE = [
     photos: [
       {src: 'awards/excelencia-director.webp', caption: 'Entrega del diploma y la medalla de honor junto al director de carrera'},
       {src: 'awards/excelencia-medalla.webp', caption: 'Con la medalla y el diploma de honor en el acto de premiación'},
+      {src: 'awards/diploma-medalla-honor.webp', caption: 'Diploma de honor por el tercer lugar de rendimiento académico de la facultad'},
     ],
   },
   {
@@ -83,6 +86,34 @@ export const TIMELINE = [
       'Promedio 84.68/100.',
       'Programación, Estructuras de Datos, Bases de Datos, Teoría de Grafos, Desarrollo Web.',
     ],
-    projects: ['Prototipo HTR para código manuscrito', 'Gestor de portafolios profesionales', 'Sitio web del Centro MEMI', 'Diagramador de flujo SVG', 'Landing page Academia Digital Pro', 'Simulación de sistemas en R'],
+    projects: ['Prototipo HTR para código manuscrito', 'Gestor de portafolios profesionales', 'Sitio web del Centro MEMI', 'Chat grupal con sockets', 'Capilla con bibliotecaria en 3D', 'Diagramador de flujo SVG', 'Landing page Academia Digital Pro', 'Simulación de sistemas en R'],
+  },
+  {
+    period: 'Dic 2022',
+    title: 'Bachiller de Excelencia',
+    place: 'Estado Plurinacional de Bolivia',
+    type: 'award',
+    points: [
+      'Certificado de Reconocimiento por obtener el mejor rendimiento educativo entre los bachilleres de mi unidad educativa.',
+      'Otorgado por la Presidencia del Estado Plurinacional de Bolivia.',
+    ],
+    photos: [{src: 'school/bachiller-excelencia.webp', caption: 'Certificado de Reconocimiento como Bachiller de Excelencia'}],
+  },
+  {
+    period: 'Dic 2022',
+    title: 'Bachiller y Técnico Medio en Sistemas Informáticos',
+    place: 'Unidad Educativa Privada Eugenia Ravasco · Cochabamba',
+    type: 'education',
+    points: [
+      'Bachiller en Humanidades con formación técnica en Sistemas Informáticos.',
+      'Título de Técnico Medio en Sistemas Informáticos otorgado por el Ministerio de Educación.',
+      'Curso de Ofimática en junio de 2021.',
+    ],
+    photos: [
+      {src: 'school/bachiller-tecnico-medio.webp', caption: 'Certificado de Bachiller en Humanidades y Técnico Medio en Sistemas Informáticos'},
+      {src: 'school/titulo-tecnico-medio.webp', caption: 'Título de Técnico Medio en Sistemas Informáticos'},
+      {src: 'school/diploma-bachiller.webp', caption: 'Diploma de Bachiller en Humanidades'},
+      {src: 'school/ofimatica.webp', caption: 'Curso de Ofimática de la Escuela de Negocios Nelson Mandela'},
+    ],
   },
 ];

@@ -50,6 +50,7 @@ export const BRAND_ICONS = {
   'Cisco': siCisco,
   'Bootstrap': siBootstrap,
   '.NET': siDotnet,
+  'C#': siDotnet,
   'PHP': siPhp,
   'MariaDB': siMariadb,
   'Arduino': siArduino,

@@ -84,7 +84,7 @@ export const TIMELINE = [
     type: 'education',
     points: [
       'Promedio 84.68/100.',
-      'Programación, Estructuras de Datos, Bases de Datos, Teoría de Grafos, Desarrollo Web.',
+      'Programación, Estructuras de Datos, Bases de Datos, Teoría de Grafos, Redes, Desarrollo Web y Taller de Ingeniería de Software.',
     ],
     projects: ['Prototipo HTR para código manuscrito', 'SansiStore', 'Gestor de portafolios profesionales', 'Sitio web del Centro MEMI', 'Chat grupal con sockets', 'Capilla con bibliotecaria en 3D', 'Diagramador de flujo SVG', 'Landing page Academia Digital Pro', 'Simulación de sistemas en R'],
   },

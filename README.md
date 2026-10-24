@@ -48,7 +48,7 @@ npm run build-storybook     # sitio estático de Storybook
 | Proyectos | Índice con miniaturas y una parada por proyecto con capturas, gráficos o código |
 | Trayectoria | Línea de tiempo desde el colegio, con cifras y una parada por etapa con fotos, diplomas, arquitectura o proyectos |
 | Certificaciones | Resumen general y una parada por área (profesionales, diplomados, datos e IA, desarrollo de software, competencias y comunidad, idiomas) con sus certificados escaneados |
-| Contacto | Correo para copiar, menú para escribir desde Gmail, Outlook o la app de correo, redes y tarjeta con foto y hora local |
+| Contacto | Correo para copiar, enlace que abre la app de correo, redes y tarjeta con foto y hora local |
 
 El CV en PDF se descarga desde la barra de navegación y desde el menú del celular.
 

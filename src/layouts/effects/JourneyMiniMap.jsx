@@ -1,6 +1,7 @@
-import {motion} from 'framer-motion';
+import {AnimatePresence, motion} from 'framer-motion';
 import {Network} from 'lucide-react';
 import useJourneyProgress from '../../features/journey/hooks/useJourneyProgress';
+import useNearPageEnd from '../../hooks/shared/useNearPageEnd';
 import {EASE_OUT} from '../../constants';
 
 const styles = {
@@ -18,6 +19,8 @@ const ringStroke = 3;
 const ringLength = 2 * Math.PI * ringRadius;
 const iconSize = 20;
 const ringTransition = {duration: 0.5, ease: EASE_OUT};
+const footerClearancePx = 120;
+const dockMotion = {initial: {opacity: 0, y: 12}, animate: {opacity: 1, y: 0}, exit: {opacity: 0, y: 12}, transition: {duration: 0.25, ease: EASE_OUT}};
 
 const countOf = (progress) => {
   if (progress.branchPosition < 0) {
@@ -38,17 +41,22 @@ function ProgressRing({ratio}) {
 
 function JourneyMiniMap() {
   const progress = useJourneyProgress();
+  const isNearEnd = useNearPageEnd(footerClearancePx);
   return (
-    <div className={styles.dock} role="status" aria-live="polite">
-      <span className={styles.pill}>
-        {progress.groupLabel}
-        <span className={styles.pillCount}>{countOf(progress)}</span>
-      </span>
-      <span className={styles.ball}>
-        <ProgressRing ratio={progress.ratio} />
-        <Network size={iconSize} aria-hidden="true" />
-      </span>
-    </div>
+    <AnimatePresence>
+      {!isNearEnd && (
+        <motion.div className={styles.dock} role="status" aria-live="polite" {...dockMotion}>
+          <span className={styles.pill}>
+            {progress.groupLabel}
+            <span className={styles.pillCount}>{countOf(progress)}</span>
+          </span>
+          <span className={styles.ball}>
+            <ProgressRing ratio={progress.ratio} />
+            <Network size={iconSize} aria-hidden="true" />
+          </span>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 }
 

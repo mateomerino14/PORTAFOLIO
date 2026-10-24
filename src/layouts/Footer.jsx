@@ -1,8 +1,9 @@
 import {PROFILE} from '../data/profile';
 
 const styles = {
-  footer: 'relative z-10 border-t border-line bg-ink pt-8 pb-28 lg:pb-8',
-  content: 'mx-auto flex max-w-6xl flex-col items-center justify-between gap-2 px-6 font-mono text-xs text-fog md:flex-row',
+  footer: 'relative z-10 border-t border-line bg-ink py-5 md:py-8',
+  content: 'mx-auto flex max-w-6xl flex-col items-center justify-between gap-1 px-6 text-center font-mono text-[11px] text-fog md:flex-row md:text-xs',
+  stack: 'hidden md:inline',
 };
 
 const currentYear = new Date().getFullYear();
@@ -12,7 +13,7 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.content}>
         <span>© {currentYear} {PROFILE.name}</span>
-        <span>Hecho con React, Three.js y Framer Motion · {PROFILE.location}</span>
+        <span><span className={styles.stack}>Hecho con React, Three.js y Framer Motion · </span>{PROFILE.location}</span>
       </div>
     </footer>
   );

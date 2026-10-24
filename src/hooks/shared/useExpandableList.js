@@ -1,6 +1,6 @@
 import {useState} from 'react';
 
-const minimumHidden = 2;
+const minimumHidden = 1;
 
 const itemsToShow = (items, visibleCount, isExpanded) => {
   if (isExpanded || items.length - visibleCount < minimumHidden) {

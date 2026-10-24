@@ -13,7 +13,7 @@ import {PROFILE} from '../../data/profile';
 
 const styles = {
   header: 'fixed inset-x-0 top-0 z-50 px-4 pt-4',
-  nav: 'mx-auto flex max-w-6xl items-center justify-between rounded-2xl border px-4 py-3 transition-all duration-500 md:px-6',
+  nav: 'mx-auto flex max-w-6xl items-center justify-between rounded-2xl border px-4 py-3 transition-all duration-500 md:px-6 lg:pt-2.5 lg:pb-4',
   navSolid: 'border-line bg-ink/70 backdrop-blur-xl',
   navClear: 'border-transparent bg-transparent',
   brand: 'flex cursor-pointer items-center gap-2 font-display text-lg font-extrabold',

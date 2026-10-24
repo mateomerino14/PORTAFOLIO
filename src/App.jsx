@@ -1,7 +1,7 @@
 import {MotionConfig} from 'framer-motion';
 import Navbar from './layouts/navbar/Navbar';
 import Footer from './layouts/Footer';
-import JourneyMap from './layouts/effects/JourneyMap';
+import JourneyMiniMap from './layouts/effects/JourneyMiniMap';
 import HomePage from './pages/HomePage';
 import SceneBackdrop from './features/scene/organisms/SceneBackdrop';
 import useSmoothScroll from './hooks/shared/useSmoothScroll';
@@ -16,7 +16,7 @@ function App() {
     <MotionConfig reducedMotion="user">
       <div className={styles.app}>
         <SceneBackdrop />
-        <JourneyMap />
+        <JourneyMiniMap />
         <Navbar />
         <HomePage />
         <Footer />

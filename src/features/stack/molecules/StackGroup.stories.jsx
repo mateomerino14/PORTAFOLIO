@@ -8,7 +8,7 @@ export default {
   parameters: {
     docs: {
       description: {
-        component: 'Fila de una categoría del stack con su ícono y sus tecnologías. Muestra las 5 primeras y un botón para ver el resto; si solo quedaría una oculta, las muestra todas. Las que aparecen en algún proyecto se pueden señalar para ver en la escena 3D dónde se usaron.',
+        component: 'Fila de una categoría del stack con su ícono y sus tecnologías. Muestra las 4 primeras y un botón para ver el resto; si solo quedaría una oculta, las muestra todas. Las que aparecen en algún proyecto se pueden señalar para ver en la escena 3D dónde se usaron.',
       },
     },
   },

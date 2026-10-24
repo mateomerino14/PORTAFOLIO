@@ -44,7 +44,7 @@ npm run build-storybook     # sitio estático de Storybook
 |---|---|
 | Portada | Nombre animado, rol rotativo y accesos a proyectos y contacto |
 | Sobre mí | Presentación, cifras destacadas e idiomas |
-| Stack | Tecnologías por área, con las 5 primeras a la vista y un botón para ver el resto; al señalar una se iluminan los proyectos que la usan |
+| Stack | Tecnologías por área, con las 4 primeras a la vista y un botón para ver el resto; al señalar una se iluminan los proyectos que la usan |
 | Proyectos | Índice con miniaturas y una parada por proyecto con capturas, gráficos o código |
 | Trayectoria | Línea de tiempo desde el colegio, con cifras y una parada por etapa con fotos, diplomas, arquitectura o proyectos |
 | Certificaciones | Resumen general y una parada por área (profesionales, diplomados, datos e IA, desarrollo de software, competencias y comunidad, idiomas) con sus certificados escaneados |
@@ -75,7 +75,7 @@ journeyStore (avance, parada actual, tecnología señalada)
 - **Avance continuo.** `useJourneyScroll` convierte el scroll en un número decimal: `3.5` significa «a mitad de camino entre la parada 3 y la 4». La escena lo lee en cada cuadro sin volver a renderizar React.
 - **Pausa en cada nodo.** La cámara se queda quieta mientras el panel está centrado y solo viaja en la franja central entre dos paradas (`CAMERA_MOTION.dwell`), para que el texto se pueda leer.
 - **Stack conectado.** Cada tecnología que aparece en un proyecto es un nodo unido a esos proyectos. Al señalarla en el panel del stack, sus aristas se iluminan.
-- **Avance del recorrido.** En la computadora, las secciones de la barra de navegación son los nodos: una línea se llena hasta la sección actual y debajo aparecen los puntos de sus subparadas, que también llevan a cada una. En el celular, un botón redondo en la esquina inferior muestra el avance con un anillo y al tocarlo vuelve al inicio; para ir a una sección se usa el menú de arriba.
+- **Avance del recorrido.** En la computadora, las secciones de la barra de navegación son los nodos: una línea se llena hasta la sección actual y debajo aparecen los puntos de sus subparadas, que también llevan a cada una. En el celular, en la esquina inferior se ve la sección y el ítem actual junto a un círculo con un anillo de avance; para ir a una sección se usa el menú de arriba.
 - **Celular y movimiento reducido.** En pantallas angostas la cámara deja el nodo arriba, el panel abajo y el espacio entre paradas se acorta. Si el sistema pide menos movimiento, la cámara salta de nodo en nodo y las galerías no avanzan solas.
 
 ### Componentes

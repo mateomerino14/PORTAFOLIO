@@ -15,7 +15,7 @@ const styles = {
 
 const iconSize = 16;
 const chevronSize = 14;
-const visibleTechnologies = 5;
+const visibleTechnologies = 4;
 
 const toggleLabel = (isExpanded, hiddenCount) => {
   if (isExpanded) {

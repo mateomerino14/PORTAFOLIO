@@ -1,22 +1,30 @@
-import {AnimatePresence, motion} from 'framer-motion';
-import {ArrowUp} from 'lucide-react';
+import {motion} from 'framer-motion';
+import {Network} from 'lucide-react';
 import useJourneyProgress from '../../features/journey/hooks/useJourneyProgress';
-import {scrollToTop} from '../../utils/scroll';
 import {EASE_OUT} from '../../constants';
 
 const styles = {
-  toggle: 'fixed right-4 bottom-4 z-40 grid h-12 w-12 cursor-pointer place-items-center rounded-full border border-line bg-ink/90 text-paper shadow-glow backdrop-blur-md lg:hidden',
+  dock: 'pointer-events-none fixed right-4 bottom-4 z-40 flex items-center gap-2 lg:hidden',
+  pill: 'max-w-[55vw] truncate rounded-full border border-line bg-ink/90 px-3 py-1.5 text-[13px] font-medium text-paper backdrop-blur-md',
+  pillCount: 'font-mono text-[11px] text-fog',
+  ball: 'relative grid h-14 w-14 place-items-center rounded-full border border-line bg-ink/90 text-paper shadow-glow backdrop-blur-md',
   ring: 'absolute inset-0 -rotate-90',
 };
 
-const ringSize = 48;
+const ringSize = 56;
 const ringCenter = ringSize / 2;
-const ringRadius = 20;
+const ringRadius = 24;
 const ringStroke = 3;
 const ringLength = 2 * Math.PI * ringRadius;
-const iconSize = 18;
+const iconSize = 20;
 const ringTransition = {duration: 0.5, ease: EASE_OUT};
-const buttonMotion = {initial: {opacity: 0, scale: 0.8}, animate: {opacity: 1, scale: 1}, exit: {opacity: 0, scale: 0.8}, transition: {duration: 0.25, ease: EASE_OUT}};
+
+const countOf = (progress) => {
+  if (progress.branchPosition < 0) {
+    return '';
+  }
+  return ` ${progress.branchPosition + 1}/${progress.branches.length}`;
+};
 
 function ProgressRing({ratio}) {
   return (
@@ -31,14 +39,16 @@ function ProgressRing({ratio}) {
 function JourneyMiniMap() {
   const progress = useJourneyProgress();
   return (
-    <AnimatePresence>
-      {progress.ratio > 0 && (
-        <motion.button type="button" className={styles.toggle} onClick={scrollToTop} aria-label={`Volver al inicio. Estás en ${progress.groupLabel}`} {...buttonMotion}>
-          <ProgressRing ratio={progress.ratio} />
-          <ArrowUp size={iconSize} aria-hidden="true" />
-        </motion.button>
-      )}
-    </AnimatePresence>
+    <div className={styles.dock} role="status" aria-live="polite">
+      <span className={styles.pill}>
+        {progress.groupLabel}
+        <span className={styles.pillCount}>{countOf(progress)}</span>
+      </span>
+      <span className={styles.ball}>
+        <ProgressRing ratio={progress.ratio} />
+        <Network size={iconSize} aria-hidden="true" />
+      </span>
+    </div>
   );
 }
 

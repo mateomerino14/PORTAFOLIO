@@ -1,6 +1,7 @@
-import {Building2, GraduationCap, Laptop, Presentation, Trophy} from 'lucide-react';
+import {Building2, GraduationCap, Laptop, Presentation, Rocket, Trophy} from 'lucide-react';
 
 export const TIMELINE_TYPE_LABELS = {
+  personal: 'Proyectos propios',
   freelance: 'Freelance',
   internship: 'Pasantía',
   work: 'Experiencia',
@@ -9,6 +10,7 @@ export const TIMELINE_TYPE_LABELS = {
 };
 
 export const TIMELINE_TYPE_ICONS = {
+  personal: Rocket,
   freelance: Laptop,
   internship: Building2,
   work: Presentation,

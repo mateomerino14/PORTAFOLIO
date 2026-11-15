@@ -1,5 +1,18 @@
 export const TIMELINE = [
   {
+    period: 'Nov 2026',
+    title: 'Proyectos propios',
+    place: 'Cochabamba, Bolivia',
+    type: 'personal',
+    points: [
+      'Dos videojuegos de terror en Godot ambientados en Bolivia, con versión para Windows.',
+      'Un observatorio de precios que recolecta datos cada día y los publica en un sitio en vivo.',
+      'Un sistema de escritorio para farmacias y una tienda contada con una escena 3D.',
+    ],
+    tags: ['Godot', 'Python', 'Rust', 'Three.js', 'Supabase'],
+    projects: ['Observatorio de Precios CBBA', 'Sistema Farmacia', 'Socavón', 'Espejo', 'Maison Brumaire'],
+  },
+  {
     period: 'Sep 2026',
     title: 'Medalla de Oro · Estudiante Destacado',
     place: 'Facultad de Ciencias y Tecnología · UMSS',
@@ -86,7 +99,7 @@ export const TIMELINE = [
       'Promedio 84.68/100.',
       'Programación, Estructuras de Datos, Bases de Datos, Teoría de Grafos, Redes, Desarrollo Web y Taller de Ingeniería de Software.',
     ],
-    projects: ['Prototipo HTR para código manuscrito', 'SansiStore', 'Gestor de portafolios profesionales', 'Sitio web del Centro MEMI', 'Chat grupal con sockets', 'Capilla con bibliotecaria en 3D', 'Diagramador de flujo SVG', 'Landing page Academia Digital Pro', 'Simulación de sistemas en R'],
+    projects: ['Prototipo HTR para código manuscrito', 'SansiStore', 'EXPRESA · Analizador de comunicación', 'Despliegue con Ansible en openSUSE', 'Gestor de portafolios profesionales', 'Sitio web del Centro MEMI', 'Chat grupal con sockets', 'Capilla con bibliotecaria en 3D', 'Diagramador de flujo SVG', 'Landing page Academia Digital Pro', 'Simulación de sistemas en R'],
   },
   {
     period: 'Dic 2022',

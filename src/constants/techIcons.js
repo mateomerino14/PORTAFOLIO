@@ -1,11 +1,11 @@
 import {
-  siAngular, siArduino, siAstro, siBlender, siBootstrap, siC, siCisco, siCplusplus, siCss, siDocker, siDotnet, siElectron, siExpress,
-  siFigma, siFirebase, siFramer, siGit, siGithubactions, siGoogle, siGooglegemini, siHtml5, siJavascript, siJsonwebtokens, siMariadb,
+  siAngular, siAnsible, siArduino, siAstro, siBlender, siBootstrap, siC, siCisco, siCplusplus, siCss, siDocker, siDotnet, siElectron, siExpress,
+  siFigma, siFirebase, siGodotengine, siFramer, siGit, siGithubactions, siGoogle, siGooglegemini, siHtml5, siJavascript, siJsonwebtokens, siLinux, siMariadb,
   siMongodb, siMysql, siNestjs, siNodedotjs, siNumpy, siOpenjdk, siPaddlepaddle, siPandas, siPhp, siPostgresql, siPostman,
-  siPython, siQt, siR, siReact, siSqlite, siStorybook, siSupabase, siSvg, siTailwindcss, siThreedotjs, siTypescript, siVitest,
+  siPython, siQt, siR, siReact, siRust, siScikitlearn, siSqlite, siStorybook, siSupabase, siSvg, siTailwindcss, siTauri, siThreedotjs, siTypescript, siVitest, siVuedotjs,
 } from 'simple-icons';
 import {
-  Binary, BrainCircuit, Cable, ChartColumn, ChartPie, Code, Database, FileCode, Languages, Mail, Network, RefreshCcw,
+  AppWindow, AudioWaveform, Binary, BrainCircuit, Cable, ChartColumn, ChartPie, Code, Database, FileCode, Languages, Mail, Mic, Network, RefreshCcw,
   ScanText, Sheet, Sigma, Trophy, Users, Webhook, Workflow,
 } from 'lucide-react';
 
@@ -58,6 +58,13 @@ export const BRAND_ICONS = {
   'PyQt': siQt,
   'Astro': siAstro,
   'Firebase': siFirebase,
+  'Godot': siGodotengine,
+  'Rust': siRust,
+  'Vue': siVuedotjs,
+  'Tauri': siTauri,
+  'Ansible': siAnsible,
+  'Linux': siLinux,
+  'scikit-learn': siScikitlearn,
 };
 
 export const FALLBACK_ICONS = {
@@ -78,6 +85,9 @@ export const FALLBACK_ICONS = {
   'Automatización': Workflow,
   'TrOCR': ScanText,
   'Tesseract': ScanText,
+  'Whisper': Mic,
+  'Tkinter': AppWindow,
+  'librosa': AudioWaveform,
   'Redes': Network,
   'Sockets TCP': Cable,
   'Visual Basic': FileCode,

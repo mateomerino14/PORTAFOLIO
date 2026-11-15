@@ -36,3 +36,7 @@ export const TwoColumns = {
   args: {columns: 2},
   decorators: [(Story) => <div className="w-[56rem]"><Story /></div>],
 };
+
+export const WithSelectHandler = {
+  args: {onSelect: () => {}},
+};

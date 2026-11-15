@@ -5,6 +5,7 @@ export const SECTION_IDS = {
   about: 'sobre-mi',
   stack: 'stack',
   projects: 'proyectos',
+  otherProjects: 'otros-proyectos',
   timeline: 'trayectoria',
   certifications: 'certificaciones',
   contact: 'contacto',

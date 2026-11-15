@@ -28,12 +28,21 @@ function StopVisual({item}) {
   return null;
 }
 
-function StopIndex({items, columns = 1}) {
+const selectHandler = (onSelect) => (item) => {
+  if (onSelect) {
+    onSelect(item);
+    return;
+  }
+  scrollToSection(item.target || item.id);
+};
+
+function StopIndex({items, columns = 1, onSelect}) {
+  const handleSelect = selectHandler(onSelect);
   return (
     <ul className={columns === 2 ? styles.listTwoColumns : styles.list}>
       {items.map((item) => (
         <li key={item.id}>
-          <button type="button" className={styles.item} onClick={() => scrollToSection(item.id)}>
+          <button type="button" className={styles.item} onClick={() => handleSelect(item)}>
             <StopVisual item={item} />
             <span className={styles.body}>
               <span className={styles.label}>{item.label}</span>

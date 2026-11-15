@@ -11,6 +11,7 @@ const demoNote = 'Capturas de la aplicación corriendo con datos de ejemplo.';
 export const PROJECTS = [
   {
     title: 'Sistema de Control de Viáticos',
+    isFeatured: true,
     cover: 'projects/viaticos/mis-viajes.webp',
     context: 'Pasantía · MAXAM FANEXA',
     kind: 'Web full stack',
@@ -40,6 +41,7 @@ export const PROJECTS = [
   },
   {
     title: 'Sistema Cafebar · Web y escritorio',
+    isFeatured: true,
     cover: 'projects/cafe-bar/mesas.webp',
     context: 'Cliente freelance · Entregado',
     kind: 'Web y escritorio',
@@ -98,6 +100,7 @@ export const PROJECTS = [
   },
   {
     title: 'Brasa Brava',
+    isFeatured: true,
     cover: 'projects/brasa-brava/caja.webp',
     context: 'Cliente freelance · En curso',
     kind: 'Web y escritorio',
@@ -127,6 +130,7 @@ export const PROJECTS = [
   },
   {
     title: 'Observatorio de Precios CBBA',
+    isFeatured: true,
     cover: 'projects/observatorio-precios/resumen.webp',
     context: 'Proyecto personal · Sitio en vivo',
     kind: 'Datos y web',
@@ -155,6 +159,7 @@ export const PROJECTS = [
   },
   {
     title: 'Sistema Farmacia',
+    isFeatured: true,
     cover: 'projects/sistema-farmacia/inicio.webp',
     context: 'Proyecto propio · Versión 1.0',
     kind: 'Escritorio',
@@ -183,22 +188,28 @@ export const PROJECTS = [
     ],
   },
   {
-    title: 'Socavón',
+    title: 'Socavón y Espejo',
+    isFeatured: true,
     cover: 'projects/socavon/tio.webp',
-    context: 'Proyecto personal · Videojuego',
-    kind: 'Juego 3D',
-    description: 'Juego de terror en primera persona en las minas del Cerro Rico de Potosí. Mateo, un minero de 17 años, queda atrapado tras un derrumbe y debe salir mientras lo caza el Tío. Primera historia del universo del Manqha Pacha.',
+    context: 'Proyecto personal · Videojuegos',
+    kind: 'Juegos 3D',
+    description: 'Dos juegos de terror en primera persona del universo del Manqha Pacha. En Socavón, un minero de 17 años queda atrapado en el Cerro Rico de Potosí mientras lo caza el Tío. En Espejo, una fotógrafa descubre en el salar de Uyuni que algo vive del otro lado de los reflejos.',
     highlights: [
-      'Seis niveles, dos finales y versión para Windows en Releases',
-      'IA del Tío que patrulla, oye, rastrea, revisa escondites y se calma con ofrendas',
-      'Modelos generados con scripts de Blender en Python, voces, música en capas y pruebas automáticas',
+      'Socavón: seis niveles, dos finales e IA del Tío que patrulla, oye, rastrea y se calma con ofrendas',
+      'Espejo: cinco niveles, tres finales y un ente que solo se ve por la cámara y en los espejos',
+      'Modelos generados con scripts de Blender en Python y versión para Windows en Releases',
     ],
     tags: ['Godot', 'Blender', 'Python'],
-    links: [{label: 'Código', href: `${githubUrl}/socavon`}, {label: 'Descargar', href: 'https://github.com/mateomerino14/socavon/releases'}],
+    links: [
+      {label: 'Código Socavón', href: `${githubUrl}/socavon`},
+      {label: 'Descargar Socavón', href: `${githubUrl}/socavon/releases`},
+      {label: 'Código Espejo', href: `${githubUrl}/espejo`},
+      {label: 'Descargar Espejo', href: `${githubUrl}/espejo/releases`},
+    ],
     media: [
       {
         type: MEDIA_TYPES.gallery,
-        label: 'Capturas',
+        label: 'Socavón',
         note: 'Capturas del juego, sin interfaz.',
         images: [
           {src: 'projects/socavon/galeria.webp', caption: 'Una galería de la mina con los rieles hacia el fondo'},
@@ -208,25 +219,9 @@ export const PROJECTS = [
           {src: 'projects/socavon/bocamina.webp', caption: 'La luz de la bocamina, al final del recorrido'},
         ],
       },
-    ],
-  },
-  {
-    title: 'Espejo',
-    cover: 'projects/espejo/reflejo.webp',
-    context: 'Proyecto personal · Videojuego',
-    kind: 'Juego 3D',
-    description: 'Juego de terror en primera persona en el salar de Uyuni durante la temporada de lluvias. Lucía, una fotógrafa de La Paz, descubre que algo vive del otro lado de los reflejos. Segunda historia del Manqha Pacha, después de Socavón.',
-    highlights: [
-      'Cinco niveles, tres finales y versión para Windows en Releases',
-      'Un ente que solo se ve por el visor de la cámara y en los espejos',
-      'Cámara con flash, álbum de fotos, mochila, mapa y objetivos por nivel',
-    ],
-    tags: ['Godot', 'Blender', 'Python'],
-    links: [{label: 'Código', href: `${githubUrl}/espejo`}, {label: 'Descargar', href: 'https://github.com/mateomerino14/espejo/releases'}],
-    media: [
       {
         type: MEDIA_TYPES.gallery,
-        label: 'Capturas',
+        label: 'Espejo',
         note: 'Capturas del juego, sin interfaz.',
         images: [
           {src: 'projects/espejo/pasillo.webp', caption: 'El pasillo del hostal de sal en Colchani'},
@@ -240,6 +235,7 @@ export const PROJECTS = [
   },
   {
     title: 'Maison Brumaire',
+    isFeatured: true,
     cover: 'projects/maison-brumaire/portada.webp',
     context: 'Proyecto personal · Sitio en vivo',
     kind: 'Web 3D',
@@ -268,6 +264,7 @@ export const PROJECTS = [
   },
   {
     title: 'Prototipo HTR para código manuscrito',
+    isFeatured: true,
     context: 'Proyecto de Grado',
     kind: 'Investigación',
     description: 'Prototipo que integra herramientas de reconocimiento de escritura para transcribir el código Java y Python escrito a mano en exámenes de la FCyT-UMSS.',
@@ -682,3 +679,7 @@ methods = list(generarNumeros = function(cantidad) {
     ],
   },
 ];
+
+export const FEATURED_PROJECTS = PROJECTS.filter((project) => project.isFeatured);
+
+export const OTHER_PROJECTS = PROJECTS.filter((project) => !project.isFeatured);

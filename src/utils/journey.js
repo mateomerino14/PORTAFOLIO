@@ -13,6 +13,8 @@ export const createBranchStops = (groupId, prefix, items, getLabel) => items.map
   itemIndex,
 }));
 
+export const createCollectionStop = (groupId, id, label) => ({id, groupId, label, level: STOP_LEVELS.branch, itemIndex: -1, isCollection: true});
+
 export const findStopIndex = (stops, stopId) => stops.findIndex((stop) => stop.id === stopId);
 
 export const computeProgress = (centers, position) => {

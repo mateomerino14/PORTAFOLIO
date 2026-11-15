@@ -10,7 +10,7 @@ export const TIMELINE = [
       'Un sistema de escritorio para farmacias y una tienda contada con una escena 3D.',
     ],
     tags: ['Godot', 'Python', 'Rust', 'Three.js', 'Supabase'],
-    projects: ['Observatorio de Precios CBBA', 'Sistema Farmacia', 'Socavón', 'Espejo', 'Maison Brumaire'],
+    projects: ['Observatorio de Precios CBBA', 'Sistema Farmacia', 'Socavón y Espejo', 'Maison Brumaire'],
   },
   {
     period: 'Sep 2026',

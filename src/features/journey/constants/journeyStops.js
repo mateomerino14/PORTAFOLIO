@@ -1,10 +1,11 @@
 import {NAV_ITEMS, SECTION_IDS} from '../../../constants/navigation';
-import {PROJECTS} from '../../../data/projects';
+import {FEATURED_PROJECTS} from '../../../data/projects';
 import {TIMELINE} from '../../../data/timeline';
 import {CERTIFICATION_GROUPS} from '../../../data/certifications';
-import {createBranchStops, createMainStop} from '../../../utils/journey';
+import {createBranchStops, createCollectionStop, createMainStop} from '../../../utils/journey';
 
 const heroLabel = 'Inicio';
+const otherProjectsLabel = 'Otros proyectos';
 
 const labelOf = (sectionId) => NAV_ITEMS.find((item) => item.id === sectionId).label;
 
@@ -15,7 +16,8 @@ export const JOURNEY_STOPS = [
   mainStop(SECTION_IDS.about),
   mainStop(SECTION_IDS.stack),
   mainStop(SECTION_IDS.projects),
-  ...createBranchStops(SECTION_IDS.projects, 'proyecto', PROJECTS, (project) => project.title),
+  ...createBranchStops(SECTION_IDS.projects, 'proyecto', FEATURED_PROJECTS, (project) => project.title),
+  createCollectionStop(SECTION_IDS.projects, SECTION_IDS.otherProjects, otherProjectsLabel),
   mainStop(SECTION_IDS.timeline),
   ...createBranchStops(SECTION_IDS.timeline, 'etapa', TIMELINE, (entry) => entry.title),
   mainStop(SECTION_IDS.certifications),

@@ -19,6 +19,19 @@ export const scrollToSection = (sectionId) => {
   }
 };
 
+const lockedOverflow = 'hidden';
+const freeOverflow = '';
+
+export const lockPageScroll = () => {
+  smoothScroller?.stop();
+  document.documentElement.style.overflow = lockedOverflow;
+};
+
+export const unlockPageScroll = () => {
+  document.documentElement.style.overflow = freeOverflow;
+  smoothScroller?.start();
+};
+
 export const scrollToTop = () => {
   if (smoothScroller) {
     smoothScroller.scrollTo(0);
